@@ -1,11 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch} from 'react-router-dom';
-import Main from '@modules/main/Main';
-import Login from '@modules/login/Login';
-import Register from '@modules/register/Register';
-import ForgetPassword from '@modules/forgot-password/ForgotPassword';
-import RecoverPassword from '@modules/recover-password/RecoverPassword';
-import PrivacyPolicy from '@modules/privacy-policy/PrivacyPolicy';
+import Main from '@containers/main/Main';
+import Login from '@containers/login/Login';
+import Register from '@containers/register/Register';
+import ForgetPassword from '@containers/forgot-password/ForgotPassword';
+import RecoverPassword from '@containers/recover-password/RecoverPassword';
+import PrivacyPolicy from '@containers/privacy-policy/PrivacyPolicy';
 
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
