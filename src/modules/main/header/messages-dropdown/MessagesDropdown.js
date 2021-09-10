@@ -125,7 +125,7 @@ const MessagesDropdown = () => {
                             <p className="text-sm text-muted">
                                 <i className="far fa-clock mr-1" />
                                 <span>
-                                    text
+                                    tex
                                 </span>
                             </p>
                         </div>
