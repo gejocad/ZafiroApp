@@ -1,10 +1,8 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {NavLink, Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 
 const MenuSidebar = () => {
-    const [t] = useTranslation();
     const user = useSelector((state) => state.auth.currentUser);
 
     return (
@@ -43,13 +41,13 @@ const MenuSidebar = () => {
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link">
                                 <i className="nav-icon fas fa-tachometer-alt" />
-                                <p>{t('menusidebar.label.dashboard')}</p>
+                                <p>menusidebar.label.dashboard</p>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/profile" exact className="nav-link">
                                 <i className="nav-icon fas fa-user" />
-                                <p>{t('menusidebar.label.profile')}</p>
+                                <p>menusidebar.label.profile</p>
                             </NavLink>
                         </li>
                     </ul>

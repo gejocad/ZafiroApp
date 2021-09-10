@@ -3,7 +3,6 @@ import {Link, useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
-import {useTranslation} from 'react-i18next';
 import * as Yup from 'yup';
 import {loginUser} from '@store/reducers/auth';
 
@@ -14,7 +13,6 @@ const Register = () => {
     const [isAuthLoading, setAuthLoading] = useState(false);
     const [isGoogleAuthLoading, setGoogleAuthLoading] = useState(false);
     const [isFacebookAuthLoading, setFacebookAuthLoading] = useState(false);
-    const [t] = useTranslation();
     const dispatch = useDispatch();
 
     const history = useHistory();
@@ -127,7 +125,7 @@ const Register = () => {
                     </Link>
                 </div>
                 <div className="card-body">
-                    <p className="login-box-msg">{t('register.registerNew')}</p>
+                    <p className="login-box-msg">register.registerNew</p>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="mb-3">
                             <div className="input-group">
@@ -206,7 +204,7 @@ const Register = () => {
                                         isGoogleAuthLoading
                                     }
                                 >
-                                    {t('register.label')}
+                                    register.label'
                                 </Button>
                             </div>
                         </div>
@@ -219,9 +217,7 @@ const Register = () => {
                             isLoading={isFacebookAuthLoading}
                             disabled={isAuthLoading || isGoogleAuthLoading}
                         >
-                            {t('login.button.signUp.social', {
-                                what: 'Facebook'
-                            })}
+                            login.button.signUp.social', { }
                         </Button>
                         <Button
                             block
@@ -231,11 +227,11 @@ const Register = () => {
                             isLoading={isGoogleAuthLoading}
                             disabled={isAuthLoading || isFacebookAuthLoading}
                         >
-                            {t('login.button.signUp.social', {what: 'Google'})}
+                            login.button.signUp.soci
                         </Button>
                     </div>
                     <Link to="/login" className="text-center">
-                        {t('register.alreadyHave')}
+                        register.alreadyHave'
                     </Link>
                 </div>
             </div>

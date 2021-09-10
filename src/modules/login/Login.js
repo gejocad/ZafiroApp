@@ -3,7 +3,6 @@ import {useDispatch} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
-import {useTranslation} from 'react-i18next';
 import {loginUser} from '@store/reducers/auth';
 import * as Yup from 'yup';
 import * as AuthService from '../../services/auth';
@@ -16,7 +15,6 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const history = useHistory();
-    const [t] = useTranslation();
 
     const login = async (email, password) => {
         try {
@@ -113,7 +111,7 @@ const Login = () => {
                     </Link>
                 </div>
                 <div className="card-body">
-                    <p className="login-box-msg">{t('login.label.signIn')}</p>
+                    <p className="login-box-msg">entrar</p>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="mb-3">
                             <div className="input-group">
@@ -155,7 +153,7 @@ const Login = () => {
                                 <div className="icheck-primary">
                                     <input type="checkbox" id="remember" />
                                     <label htmlFor="remember">
-                                        {t('login.label.rememberMe')}
+                                        recordarme
                                     </label>
                                 </div>
                             </div>
@@ -169,7 +167,7 @@ const Login = () => {
                                         isGoogleAuthLoading
                                     }
                                 >
-                                    {t('login.button.signIn.label')}
+                                    entrar
                                 </Button>
                             </div>
                         </div>
@@ -182,9 +180,7 @@ const Login = () => {
                             isLoading={isFacebookAuthLoading}
                             disabled={isAuthLoading || isGoogleAuthLoading}
                         >
-                            {t('login.button.signIn.social', {
-                                what: 'Facebook'
-                            })}
+                            entrar con facebook
                         </Button>
                         <Button
                             block
@@ -194,17 +190,17 @@ const Login = () => {
                             isLoading={isGoogleAuthLoading}
                             disabled={isAuthLoading || isFacebookAuthLoading}
                         >
-                            {t('login.button.signIn.social', {what: 'Google'})}
+                            entrar con google
                         </Button>
                     </div>
                     <p className="mb-1">
                         <Link to="/forgot-password">
-                            {t('login.label.forgotPass')}
+                            forgotPass
                         </Link>
                     </p>
                     <p className="mb-0">
                         <Link to="/register" className="text-center">
-                            {t('login.label.registerNew')}
+                            registrarse
                         </Link>
                     </p>
                 </div>

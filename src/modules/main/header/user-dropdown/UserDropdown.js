@@ -2,13 +2,11 @@ import React, {useRef, useEffect, useState} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {DateTime} from 'luxon';
-import {useTranslation} from 'react-i18next';
 import {logoutUser} from '@store/reducers/auth';
 
 const UserDropdown = () => {
     const dropdownRef = useRef(null);
     const history = useHistory();
-    const [t] = useTranslation();
     const dispatch = useDispatch();
     const user = useSelector((state) => state.auth.currentUser);
 
@@ -91,13 +89,13 @@ const UserDropdown = () => {
                 <li className="user-body">
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/">{t('header.user.followers')}</Link>
+                            <Link to="/">header.user.followers</Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/">{t('header.user.sales')}</Link>
+                            <Link to="/">header.user.sales</Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/">{t('header.user.friends')}</Link>
+                            <Link to="/">header.user.friends</Link>
                         </div>
                     </div>
                 </li>
@@ -107,14 +105,14 @@ const UserDropdown = () => {
                         onClick={toggleDropdown}
                         className="btn btn-default btn-flat"
                     >
-                        {t('header.user.profile')}
+                        header.user.profile
                     </Link>
                     <button
                         type="button"
                         className="btn btn-default btn-flat float-right"
                         onClick={logOut}
                     >
-                        {t('login.button.signOut')}
+                        login.button.signOut
                     </button>
                 </li>
             </ul>

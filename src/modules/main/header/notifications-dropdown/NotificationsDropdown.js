@@ -1,10 +1,8 @@
 import React, {useRef, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 
 const NotificationsDropdown = () => {
     const dropdownRef = useRef(null);
-    const [t] = useTranslation();
 
     const [dropdownState, updateDropdownState] = useState({
         isDropdownOpen: false
@@ -57,56 +55,44 @@ const NotificationsDropdown = () => {
             </button>
             <div className={className}>
                 <span className="dropdown-item dropdown-header">
-                    {t('header.notifications.count', {quantity: '15'})}
+                   'header.notifications.count'
                 </span>
                 <div className="dropdown-divider" />
                 <Link to="/" className="dropdown-item">
                     <i className="fas fa-envelope mr-2" />
                     <span>
-                        {t('header.notifications.newMessagesCount', {
-                            quantity: '4'
-                        })}
+                        header.notifications.newMessagesCount',
                     </span>
                     <span className="float-right text-muted text-sm">
-                        {t('measurement.quantityUnit', {
-                            quantity: '3',
-                            unit: 'mins'
-                        })}
+                        measurement.quantityUnit'
+                        
                     </span>
                 </Link>
                 <div className="dropdown-divider" />
                 <Link to="/" className="dropdown-item">
                     <i className="fas fa-users mr-2" />
                     <span>
-                        {t('header.notifications.friendRequestsCount', {
-                            quantity: '5'
-                        })}
+                        header.notifications.friendRequestsCount'
                     </span>
                     <span className="float-right text-muted text-sm">
-                        {t('measurement.quantityUnit', {
-                            quantity: '12',
-                            unit: 'hours'
-                        })}
+                        measurement.quantityUnit', 
+                        
                     </span>
                 </Link>
                 <div className="dropdown-divider" />
                 <Link to="/" className="dropdown-item">
                     <i className="fas fa-file mr-2" />
                     <span>
-                        {t('header.notifications.reportsCount', {
-                            quantity: '3'
-                        })}
+                        header.notifications.reportsCount', 
+                        
                     </span>
                     <span className="float-right text-muted text-sm">
-                        {t('measurement.quantityUnit', {
-                            quantity: '2',
-                            unit: 'days'
-                        })}
+                        measurement.quantityUnit',
                     </span>
                 </Link>
                 <div className="dropdown-divider" />
                 <Link to="/" className="dropdown-item dropdown-footer">
-                    {t('header.notifications.seeAll')}
+                    header.notifications.seeAll
                 </Link>
             </div>
         </li>

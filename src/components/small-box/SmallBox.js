@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 
 const SmallBox = ({
     type = 'info',
@@ -9,8 +8,6 @@ const SmallBox = ({
     title,
     navigateTo
 }) => {
-    const [t] = useTranslation();
-
     return (
         <div className={`small-box bg-${type}`}>
             <div className="inner">
@@ -21,7 +18,7 @@ const SmallBox = ({
                 <i className={`ion ${icon || 'ion-bag'}`} />
             </div>
             <Link to={navigateTo} className="small-box-footer">
-                <span className="mr-2">{t('main.label.moreInfo')}</span>
+                <span className="mr-2">Mas informacion</span>
                 <i className="fa fa-arrow-circle-right" />
             </Link>
         </div>

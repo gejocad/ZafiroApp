@@ -35,8 +35,6 @@
         "craco-alias": "3.0.1",
         "formik": "2.2.9",
         "gatekeeper-client-sdk": "0.2.1",
-        "i18next": "20.4.0",
-        "i18next-browser-languagedetector": "6.1.2",
         "luxon": "^2.0.2",
         "node-sass": "6.0.1",
         "react": "17.0.2",
