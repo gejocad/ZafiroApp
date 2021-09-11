@@ -3,6 +3,7 @@ import {useHistory, Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {DateTime} from 'luxon';
 import {useTranslation} from 'react-i18next';
+import {startLogout} from './../../../../actions/authAction';
 
 const UserDropdown = () => {
     const dropdownRef = useRef(null);
@@ -32,7 +33,7 @@ const UserDropdown = () => {
     const logOut = (event) => {
         toggleDropdown();
         event.preventDefault();
-        dispatch(logoutUser());
+        dispatch(startLogout());
         history.push('/login');
     };
 
@@ -62,7 +63,7 @@ const UserDropdown = () => {
                 data-toggle="dropdown"
             >
                 <img
-                    src={user.picture || '/img/default-profile.png'}
+                    src={'profile' || '/img/default-profile.png'}
                     className="user-image img-circle elevation-2"
                     alt="User"
                 />
@@ -71,19 +72,15 @@ const UserDropdown = () => {
             <ul className={className}>
                 <li className="user-header bg-primary">
                     <img
-                        src={user.picture || '/img/default-profile.png'}
+                        src={'profile' || '/img/default-profile.png'}
                         className="img-circle elevation-2"
                         alt="User"
                     />
                     <p>
-                        {user.email}
+                        {'email'}
                         <small>
                             <span>Member since </span>
-                            <span>
-                                {DateTime.fromISO(user.createdAt).toFormat(
-                                    'dd LLL yyyy'
-                                )}
-                            </span>
+                            
                         </small>
                     </p>
                 </li>

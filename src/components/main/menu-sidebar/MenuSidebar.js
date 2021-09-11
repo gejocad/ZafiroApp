@@ -6,6 +6,7 @@ import {useTranslation} from 'react-i18next';
 const MenuSidebar = () => {
     const [t] = useTranslation();
     const user = useSelector((state) => state.auth.currentUser);
+    
 
     return (
         <aside className="main-sidebar sidebar-dark-primary elevation-4">
@@ -22,14 +23,14 @@ const MenuSidebar = () => {
                 <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div className="image">
                         <img
-                            src={user.picture || '/img/default-profile.png'}
+                            src={'/img/default-profile.png'}
                             className="img-circle elevation-2"
                             alt="User"
                         />
                     </div>
                     <div className="info">
                         <Link to="/profile" className="d-block">
-                            {user.email}
+                            {"email"}
                         </Link>
                     </div>
                 </div>

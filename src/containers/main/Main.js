@@ -5,6 +5,7 @@ import {Gatekeeper} from 'gatekeeper-client-sdk';
 
 import Dashboard from '@components/pages/Dashboard';
 import Profile from '@components/pages/profile/Profile';
+import { startLogout } from '../../actions/authAction';
 
 import Header from '@components/main/header/Header';
 import Footer from '@components/main/footer/Footer';
@@ -32,7 +33,7 @@ const Main = () => {
                 dispatch(loadUser(response));
                 updateAppLoading(false);
             } catch (error) {
-                dispatch(logoutUser());
+                dispatch(startLogout());
                 updateAppLoading(false);
             }
         };
