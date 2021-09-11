@@ -15,4 +15,5 @@ export const types = {
     movieDelete:'Delete movies',
 
     ListarBusqueda: 'ListarBusqueda'
-}
+};
+

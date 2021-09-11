@@ -6,12 +6,7 @@
         "start": "craco start",
         "build": "craco build",
         "dev": "craco test",
-        "eject": "react-scripts eject",
-        "format": "prettier-eslint $PWD/'src/**/*.{js,json}' --write",
-        "lint": "eslint src/**/*.js"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
+        "eject": "react-scripts eject"
     },
     "browserslist": {
         "production": [
@@ -33,6 +28,7 @@
         "@testing-library/user-event": "13.2.1",
         "axios": "0.21.1",
         "craco-alias": "3.0.1",
+        "firebase": "^8.6.5",
         "formik": "2.2.9",
         "gatekeeper-client-sdk": "0.2.1",
         "i18next": "20.4.0",
@@ -52,30 +48,6 @@
     },
     "devDependencies": {
         "admin-lte": "3.1.0",
-        "eslint": "7.32.0",
-        "eslint-config-airbnb": "18.2.1",
-        "eslint-config-prettier": "8.3.0",
-        "eslint-import-resolver-alias": "^1.1.2",
-        "eslint-plugin-import": "2.24.2",
-        "eslint-plugin-jsx-a11y": "6.4.1",
-        "eslint-plugin-prettier": "3.4.1",
-        "eslint-plugin-react": "7.25.0",
-        "eslint-plugin-react-hooks": "4.2.0",
-        "husky": "7.0.2",
-        "lint-staged": "11.1.2",
-        "prettier": "2.3.2",
-        "prettier-eslint": "13.0.0",
-        "prettier-eslint-cli": "5.0.1"
-    },
-    "lint-staged": {
-        "**/*.js": [
-            "eslint --fix",
-            "prettier-eslint --write"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
+        "husky": "7.0.2"
     }
 }

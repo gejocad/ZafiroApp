@@ -1,86 +1,17 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useForm } from '../../hooks/useForm';
+import { removeError, setError } from '../../actions/uiAction';
+import { startGoogleLogin, startFacebookLogin, startLogin } from '../../actions/authAction';
 import {Link, useHistory} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
 import {useTranslation} from 'react-i18next';
-import {loginUser} from '@store/reducers/auth';
 import * as Yup from 'yup';
-import * as AuthService from '../../services/auth';
 import Button from '../../components/button/Button';
 
 const Login = () => {
-    const [isAuthLoading, setAuthLoading] = useState(false);
-    const [isGoogleAuthLoading, setGoogleAuthLoading] = useState(false);
-    const [isFacebookAuthLoading, setFacebookAuthLoading] = useState(false);
-    const dispatch = useDispatch();
-
-    const history = useHistory();
-    const [t] = useTranslation();
-
-    const login = async (email, password) => {
-        try {
-            setAuthLoading(true);
-            const token = await AuthService.loginByAuth(email, password);
-            toast.success('Login is succeed!');
-            setAuthLoading(false);
-            dispatch(loginUser(token));
-            history.push('/');
-        } catch (error) {
-            setAuthLoading(false);
-            toast.error(
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    'Failed'
-            );
-        }
-    };
-
-    const loginByGoogle = async () => {
-        try {
-            setGoogleAuthLoading(true);
-            const token = await AuthService.loginByGoogle();
-            toast.success('Login is succeeded!');
-            setGoogleAuthLoading(false);
-            dispatch(loginUser(token));
-            history.push('/');
-        } catch (error) {
-            setGoogleAuthLoading(false);
-            toast.error(
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    'Failed'
-            );
-        }
-    };
-
-    const loginByFacebook = async () => {
-        try {
-            setFacebookAuthLoading(true);
-            const token = await AuthService.loginByFacebook();
-            toast.success('Login is succeeded!');
-            setFacebookAuthLoading(false);
-            dispatch(loginUser(token));
-            history.push('/');
-        } catch (error) {
-            setFacebookAuthLoading(false);
-            toast.error(
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    'Failed'
-            );
-        }
-    };
-
-    const printFormError = (formik, key) => {
-        if (formik.touched[key] && formik.errors[key]) {
-            return <div>{formik.errors[key]}</div>;
-        }
-        return null;
-    };
+    
 
     const formik = useFormik({
         initialValues: {
@@ -97,9 +28,17 @@ const Login = () => {
                 .required('Required')
         }),
         onSubmit: (values) => {
-            login(values.email, values.password);
+            startLogin(values.email, values.password);
         }
     });
+
+    const handleGoogleLogin = () => {
+        dispatch(startGoogleLogin())
+    }
+
+    const handleFacebookLogin = () => {
+        dispatch(startFacebookLogin())
+    }
 
     document.getElementById('root').classList = 'hold-transition login-page';
 
@@ -178,7 +117,7 @@ const Login = () => {
                         <Button
                             block
                             icon="facebook"
-                            onClick={loginByFacebook}
+                            onClick={handleFacebookLogin}
                             isLoading={isFacebookAuthLoading}
                             disabled={isAuthLoading || isGoogleAuthLoading}
                         >
@@ -190,7 +129,7 @@ const Login = () => {
                             block
                             icon="google"
                             theme="danger"
-                            onClick={loginByGoogle}
+                            onClick={handleGoogleLogin}
                             isLoading={isGoogleAuthLoading}
                             disabled={isAuthLoading || isFacebookAuthLoading}
                         >

@@ -1,5 +1,5 @@
 import React from 'react';
-import SmallBox from '../components/small-box/SmallBox';
+import SmallBox from '../small-box/SmallBox';
 
 const Dashboard = () => {
     return (

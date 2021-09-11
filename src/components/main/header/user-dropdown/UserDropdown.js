@@ -3,7 +3,6 @@ import {useHistory, Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {DateTime} from 'luxon';
 import {useTranslation} from 'react-i18next';
-import {logoutUser} from '@store/reducers/auth';
 
 const UserDropdown = () => {
     const dropdownRef = useRef(null);

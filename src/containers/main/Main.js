@@ -2,14 +2,13 @@ import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {Gatekeeper} from 'gatekeeper-client-sdk';
-import {loadUser, logoutUser} from '@store/reducers/auth';
 
-import Dashboard from '@pages/Dashboard';
-import Profile from '@pages/profile/Profile';
+import Dashboard from '@components/pages/Dashboard';
+import Profile from '@components/pages/profile/Profile';
 
-import Header from './header/Header';
-import Footer from './footer/Footer';
-import MenuSidebar from './menu-sidebar/MenuSidebar';
+import Header from '@components/main/header/Header';
+import Footer from '@components/main/footer/Footer';
+import MenuSidebar from '@components/main/menu-sidebar/MenuSidebar';
 import PageLoading from '../../components/page-loading/PageLoading';
 
 const Main = () => {

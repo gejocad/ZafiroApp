@@ -1,64 +1,44 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
-import firebase from 'firebase'
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Switch
-} from 'react-router-dom'
-import { login } from '../actions/authAction';
-import { PrivateRouter } from './PrivateRoute';
-import { PublicRouter } from './PublicRoute';
-// import Home from '../containers/home/Home';
-import AuthRoutes from './AuthRoutes';
-import AddMovie from '../containers/addmovie/AddMovie';
-// import ContenedorNav from '../containers/sideBar/ContenedorNav';
-import { SearchScreen } from '../components/search/SearchScreen';
-import NavRoutes from './NavRoutes';
-import { startLoadingMovie } from '../actions/movieAction';
+import React from 'react';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import Main from '@containers/main/Main';
+import Login from '@containers/login/Login';
+import Register from '@containers/register/Register';
+import ForgetPassword from '@containers/forgot-password/ForgotPassword';
+import RecoverPassword from '@containers/recover-password/RecoverPassword';
+import PrivacyPolicy from '@containers/privacy-policy/PrivacyPolicy';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
 
-function App() {
+import './App.scss';
 
-  const dispatch = useDispatch()
-
-  const [checking, setChecking] = useState(true)
-  const [isLoogedIn, setIsLoogedIn] = useState(false)
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged(async (user) => {
-      if (user?.uid) {
-        dispatch(login(user.uid, user.displayName, user.email, user.photoURL))
-        setIsLoogedIn(true)
-        dispatch(startLoadingMovie('movies'))
-      } else {
-        setIsLoogedIn(false)
-      }
-      setChecking(false)
-    })
-  }, [dispatch, setChecking, setIsLoogedIn])
-
-  if (checking) {
+const App = () => {
     return (
-      <h1>Loading ...</h1>
-    )
-  }
-
-  return (
-    <ChakraProvider>
-      <Router>
-        <Switch>
-          <PublicRouter path='/auth' component={AuthRoutes} isAuthenticated={isLoogedIn} />
-          <PrivateRouter path='/' component={NavRoutes} isAuthenticated={isLoogedIn} />
-          <PrivateRouter path='/addmovies' component={AddMovie} isAuthenticated={isLoogedIn} />
-          <PrivateRouter path='/search' component={SearchScreen} isAuthenticated={isLoogedIn} />
-          {/* <Route exact path='/auth/login' component={Login} />
-          <Route exact path='/auth/register' component={Register} /> */}
-          <Redirect to='/auth/login' />
-        </Switch>
-      </Router>
-    </ChakraProvider>
-  );
-}
+        <Router>
+            <Switch>
+                <PublicRoute exact path="/login">
+                    <Login />
+                </PublicRoute>
+                <PublicRoute exact path="/register">
+                    <Register />
+                </PublicRoute>
+                <PublicRoute exact path="/forgot-password">
+                    <ForgetPassword />
+                </PublicRoute>
+                <PublicRoute exact path="/recover-password">
+                    <RecoverPassword />
+                </PublicRoute>
+                <PublicRoute exact path="/privacy-policy">
+                    <PrivacyPolicy />
+                </PublicRoute>
+                <PublicRoute exact path="/callback">
+                    <h1>Callback</h1>
+                </PublicRoute>
+                <PrivateRoute path="/">
+                    <Main />
+                </PrivateRoute>
+            </Switch>
+        </Router>
+    );
+};
 
 export default App;

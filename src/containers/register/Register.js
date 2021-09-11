@@ -5,10 +5,8 @@ import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
 import {useTranslation} from 'react-i18next';
 import * as Yup from 'yup';
-import {loginUser} from '@store/reducers/auth';
 
 import {Button} from '@components';
-import * as AuthService from '../../services/auth';
 
 const Register = () => {
     const [isAuthLoading, setAuthLoading] = useState(false);
@@ -19,12 +17,11 @@ const Register = () => {
 
     const history = useHistory();
 
-    const register = async (email, password) => {
+    const register = async () => {
         try {
             setAuthLoading(true);
-            const token = await AuthService.registerByAuth(email, password);
             setAuthLoading(false);
-            dispatch(loginUser(token));
+            dispatch(loginUser());
             toast.success('Registration is success');
             history.push('/');
         } catch (error) {
@@ -41,9 +38,8 @@ const Register = () => {
     const loginByGoogle = async () => {
         try {
             setGoogleAuthLoading(true);
-            const token = await AuthService.registerByGoogle();
             setGoogleAuthLoading(false);
-            dispatch(loginUser(token));
+            dispatch(loginUser());
             toast.success('Authentication is succeed!');
             history.push('/');
         } catch (error) {
@@ -61,9 +57,8 @@ const Register = () => {
         try {
             setFacebookAuthLoading(true);
 
-            const token = await AuthService.registerByFacebook();
             setFacebookAuthLoading(false);
-            dispatch(loginUser(token));
+            dispatch(loginUser());
             toast.success('Register is succeeded!');
             history.push('/');
         } catch (error) {
