@@ -1,28 +1,24 @@
-import React from 'react';
-import {Redirect, Route} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Route, Redirect } from 'react-router-dom'
 
-const PublicRoute = ({children, ...rest}) => {
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-    const isAuthenticated = isLoggedIn || localStorage.getItem('token');
-
+export const PublicRoute = ({
+    isAuthenticated,
+    component: Component,
+    ...rest
+}) => {
     return (
-        <Route
-            {...rest}
-            render={({location}) =>
-                isAuthenticated ? (
-                    <Redirect
-                        to={{
-                            pathname: '/',
-                            state: {from: location}
-                        }}
-                    />
-                ) : (
-                    children
-                )
-            }
+        <Route {...rest}
+            component={(props) => (
+                (isAuthenticated)
+                ? (<Redirect to='/' />)
+                : (<Component {...props} />)
+            )}
         />
-    );
-};
+    )
+}
 
-export default PublicRoute;
+PublicRoute.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+    component: PropTypes.func.isRequired
+}

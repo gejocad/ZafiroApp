@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 import {Button} from '@components';
 import ActivityTab from './ActivityTab';
 import TimelineTab from './TimelineTab';
@@ -8,7 +7,6 @@ import SettingsTab from './SettingsTab';
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState('ACTIVITY');
-    const [t] = useTranslation();
 
     const toggle = (tab) => {
         if (activeTab !== tab) setActiveTab(tab);
@@ -20,15 +18,15 @@ const Profile = () => {
                 <div className="container-fluid">
                     <div className="row mb-2">
                         <div className="col-sm-6">
-                            <h1>{t('header.user.profile')}</h1>
+                            <h1>Perfil</h1>
                         </div>
                         <div className="col-sm-6">
                             <ol className="breadcrumb float-sm-right">
                                 <li className="breadcrumb-item">
-                                    <Link to="/">{t('header.label.home')}</Link>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li className="breadcrumb-item active">
-                                    {t('views.user.profile')}
+                                    Vistas
                                 </li>
                             </ol>
                         </div>
@@ -56,27 +54,27 @@ const Profile = () => {
                                     </p>
                                     <ul className="list-group list-group-unbordered mb-3">
                                         <li className="list-group-item">
-                                            <b>{t('header.user.followers')}</b>
+                                            <b>Seguidores</b>
 
                                             <span className="float-right">
                                                 1,322
                                             </span>
                                         </li>
                                         <li className="list-group-item">
-                                            <b>{t('views.user.following')}</b>
+                                            <b>Vistas</b>
                                             <span className="float-right">
                                                 543
                                             </span>
                                         </li>
                                         <li className="list-group-item">
-                                            <b>{t('header.user.friends')}</b>
+                                            <b>Amigos</b>
                                             <span className="float-right">
                                                 13,287
                                             </span>
                                         </li>
                                     </ul>
                                     <Button block>
-                                        {t('main.label.follow')}
+                                        Seguir
                                     </Button>
                                 </div>
                                 {/* /.card-body */}
@@ -84,13 +82,13 @@ const Profile = () => {
                             <div className="card card-primary">
                                 <div className="card-header">
                                     <h3 className="card-title">
-                                        {t('main.label.aboutMe')}
+                                        Sobre zafiro
                                     </h3>
                                 </div>
                                 <div className="card-body">
                                     <strong>
                                         <i className="fas fa-book mr-1" />
-                                        {t('main.label.education')}
+                                        Educación
                                     </strong>
                                     <p className="text-muted">
                                         B.S. in Computer Science from the
@@ -99,7 +97,7 @@ const Profile = () => {
                                     <hr />
                                     <strong>
                                         <i className="fas fa-map-marker-alt mr-1" />
-                                        {t('main.label.location')}
+                                        Ubicación
                                     </strong>
                                     <p className="text-muted">
                                         Malibu, California
@@ -107,7 +105,7 @@ const Profile = () => {
                                     <hr />
                                     <strong>
                                         <i className="fas fa-pencil-alt mr-1" />
-                                        {t('main.label.skills')}
+                                        Habilidades
                                     </strong>
                                     <p className="text-muted">
                                         <span className="tag tag-danger">
@@ -129,7 +127,7 @@ const Profile = () => {
                                     <hr />
                                     <strong>
                                         <i className="far fa-file-alt mr-1" />
-                                        {t('main.label.notes')}
+                                        Notas
                                     </strong>
                                     <p className="text-muted">
                                         Lorem ipsum dolor sit amet, consectetur
@@ -155,7 +153,7 @@ const Profile = () => {
                                                     toggle('ACTIVITY')
                                                 }
                                             >
-                                                {t('main.label.activity')}
+                                                Actividad
                                             </button>
                                         </li>
                                         <li className="nav-item">
@@ -170,7 +168,7 @@ const Profile = () => {
                                                     toggle('TIMELINE')
                                                 }
                                             >
-                                                {t('main.label.timeline')}
+                                                Tiempo
                                             </button>
                                         </li>
                                         <li className="nav-item">
@@ -185,7 +183,7 @@ const Profile = () => {
                                                     toggle('SETTINGS')
                                                 }
                                             >
-                                                {t('main.label.settings')}
+                                                Ajustes
                                             </button>
                                         </li>
                                     </ul>

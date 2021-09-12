@@ -8,7 +8,7 @@ const TimelineTab = ({isActive}) => {
             <div className="timeline timeline-inverse">
                 {/* timeline time label */}
                 <div className="time-label">
-                    <span className="bg-danger">10 Feb. 2014</span>
+                    <span className="bg-danger">10 Feb. 2021</span>
                 </div>
                 {/* /.timeline-label */}
                 {/* timeline item */}

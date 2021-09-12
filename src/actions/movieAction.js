@@ -27,7 +27,7 @@ export const AddMovie = (tittle, description, year, categorie, image, duration) 
         dispatch(startLoadingMovie('movies'))
     }
 }
- ovie = (movie) => ({
+export const addNewMovie = (movie) => ({
     type: types.addMovie,
     payload: {
         ...movie

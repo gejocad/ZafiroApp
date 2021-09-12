@@ -1,10 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {toast} from 'react-toastify';
-import {useTranslation} from 'react-i18next';
 
 const ForgotPassword = () => {
-    const [t] = useTranslation();
     let emailInput = null;
 
     const setEmailInputRef = (element) => {
@@ -31,7 +29,7 @@ const ForgotPassword = () => {
                 </div>
                 <div className="card-body">
                     <p className="login-box-msg">
-                        {t('recover.forgotYourPassword')}
+                        Recuperar contraseña
                     </p>
                     <form onSubmit={requestNewPassword}>
                         <div className="input-group mb-3">
@@ -53,14 +51,14 @@ const ForgotPassword = () => {
                                     type="submit"
                                     className="btn btn-primary btn-block"
                                 >
-                                    {t('recover.requestNewPassword')}
+                                    Solicitar contraseña
                                 </button>
                             </div>
                         </div>
                     </form>
                     <p className="mt-3 mb-1">
                         <Link to="/login">
-                            {t('login.button.signIn.label')}
+                            Iniciar
                         </Link>
                     </p>
                 </div>

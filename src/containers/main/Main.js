@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
-import {Gatekeeper} from 'gatekeeper-client-sdk';
-
 import Dashboard from '@components/pages/Dashboard';
 import Profile from '@components/pages/profile/Profile';
 import { startLogout } from '../../actions/authAction';
-
 import Header from '@components/main/header/Header';
 import Footer from '@components/main/footer/Footer';
 import MenuSidebar from '@components/main/menu-sidebar/MenuSidebar';
@@ -29,8 +26,6 @@ const Main = () => {
         updateAppLoading(true);
         const fetchProfile = async () => {
             try {
-                const response = await Gatekeeper.getProfile();
-                dispatch(loadUser(response));
                 updateAppLoading(false);
             } catch (error) {
                 dispatch(startLogout());

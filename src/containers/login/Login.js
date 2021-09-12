@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useForm } from '../../hooks/useForm';
-import { removeError, setError } from '../../actions/uiAction';
 import { startGoogleLogin, startFacebookLogin, startLogin } from '../../actions/authAction';
 import {Link, useHistory} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
-import {useTranslation} from 'react-i18next';
 import * as Yup from 'yup';
 import Button from '../../components/button/Button';
 const Login = () => {
@@ -16,15 +13,15 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const history = useHistory();
-    const [t] = useTranslation();
 
-    const login = async (email, password) => {
+    const login = async (user, password) => {
         try {
             setAuthLoading(true);
-            dispatch(startLogin(email, password));
+            
+            console.log(user, password);
+            dispatch(startLogin(user, password));
             toast.success('Login is succeed!');
             setAuthLoading(false);
-            history.push('/');
         } catch (error) {
             setAuthLoading(false);
             toast.error(
@@ -42,7 +39,6 @@ const Login = () => {
             toast.success('Login is succeeded!');
             setGoogleAuthLoading(false);
             dispatch(startGoogleLogin());
-            history.push('/');
         } catch (error) {
             setGoogleAuthLoading(false);
             toast.error(
@@ -85,7 +81,7 @@ const Login = () => {
             password: ''
         },
         validationSchema: Yup.object({
-            email: Yup.string()
+            user: Yup.string()
                 .email('Invalid email address')
                 .required('Required'),
             password: Yup.string()
@@ -94,8 +90,7 @@ const Login = () => {
                 .required('Required')
         }),
         onSubmit: (values) => {
-            console.log(values);
-            login(values.email, values.password);
+            login(values.user, values.password);
         }
     });
 
@@ -111,16 +106,16 @@ const Login = () => {
                     </Link>
                 </div>
                 <div className="card-body">
-                    <p className="login-box-msg">{t('login.label.signIn')}</p>
+                    <p className="login-box-msg">Iniciar sesión</p>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
-                                    name='email'
+                                    name='user'
                                     type="email"
                                     className="form-control"
                                     placeholder="Email"
-                                    {...formik.getFieldProps('email')}
+                                    {...formik.getFieldProps('user')}
                                 />
                                 <div className="input-group-append">
                                     <div className="input-group-text">
@@ -154,7 +149,7 @@ const Login = () => {
                                 <div className="icheck-primary">
                                     <input type="checkbox" id="remember" />
                                     <label htmlFor="remember">
-                                        {t('login.label.rememberMe')}
+                                       Recuerdame
                                     </label>
                                 </div>
                             </div>
@@ -168,7 +163,7 @@ const Login = () => {
                                         isGoogleAuthLoading
                                     }
                                 >
-                                    {t('login.button.signIn.label')}
+                                   Iniciar
                                 </Button>
                             </div>
                         </div>
@@ -181,9 +176,7 @@ const Login = () => {
                             isLoading={isFacebookAuthLoading}
                             disabled={isAuthLoading || isGoogleAuthLoading}
                         >
-                            {t('login.button.signIn.social', {
-                                what: 'Facebook'
-                            })}
+                            Iniciar con Facebook
                         </Button>
                         <Button
                             block
@@ -193,17 +186,17 @@ const Login = () => {
                             isLoading={isGoogleAuthLoading}
                             disabled={isAuthLoading || isFacebookAuthLoading}
                         >
-                            {t('login.button.signIn.social', {what: 'Google'})}
+                            Iniciar con Google
                         </Button>
                     </div>
                     <p className="mb-1">
                         <Link to="/forgot-password">
-                            {t('login.label.forgotPass')}
+                            Olvide mi contraseña
                         </Link>
                     </p>
                     <p className="mb-0">
                         <Link to="/register" className="text-center">
-                            {t('login.label.registerNew')}
+                            Registrarse
                         </Link>
                     </p>
                 </div>

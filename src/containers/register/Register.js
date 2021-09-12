@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
+import { startGoogleLogin, startFacebookLogin, startRegisterUser } from '../../actions/authAction';
 import {useDispatch} from 'react-redux';
 import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
-import {useTranslation} from 'react-i18next';
 import * as Yup from 'yup';
 
 import {Button} from '@components';
@@ -12,7 +12,6 @@ const Register = () => {
     const [isAuthLoading, setAuthLoading] = useState(false);
     const [isGoogleAuthLoading, setGoogleAuthLoading] = useState(false);
     const [isFacebookAuthLoading, setFacebookAuthLoading] = useState(false);
-    const [t] = useTranslation();
     const dispatch = useDispatch();
 
     const history = useHistory();
@@ -21,7 +20,7 @@ const Register = () => {
         try {
             setAuthLoading(true);
             setAuthLoading(false);
-            dispatch(loginUser());
+            dispatch(startRegisterUser());
             toast.success('Registration is success');
             history.push('/');
         } catch (error) {
@@ -39,7 +38,7 @@ const Register = () => {
         try {
             setGoogleAuthLoading(true);
             setGoogleAuthLoading(false);
-            dispatch(loginUser());
+            dispatch(startGoogleLogin());
             toast.success('Authentication is succeed!');
             history.push('/');
         } catch (error) {
@@ -58,7 +57,7 @@ const Register = () => {
             setFacebookAuthLoading(true);
 
             setFacebookAuthLoading(false);
-            dispatch(loginUser());
+            dispatch(startFacebookLogin());
             toast.success('Register is succeeded!');
             history.push('/');
         } catch (error) {
@@ -122,7 +121,7 @@ const Register = () => {
                     </Link>
                 </div>
                 <div className="card-body">
-                    <p className="login-box-msg">{t('register.registerNew')}</p>
+                    <p className="login-box-msg">Registrar</p>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="mb-3">
                             <div className="input-group">
@@ -201,7 +200,7 @@ const Register = () => {
                                         isGoogleAuthLoading
                                     }
                                 >
-                                    {t('register.label')}
+                                    Registrar
                                 </Button>
                             </div>
                         </div>
@@ -214,9 +213,7 @@ const Register = () => {
                             isLoading={isFacebookAuthLoading}
                             disabled={isAuthLoading || isGoogleAuthLoading}
                         >
-                            {t('login.button.signUp.social', {
-                                what: 'Facebook'
-                            })}
+                           Registrar con Facebook
                         </Button>
                         <Button
                             block
@@ -226,11 +223,11 @@ const Register = () => {
                             isLoading={isGoogleAuthLoading}
                             disabled={isAuthLoading || isFacebookAuthLoading}
                         >
-                            {t('login.button.signUp.social', {what: 'Google'})}
+                            Registrar con Google
                         </Button>
                     </div>
                     <Link to="/login" className="text-center">
-                        {t('register.alreadyHave')}
+                        Registrar
                     </Link>
                 </div>
             </div>

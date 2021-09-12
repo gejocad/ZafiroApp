@@ -1,10 +1,8 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 
 const MessagesDropdown = () => {
     const dropdownRef = useRef(null);
-    const [t] = useTranslation();
 
     const [dropdownState, updateDropdownState] = useState({
         isDropdownOpen: false
@@ -76,10 +74,7 @@ const MessagesDropdown = () => {
                             <p className="text-sm text-muted">
                                 <i className="far fa-clock mr-1" />
                                 <span>
-                                    {t('header.messages.ago', {
-                                        quantity: '30',
-                                        unit: 'Minutes'
-                                    })}
+                                    Mensaje lateral
                                 </span>
                             </p>
                         </div>
@@ -104,10 +99,7 @@ const MessagesDropdown = () => {
                             <p className="text-sm text-muted">
                                 <i className="far fa-clock mr-1" />
                                 <span>
-                                    {t('header.messages.ago', {
-                                        quantity: '3',
-                                        unit: 'Hours'
-                                    })}
+                                    Mensaje lateral 2
                                 </span>
                             </p>
                         </div>
@@ -132,10 +124,7 @@ const MessagesDropdown = () => {
                             <p className="text-sm text-muted">
                                 <i className="far fa-clock mr-1" />
                                 <span>
-                                    {t('header.messages.ago', {
-                                        quantity: '4',
-                                        unit: 'Hours'
-                                    })}
+                                    Mensaje mensaje
                                 </span>
                             </p>
                         </div>
@@ -143,7 +132,7 @@ const MessagesDropdown = () => {
                 </Link>
                 <div className="dropdown-divider" />
                 <Link to="/" className="dropdown-item dropdown-footer">
-                    {t('header.messages.seeAll')}
+                   Mensaje header
                 </Link>
             </div>
         </li>
