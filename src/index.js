@@ -4,6 +4,8 @@ import {toast} from 'react-toastify';
 import App from '@routes/App';
 import {store} from '@store/store';
 
+import * as serviceWorker from './serviceWorker';
+
 import './index.scss';
 
 toast.configure({
@@ -30,3 +32,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 
+serviceWorker.unregister();
