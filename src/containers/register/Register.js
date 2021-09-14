@@ -16,11 +16,11 @@ const Register = () => {
 
     const history = useHistory();
 
-    const register = async (name,lastName, user, password) => {
+    const register = async (name,lastName, email, password) => {
         try {
             setAuthLoading(true);
             setAuthLoading(false);
-            dispatch(startRegisterUser(name, lastName, user, password));
+            dispatch(startRegisterUser(name, lastName, email, password));
             toast.success('Registration is success');
         } catch (error) {
             toast.error(
@@ -81,7 +81,7 @@ const Register = () => {
         initialValues: {
             name: '',
             lastName: '',
-            user: '',
+            email: '',
             password: '',
             passwordRetype: ''
         },
@@ -94,7 +94,7 @@ const Register = () => {
             .min(2, 'Must be 2 characters or more')
             .max(30, 'Must be 30 characters or less')
             .required('Required'),
-            user: Yup.string()
+            email: Yup.string()
                 .email('Invalid email address')
                 .required('Required'),
             password: Yup.string()
@@ -114,7 +114,7 @@ const Register = () => {
                 })
         }),
         onSubmit: (values) => {
-            register(values.name,values.lastName,values.user, values.password);
+            register(values.name,values.lastName,values.email, values.password);
         }
     });
 
@@ -135,6 +135,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="name"
                                     type="text"
                                     className="form-control"
                                     placeholder="Name"
@@ -151,6 +152,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="lastName"
                                     type="text"
                                     className="form-control"
                                     placeholder="Lastname"
@@ -167,7 +169,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
-                                    name="user"
+                                    name="email"
                                     type="email"
                                     className="form-control"
                                     placeholder="Email"
@@ -186,6 +188,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="password"
                                     type="password"
                                     className="form-control"
                                     placeholder="Password"
@@ -203,6 +206,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="passwordRetype"
                                     type="password"
                                     className="form-control"
                                     placeholder="Retype password"
@@ -228,7 +232,7 @@ const Register = () => {
                                     />
                                     <label htmlFor="agreeTerms">
                                         <span>I agree to the </span>
-                                        <Link to="/">terms</Link>
+                                        <Link to="/privacy-policy">terms</Link>
                                     </label>
                                 </div>
                             </div>
