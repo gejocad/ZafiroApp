@@ -51,6 +51,12 @@ const MenuSidebar = () => {
                                 <p>Perfil</p>
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink to="/students" exact className="nav-link">
+                                <i className="nav-icon fas fa-user" />
+                                <p>Registro Estudiantes</p>
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
             </div>

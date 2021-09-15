@@ -5,7 +5,7 @@ import {
     Switch
 } from 'react-router-dom'
 import NavBar from '../components/sideBar/NavBar'
-import AddMovie from '../containers/addmovie/AddMovie'
+import AddStudent from '../containers/addstudent/AddStudent'
 import Home from '../containers/home/Home'
 import { SearchScreen } from '../components/search/SearchScreen'
 
@@ -15,7 +15,7 @@ const NavRoutes = () => {
             <NavBar />
             <Switch>
                 <Route path='/home' component={Home} />
-                <Route path='/addmovies' component={AddMovie} />
+                <Route path='/addstudents' component={AddStudent} />
                 <Route path='/search' component={SearchScreen} />
             </Switch>
         </>

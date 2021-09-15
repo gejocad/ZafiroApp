@@ -1,16 +1,16 @@
 import { db } from "../firebase/firebase-config";
 
-export const loadMovies = async (id) => {
+export const loadStudents = async (id) => {
 
-    const moviesSnap = await db.collection(`movies/`).get()
-    const movies = []
+    const studentsSnap = await db.collection(`students/`).get()
+    const students = []
 
-    moviesSnap.forEach(snapHijo => {
-        movies.push({
+    studentsSnap.forEach(snapHijo => {
+        students.push({
             id: snapHijo.id,
             ...snapHijo.data()
         })
     })
 
-    return movies
+    return students
 }

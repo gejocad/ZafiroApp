@@ -1,37 +1,35 @@
 import { types } from "../types/types";
 
 const initialState = {
-    movie: [],
+    student: [],
     active: {
-        image: '',
-        tittle: '',
-        description: '',
-        year: '',
-        categorie: '',
-        duration:'',
-        qualification: [],
-        trailer: ''
+        name: '',
+        lastName: '',
+        document: '',
+        email: '',
+        finscrip: '',
+        prog:{},
     }
 }
 
-export const movieReducer = (state = initialState, action) => {
+export const studentReducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.addMovie:
+        case types.addStudent:
             return {
                 ...state,
-                movie: [action.payload, ...state.movie]
+                student: [action.payload, ...state.student]
             }
-        case types.loadMovie:
+        case types.loadStudent:
             return {
                 ...state,
-                movie: [...action.payload]
+                student: [...action.payload]
             }
-        case types.activeMovie:
+        case types.activeStudent:
             return {
                 ...state,
                 active: {...action.payload}
             }
-        case types.updateMovie:
+        case types.updateStudent:
             return {}
 
         case types.ListarBusqueda:
