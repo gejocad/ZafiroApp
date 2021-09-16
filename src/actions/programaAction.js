@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 let fileUrl=[]
 
-export const AddMovie = (nombre, resolicion, codigo, semestres,  duration) => {
+export const AddMovie = (nombre, resolucion, codigo, semestres,  duration) => {
     return async (dispatch) => {
 
         const newMovie = {

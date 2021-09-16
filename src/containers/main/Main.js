@@ -8,6 +8,7 @@ import Header from '@components/main/header/Header';
 import Footer from '@components/main/footer/Footer';
 import MenuSidebar from '@components/main/menu-sidebar/MenuSidebar';
 import PageLoading from '../../components/page-loading/PageLoading';
+import CrudStudents from '@components/pages/crud/CrudStudents';
 
 const Main = () => {
     const [appLoadingState, updateAppLoading] = useState(false);
@@ -67,6 +68,7 @@ const Main = () => {
                         <Switch>
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/" component={Dashboard} />
+                            <Route exact path="/students" component={CrudStudents} />
                         </Switch>
                     </section>
                 </div>

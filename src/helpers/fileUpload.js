@@ -2,7 +2,7 @@ export const fileUpload = async(file) => {
 
     const cluodUrl = 'https://api.cloudinary.com/v1_1/netcat-inc/image/upload';
     const fromData = new FormData();
-    fromData.append('upload_preset', 'movies');
+    fromData.append('upload_preset', 'students');
     fromData.append('file', file);
 
     try {
