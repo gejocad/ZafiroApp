@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/zafiroApp/static/css/main.d1eb5846.chunk.css",
-    "main.js": "/zafiroApp/static/js/main.c914a332.chunk.js",
-    "main.js.map": "/zafiroApp/static/js/main.c914a332.chunk.js.map",
-    "runtime-main.js": "/zafiroApp/static/js/runtime-main.d8fd079a.js",
-    "runtime-main.js.map": "/zafiroApp/static/js/runtime-main.d8fd079a.js.map",
+    "main.js": "/zafiroApp/static/js/main.b06e7fee.chunk.js",
+    "main.js.map": "/zafiroApp/static/js/main.b06e7fee.chunk.js.map",
+    "runtime-main.js": "/zafiroApp/static/js/runtime-main.42ab6fa0.js",
+    "runtime-main.js.map": "/zafiroApp/static/js/runtime-main.42ab6fa0.js.map",
     "static/css/2.b5a83cbc.chunk.css": "/zafiroApp/static/css/2.b5a83cbc.chunk.css",
-    "static/js/2.7a65eb41.chunk.js": "/zafiroApp/static/js/2.7a65eb41.chunk.js",
-    "static/js/2.7a65eb41.chunk.js.map": "/zafiroApp/static/js/2.7a65eb41.chunk.js.map",
-    "static/js/3.6f8c2985.chunk.js": "/zafiroApp/static/js/3.6f8c2985.chunk.js",
-    "static/js/3.6f8c2985.chunk.js.map": "/zafiroApp/static/js/3.6f8c2985.chunk.js.map",
+    "static/js/2.9f7f8a5b.chunk.js": "/zafiroApp/static/js/2.9f7f8a5b.chunk.js",
+    "static/js/2.9f7f8a5b.chunk.js.map": "/zafiroApp/static/js/2.9f7f8a5b.chunk.js.map",
+    "static/js/3.1ace7c62.chunk.js": "/zafiroApp/static/js/3.1ace7c62.chunk.js",
+    "static/js/3.1ace7c62.chunk.js.map": "/zafiroApp/static/js/3.1ace7c62.chunk.js.map",
     "static/js/4.7822b5e8.chunk.js": "/zafiroApp/static/js/4.7822b5e8.chunk.js",
     "static/js/4.7822b5e8.chunk.js.map": "/zafiroApp/static/js/4.7822b5e8.chunk.js.map",
     "static/js/5.19f8d923.chunk.js": "/zafiroApp/static/js/5.19f8d923.chunk.js",
@@ -17,17 +17,17 @@
     "index.html": "/zafiroApp/index.html",
     "static/css/2.b5a83cbc.chunk.css.map": "/zafiroApp/static/css/2.b5a83cbc.chunk.css.map",
     "static/css/main.d1eb5846.chunk.css.map": "/zafiroApp/static/css/main.d1eb5846.chunk.css.map",
-    "static/js/2.7a65eb41.chunk.js.LICENSE.txt": "/zafiroApp/static/js/2.7a65eb41.chunk.js.LICENSE.txt",
-    "static/js/3.6f8c2985.chunk.js.LICENSE.txt": "/zafiroApp/static/js/3.6f8c2985.chunk.js.LICENSE.txt",
+    "static/js/2.9f7f8a5b.chunk.js.LICENSE.txt": "/zafiroApp/static/js/2.9f7f8a5b.chunk.js.LICENSE.txt",
+    "static/js/3.1ace7c62.chunk.js.LICENSE.txt": "/zafiroApp/static/js/3.1ace7c62.chunk.js.LICENSE.txt",
     "static/js/4.7822b5e8.chunk.js.LICENSE.txt": "/zafiroApp/static/js/4.7822b5e8.chunk.js.LICENSE.txt",
     "static/js/5.19f8d923.chunk.js.LICENSE.txt": "/zafiroApp/static/js/5.19f8d923.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/zafiroApp/static/media/fa-solid-900.eeccf4f6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.d8fd079a.js",
+    "static/js/runtime-main.42ab6fa0.js",
     "static/css/2.b5a83cbc.chunk.css",
-    "static/js/2.7a65eb41.chunk.js",
+    "static/js/2.9f7f8a5b.chunk.js",
     "static/css/main.d1eb5846.chunk.css",
-    "static/js/main.c914a332.chunk.js"
+    "static/js/main.b06e7fee.chunk.js"
   ]
 }
