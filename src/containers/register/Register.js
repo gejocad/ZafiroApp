@@ -16,13 +16,12 @@ const Register = () => {
 
     const history = useHistory();
 
-    const register = async () => {
+    const register = async (name,lastName, email, password) => {
         try {
             setAuthLoading(true);
             setAuthLoading(false);
-            dispatch(startRegisterUser());
+            dispatch(startRegisterUser(name, lastName, email, password));
             toast.success('Registration is success');
-            history.push('/');
         } catch (error) {
             toast.error(
                 (error.response &&
@@ -80,11 +79,21 @@ const Register = () => {
 
     const formik = useFormik({
         initialValues: {
+            name: '',
+            lastName: '',
             email: '',
             password: '',
             passwordRetype: ''
         },
         validationSchema: Yup.object({
+            name: Yup.string()
+            .min(2, 'Must be 2 characters or more')
+            .max(30, 'Must be 30 characters or less')
+            .required('Required'),
+            lastName: Yup.string()
+            .min(2, 'Must be 2 characters or more')
+            .max(30, 'Must be 30 characters or less')
+            .required('Required'),
             email: Yup.string()
                 .email('Invalid email address')
                 .required('Required'),
@@ -105,7 +114,7 @@ const Register = () => {
                 })
         }),
         onSubmit: (values) => {
-            register(values.email, values.password);
+            register(values.name,values.lastName,values.email, values.password);
         }
     });
 
@@ -126,6 +135,41 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="name"
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Name"
+                                    {...formik.getFieldProps('name')}
+                                />
+                                <div className="input-group-append">
+                                    <div className="input-group-text">
+                                        <span className="fas fa-lock" />
+                                    </div>
+                                </div>
+                            </div>
+                            {printFormError(formik, 'name')}
+                        </div>
+                        <div className="mb-3">
+                            <div className="input-group">
+                                <input
+                                    name="lastName"
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Lastname"
+                                    {...formik.getFieldProps('lastName')}
+                                />
+                                <div className="input-group-append">
+                                    <div className="input-group-text">
+                                        <span className="fas fa-lock" />
+                                    </div>
+                                </div>
+                            </div>
+                            {printFormError(formik, 'lastName')}
+                        </div>
+                        <div className="mb-3">
+                            <div className="input-group">
+                                <input
+                                    name="email"
                                     type="email"
                                     className="form-control"
                                     placeholder="Email"
@@ -144,6 +188,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="password"
                                     type="password"
                                     className="form-control"
                                     placeholder="Password"
@@ -161,6 +206,7 @@ const Register = () => {
                         <div className="mb-3">
                             <div className="input-group">
                                 <input
+                                    name="passwordRetype"
                                     type="password"
                                     className="form-control"
                                     placeholder="Retype password"
@@ -186,7 +232,7 @@ const Register = () => {
                                     />
                                     <label htmlFor="agreeTerms">
                                         <span>I agree to the </span>
-                                        <Link to="/">terms</Link>
+                                        <Link to="/privacy-policy">terms</Link>
                                     </label>
                                 </div>
                             </div>
