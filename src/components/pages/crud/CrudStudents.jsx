@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import MaterialTable from 'material-table'
-import {Modal, TextField, Button} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
+import {Button} from '@material-ui/core';
+/*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 
-const useStyles = makeStyles((theme) => ({
+/*{const useStyles = makeStyles((theme) => ({
     modal: {
       position: 'absolute',
       width: 400,
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     inputMaterial:{
       width: '100%'
     }
-  }));
+  }));}*/
   
 
 const CrudStudents = () => {

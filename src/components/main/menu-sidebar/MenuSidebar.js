@@ -4,7 +4,7 @@ import {NavLink, Link} from 'react-router-dom';
 
 const MenuSidebar = () => {
     
-    const { email, image } = useSelector(state => state.auth)
+    const { email } = useSelector(state => state.auth)
     
 
     return (
