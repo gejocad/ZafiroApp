@@ -3,16 +3,17 @@ import {useSelector} from 'react-redux';
 import {NavLink, Link} from 'react-router-dom';
 
 const MenuSidebar = () => {
-    const user = useSelector((state) => state.auth.currentUser);
+    
+    const { email, image } = useSelector(state => state.auth)
     
 
     return (
         <aside className="main-sidebar sidebar-dark-primary elevation-4">
             <Link to="/" className="brand-link">
                 <img
-                    src="https://static8.depositphotos.com/1000559/852/i/600/depositphotos_8521908-stock-photo-blue-sapphire-gemstone-isolated-gemstone.jpg"
+                    src="https://i.ibb.co/WpqWtfc/logoSolo.png"
                     alt="AdminLTE Logo"
-                    className="brand-image img-circle elevation-3"
+                    className="brand-image"
                     style={{opacity: '.8'}}
                 />
                 <span className="brand-text font-weight-light">ZafiroApp</span>
@@ -20,15 +21,15 @@ const MenuSidebar = () => {
             <div className="sidebar">
                 <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div className="image">
-                        <img
-                            src={'/img/default-profile.png'}
+                        {/*<img
+                            src={image}
                             className="img-circle elevation-2"
                             alt="User"
-                        />
+                        />*/}
                     </div>
                     <div className="info">
                         <Link to="/profile" className="d-block">
-                            Correo
+                            {email}
                         </Link>
                     </div>
                 </div>

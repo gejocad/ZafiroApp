@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { startGoogleLogin, startFacebookLogin, startLogin } from '../../actions/authAction';
 import {Link, useHistory} from 'react-router-dom';
 import {toast} from 'react-toastify';
