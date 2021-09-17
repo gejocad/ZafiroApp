@@ -96,7 +96,7 @@ const UserDropdown = () => {
                 </li>
                 <li className="user-footer">
                     <Link
-                        to="/profile"
+                        to="/programa"
                         onClick={toggleDropdown}
                         className="btn btn-default btn-flat"
                     >

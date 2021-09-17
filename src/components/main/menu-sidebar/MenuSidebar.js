@@ -34,7 +34,7 @@ const MenuSidebar = () => {
                         />*/}
                     </div>
                     <div className="info">
-                        <Link to="/profile" className="d-block">
+                        <Link to="/programa" className="d-block">
                             <EmailIcon className="nav-icon fas"/>
                             {email}
                         </Link>
@@ -60,7 +60,7 @@ const MenuSidebar = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/profile" exact className="nav-link">
+                            <NavLink to="/programa" exact className="nav-link">
                             <CastForEducationIcon className="nav-icon fas"/>
                                 <p>Registro de Programas</p>
                             </NavLink>

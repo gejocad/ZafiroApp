@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Dashboard from '@components/pages/Dashboard';
-import Profile from '@components/pages/profile/Profile';
+import Programa from '@components/pages/profile/Profile';
 import Header from '@components/main/header/Header';
 import Footer from '@components/main/footer/Footer';
 import MenuSidebar from '@components/main/menu-sidebar/MenuSidebar';
@@ -62,7 +62,7 @@ const Main = () => {
                     <div className="pt-3" />
                     <section className="content">
                         <Switch>
-                            <Route exact path="/profile" component={Profile} />
+                            <Route exact path="/programa" component={Programa} />
                             <Route exact path="/" component={Dashboard} />
                             <Route exact path="/students" component={CrudStudents} />
                         </Switch>
