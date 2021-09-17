@@ -57,7 +57,7 @@ export default function StudentDetail(showDetail, setShowDetail, user) {
   return (
     <div>
     
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={showDetail}>
+      <Dialog fullWidth={true} maxWidth='lg' onClose={handleClose} aria-labelledby="customized-dialog-title" open={showDetail}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           {user.student}
         </DialogTitle>

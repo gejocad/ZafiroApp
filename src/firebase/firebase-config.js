@@ -3,12 +3,12 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDLGiIO38yt9iWafIG_PZm4qFO8VjVSY3Q",
-  authDomain: "block-master-c2e1c.firebaseapp.com",
-  projectId: "block-master-c2e1c",
-  storageBucket: "block-master-c2e1c.appspot.com",
-  messagingSenderId: "897697643083",
-  appId: "1:897697643083:web:149b92fda400a7dcfeabce"
+  apiKey: "AIzaSyAaTapNCDRD_l4wWd_2wN7vNTAqqIA_Ti0",
+  authDomain: "zafiroapp-d5379.firebaseapp.com",
+  projectId: "zafiroapp-d5379",
+  storageBucket: "zafiroapp-d5379.appspot.com",
+  messagingSenderId: "390034566049",
+  appId: "1:390034566049:web:46ae9657c906713afef9e0"
 };
 
 firebase.initializeApp(firebaseConfig);
