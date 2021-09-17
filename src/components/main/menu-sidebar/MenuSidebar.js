@@ -56,19 +56,19 @@ const MenuSidebar = () => {
                         <li className="nav-item">
                             <NavLink to="/students" exact className="nav-link">
                                 <GroupIcon className="nav-icon fas"/>
-                                <p>Registro Estudiantes</p>
+                                <p>Estudiantes</p>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/programa" exact className="nav-link">
                             <CastForEducationIcon className="nav-icon fas"/>
-                                <p>Registro de Programas</p>
+                                <p>Programas</p>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/reports" exact className="nav-link">
                                 <LibraryBooksIcon className="nav-icon fas"/>
-                                <p>Reportes y certificados</p>
+                                <p>Notas y certificados</p>
                             </NavLink>
                         </li>
                         <li className="nav-item">
