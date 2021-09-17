@@ -4,6 +4,7 @@ import {Modal, TextField, Button} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -31,6 +32,8 @@ const CrudStudents = () => {
     const [showDetail, setShowDetail] = useState(false)
     const [showAddStudent, setShowAddStudent] = useState(false)
     const [user, setUser] = useState({})
+    const { student } = useSelector(state => state.student)
+    
 
     const handleShowDetail = (event, user1) => {
         setUser(user1) 
@@ -51,7 +54,7 @@ const CrudStudents = () => {
         },
         {
             title: 'Estudiante',
-            field: 'student'
+            field: 'fullName'
         },
         {
             title: 'Correo',
@@ -77,7 +80,7 @@ const CrudStudents = () => {
             
            <MaterialTable
                 columns={columnas}
-                data={data}
+                data={student}
                 title='Estudiantes'  
                 actions={[
                     {
