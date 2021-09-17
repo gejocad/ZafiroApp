@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const TimelineTab = ({isActive}) => {
+const Registro = ({isActive}) => {
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             {/* The timeline */}
@@ -118,4 +118,4 @@ const TimelineTab = ({isActive}) => {
     );
 };
 
-export default TimelineTab;
+export default Registro;

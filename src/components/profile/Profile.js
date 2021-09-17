@@ -155,7 +155,7 @@ const Programa = () => {
                                                     toggle('TIMELINE')
                                                 }
                                             >
-                                                Tiempo
+                                                Registro
                                             </button>
                                         </li>
                                         <li className="nav-item">

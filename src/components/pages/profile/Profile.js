@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
-import {Button} from '@components';
-import ActivityTab from './ActivityTab';
-import TimelineTab from './TimelineTab';
+import Listado from './Listado';
+import Registro from './Registro';
 import SettingsTab from './SettingsTab';
 
 const Programa = () => {
-    const [activeTab, setActiveTab] = useState('ACTIVITY');
+    const [activeTab, setActiveTab] = useState('LISTADO');
 
     const toggle = (tab) => {
         if (activeTab !== tab) setActiveTab(tab);
@@ -34,30 +32,30 @@ const Programa = () => {
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'ACTIVITY'
+                                                    activeTab === 'LISTADO'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('ACTIVITY')
+                                                    toggle('LISTADO')
                                                 }
                                             >
-                                                Actividad
+                                                Listado
                                             </button>
                                         </li>
                                         <li className="nav-item">
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'TIMELINE'
+                                                    activeTab === 'REGISTO'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('TIMELINE')
+                                                    toggle('REGISTO')
                                                 }
                                             >
-                                                Tiempo
+                                                Registrar
                                             </button>
                                         </li>
                                         <li className="nav-item">
@@ -79,11 +77,11 @@ const Programa = () => {
                                 </div>
                                 <div className="card-body">
                                     <div className="tab-content">
-                                        <ActivityTab
-                                            isActive={activeTab === 'ACTIVITY'}
+                                        <Listado
+                                            isActive={activeTab === 'LISTADO'}
                                         />
-                                        <TimelineTab
-                                            isActive={activeTab === 'TIMELINE'}
+                                        <Registro
+                                            isActive={activeTab === 'REGISTO'}
                                         />
                                         <SettingsTab
                                             isActive={activeTab === 'SETTINGS'}

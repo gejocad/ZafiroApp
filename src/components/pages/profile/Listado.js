@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post';
 
-const ActivityTab = ({isActive}) => {
+const Listado = ({isActive}) => {
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             <Post />
@@ -11,4 +11,4 @@ const ActivityTab = ({isActive}) => {
     );
 };
 
-export default ActivityTab;
+export default Listado;
