@@ -7,6 +7,13 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import { useForm } from 'src/hooks/useForm';
+import { AddStudent } from 'src/actions/studentAction';
+import { useDispatch } from 'react-redux'
+
 
 const styles = (theme) => ({
   root: {
@@ -48,39 +55,203 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '50ch',
+    },
+  },
+}));
+
+
+
 export default function StudentAddModal(showAddStudent, setShowAddStudent) {
-  
+
+  const classes = useStyles();
   const handleClose = () => {
     setShowAddStudent(false);
   };
+  const tiposdoc = [
+    {
+      value: 'CC',
+      label: 'Cédula',
+    },
+    {
+      value: 'TI',
+      label: 'Tarjeta de Identidad',
+    },
+    {
+      value: 'PSPRT',
+      label: 'Pasaporte',
+    },
+    {
+      value: 'PEP',
+      label: 'PEP',
+    },
+  ];
+
+  const tiposprog = [
+    {
+      value: 'Medicina',
+      label: 'Medicina',
+    },
+    {
+      value: 'Programación',
+      label: 'Programación',
+    },
+    {
+      value: 'Administración',
+      label: 'Administración',
+    },
+    {
+      value: 'Atención al Cliente',
+      label: 'Atención al Cliente',
+    },
+  ];
+
+  const [TipoDocumento, setTipoDocumento] = React.useState('CC');
+  const [TipoProg, setTipoProg] = React.useState('');
+  const [formValue, handleInputChange, reset] = useForm([])
+  const dispatch = useDispatch()
+
+  const { name, lastName, email, document, finscrip } = formValue
+
+  const handleChange = (event) => {
+    setTipoDocumento(event.target.value);
+  };
+
+  const handleProgChange = (event) => {
+    setTipoProg(event.target.value);
+    console.log(event.target.value);
+  };
+
+  const handleNewStudent = (e) => {
+    e.preventDefault() 
+    console.log(formValue, TipoDocumento, TipoProg)
+    dispatch(AddStudent(formValue, TipoDocumento, TipoProg))
+  }
+
 
   return (
     <div>
-    
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={showAddStudent}>
+
+      <Dialog maxWidth='md' onClose={handleClose} aria-labelledby="customized-dialog-title" open={showAddStudent}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Añadir Estudiante
         </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
-          </Button>
-        </DialogActions>
+
+        <form className={classes.root} onSubmit={handleNewStudent} noValidate autoComplete="off">
+          <DialogContent dividers>
+
+            <div>
+              <TextField
+                required
+                id="Nombres"
+                label="Nombres"
+                placeholder="Ingresar Nombres"
+                variant="outlined"
+                name="name"
+                value={name}
+                onChange={handleInputChange}
+                
+              />
+              <TextField
+                required
+                id="Apellidos"
+                label="Apellidos"
+                placeholder="Ingresar Apellidos"
+                variant="outlined"
+                name="lastName"
+                value={lastName}
+                onChange={handleInputChange}
+              />
+              <TextField
+                required
+                id="Email"
+                label="Email"
+                type="email"
+                placeholder="Ingresar Email"
+                variant="outlined"
+                name="email"
+                value={email}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <TextField
+                id="tipodoc"
+                select
+                label="Tipo de Documento"
+                value={TipoDocumento}
+                onChange={handleChange}
+                SelectProps={{
+                  native: true,
+                }}
+                variant="outlined"
+                name="typedocument"
+              >
+                {tiposdoc.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
+              <TextField
+                required
+                id="Documento"
+                label="Documento"
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="document"
+                value={document}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <TextField
+                required
+                id="Fecha"
+                label="Fecha"
+                type="date"
+                placeholder="Ingresar Fecha de Inscripción"
+                variant="outlined"
+                name="finscrip"
+                value={finscrip}
+                onChange={handleInputChange}
+              />
+              <TextField
+                id="prog"
+                select
+                label="Programa"
+                value={TipoProg}
+                onChange={handleProgChange}
+                SelectProps={{
+                  native: true,
+                }}
+                variant="outlined"
+                name="prog"
+              >
+                {tiposprog.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
+            </div>
+            <div>
+              <br />
+              <br />
+              <br /><br /> <br />
+            </div>
+          </DialogContent>
+          <DialogActions>
+            <Button autoFocus type="submit "color="primary">
+              Save changes
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </div>
   );
