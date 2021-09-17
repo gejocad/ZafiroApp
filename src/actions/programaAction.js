@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 let fileUrl=[]
 
-export const AddMovie = (nombre, resolucion, codigo, semestres,  duration) => {
+export const AddMovie = (nombre, resolucion, codigo, semestres) => {
     return async (dispatch) => {
 
         const newMovie = {
@@ -18,112 +18,88 @@ export const AddMovie = (nombre, resolucion, codigo, semestres,  duration) => {
                 semestre1:{
                     competencia1:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia2:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia3:{
-                        nombre,
-                        codigo,
-                        nota
+                        nombre
                     },
                     competencia4:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia5:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                 },semestre2:{
                     competencia1:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia2:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia3:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia4:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia5:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                 },semestre3:{
                     competencia1:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia2:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia3:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia4:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia5:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                 },semestre4:{
                     competencia1:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia2:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia3:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia4:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                     competencia5:{
                         nombre,
-                        codigo,
-                        nota
+                        codigo
                     },
                 }
-            },
-            duration,
-            qualification: [],
-            trailer: ''
+            }
         }
 
         console.log(newMovie);
