@@ -14,3 +14,18 @@ export const loadStudents = async (id) => {
 
     return students
 }
+
+export const loadProgramas = async (id) => {
+
+    const programaSnap = await db.collection(`programa/`).get()
+    const programa = []
+
+    programaSnap.forEach(snapHijo => {
+        programa.push({
+            id: snapHijo.id,
+            ...snapHijo.data()
+        })
+    })
+
+    return programa
+}
