@@ -26,7 +26,31 @@ const Registro = ({isActive}) => {
         codigoS13:'',
         codigoS14:'',
         codigoS15:'',
-        codigoS16:''
+        codigoS16:'',
+        nombreS21:'',
+        nombreS22:'',
+        nombreS23:'',
+        nombreS24:'',
+        nombreS25:'',
+        nombreS26:'',
+        codigoS21:'',
+        codigoS22:'',
+        codigoS23:'',
+        codigoS24:'',
+        codigoS25:'',
+        codigoS26:'',
+        nombreS31:'',
+        nombreS32:'',
+        nombreS33:'',
+        nombreS34:'',
+        nombreS35:'',
+        nombreS36:'',
+        codigoS31:'',
+        codigoS32:'',
+        codigoS33:'',
+        codigoS34:'',
+        codigoS35:'',
+        codigoS36:''
     })
 
 
@@ -45,7 +69,31 @@ const Registro = ({isActive}) => {
         codigoS13,
         codigoS14,
         codigoS15,
-        codigoS16 
+        codigoS16,
+        nombreS21,
+        nombreS22,
+        nombreS23,
+        nombreS24,
+        nombreS25,
+        nombreS26,
+        codigoS21,
+        codigoS22,
+        codigoS23,
+        codigoS24,
+        codigoS25,
+        codigoS26,
+        nombreS31,
+        nombreS32,
+        nombreS33,
+        nombreS34,
+        nombreS35,
+        nombreS36,
+        codigoS31,
+        codigoS32,
+        codigoS33,
+        codigoS34,
+        codigoS35,
+        codigoS36  
     } = values
 
     const handleAddPrograma = e => {
@@ -66,7 +114,31 @@ const Registro = ({isActive}) => {
             codigoS13,
             codigoS14,
             codigoS15,
-            codigoS16))
+            codigoS16,
+            nombreS21,
+            nombreS22,
+            nombreS23,
+            nombreS24,
+            nombreS25,
+            nombreS26,
+            codigoS21,
+            codigoS22,
+            codigoS23,
+            codigoS24,
+            codigoS25,
+            codigoS26,
+            nombreS31,
+            nombreS32,
+            nombreS33,
+            nombreS34,
+            nombreS35,
+            nombreS36,
+            codigoS31,
+            codigoS32,
+            codigoS33,
+            codigoS34,
+            codigoS35,
+            codigoS36  ))
         reset()
 
     }
@@ -80,7 +152,7 @@ const Registro = ({isActive}) => {
                         htmlFor="inputName"
                         className="col-sm-2 col-form-label"
                     >
-                        Name
+                        Nombre
                     </label>
                     <div className="col-sm-10">
                         <input
@@ -345,7 +417,438 @@ const Registro = ({isActive}) => {
                         />
                     </div>
                 </div>
-               
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 1 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 1 S2"
+                            name="nombreS21"
+                            value={nombreS21}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 1 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 1 S2"
+                            name="codigoS21"
+                            value={codigoS21}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 2 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 2 S2"
+                            name="nombreS22"
+                            value={nombreS22}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 2 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 2 S2"
+                            name="codigoS22"
+                            value={codigoS22}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 3 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 3 S2"
+                            name="nombreS23"
+                            value={nombreS23}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 3 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 3 S2"
+                            name="codigoS23"
+                            value={codigoS23}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 4 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 4 S2"
+                            name="nombreS24"
+                            value={nombreS24}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 4 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 4 S1"
+                            name="codigoS24"
+                            value={codigoS24}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 5 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 5 S2"
+                            name="nombreS25"
+                            value={nombreS25}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 5 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 5 S2"
+                            name="codigoS25"
+                            value={codigoS25}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 6 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 6 S2"
+                            name="nombreS26"
+                            value={nombreS26}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 6 de semestre 2
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 6 S2"
+                            name="codigoS26"
+                            value={codigoS26}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 1 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 1 S3"
+                            name="nombreS31"
+                            value={nombreS31}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 1 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 1 S3"
+                            name="codigoS31"
+                            value={codigoS31}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 2 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 2 S3"
+                            name="nombreS32"
+                            value={nombreS32}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 2 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 2 S3"
+                            name="codigoS32"
+                            value={codigoS32}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 3 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 3 S3"
+                            name="nombreS33"
+                            value={nombreS33}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 3 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 3 S3"
+                            name="codigoS33"
+                            value={codigoS33}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 4 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 4 S3"
+                            name="nombreS34"
+                            value={nombreS34}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 4 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 4 S3"
+                            name="codigoS34"
+                            value={codigoS34}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 5 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 5 S3"
+                            name="nombreS35"
+                            value={nombreS35}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 5 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 5 S3"
+                            name="codigoS35"
+                            value={codigoS35}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Materia 6 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="materia 6 S3"
+                            name="nombreS36"
+                            value={nombreS36}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputSkills"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Codigo de materia 6 de semestre 3
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="codigo 6 S3"
+                            name="codigoS36"
+                            value={codigoS36}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
                 <div className="form-group row">
                     <div className="offset-sm-2 col-sm-10">
                         <Button type="submit" onClick={handleAddPrograma} theme="danger">
