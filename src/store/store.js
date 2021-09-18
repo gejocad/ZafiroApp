@@ -1,11 +1,18 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import { authReducer } from "../reducers/authReducer";
+import { studentReducer } from "../reducers/studentReducer";
+import { registro } from "../reducers/uiReducer";
 
-import {authSlice} from './reducers/auth';
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-const store = configureStore({
-    reducer: {
-        auth: authSlice.reducer
-    }
-});
+const reducer = combineReducers({
+    auth: authReducer,
+    ui: registro,
+    student: studentReducer
+})
 
-export default store;
+export const store = createStore(
+    reducer,
+    composeEnhancers(applyMiddleware(thunk))
+)

@@ -4,12 +4,14 @@
         "baseUrl": "./",
         "jsx": "react",
         "paths": {
-            "@app/*": ["src/*"],
+            "@routes/*": ["src/routes/*"],
             "@store/*": ["src/store/*"],
             "@store": ["src/store/"],
             "@components": ["src/components/index"],
-            "@modules/*": ["src/modules/*"],
-            "@pages/*": ["src/pages/*"]
+            "@components/*": ["src/components/*"],
+            "@containers/*": ["src/containers/*"],
+            "@actions/*": ["src/actions/*"],
+            "@hooks/*": ["src/hooks/*"]
         }
     },
     "exclude": ["node_modules", "**/node_modules/*", "build"]
