@@ -1,20 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {toast} from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { recoverPassword } from '../../actions/authAction';
+import {useForm} from '../../hooks/useForm'
 
 const ForgotPassword = () => {
-    let emailInput = null;
+    
 
-    const setEmailInputRef = (element) => {
-        emailInput = element;
-    };
+    const [formValues, handleInputChange] = useForm({
+        
+        emailImput: ''
+    })
 
-    const requestNewPassword = (event) => {
-        toast.warn('Henüz fonksiyonel değil!');
+    const  {emailInput}   = formValues
+
+
+    const dispatch = useDispatch();
+
+    const requestNewPassword = e => {
+        toast.warn('Para continuar revise en su correo.');
         // eslint-disable-next-line no-console
-        console.log(emailInput);
-        event.preventDefault();
-    };
+        e.preventDefault();
+        console.log(emailInput)
+        dispatch(recoverPassword(emailInput))
+    };  
 
     document.getElementById('root').classList = 'hold-transition login-page';
 
@@ -34,10 +44,12 @@ const ForgotPassword = () => {
                     <form onSubmit={requestNewPassword}>
                         <div className="input-group mb-3">
                             <input
-                                ref={setEmailInputRef}
+                                name="emailInput"
+                                value={emailInput}
                                 type="email"
                                 className="form-control"
                                 placeholder="Email"
+                                onChange={handleInputChange}
                             />
                             <div className="input-group-append">
                                 <div className="input-group-text">

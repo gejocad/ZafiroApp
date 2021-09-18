@@ -8,7 +8,7 @@ const Dashboard = () => {
                 <div className="col-lg-3 col-6">
                     <SmallBox
                         count={150}
-                        title="New Orders"
+                        title="Estudiantes Registrados"
                         type="info"
                         icon="ion-android-people"
                         navigateTo="/"
@@ -17,24 +17,28 @@ const Dashboard = () => {
                 <div className="col-lg-3 col-6">
                     <SmallBox
                         count={53}
-                        title="Bounce Rate"
-                        type="success"
+                        title="Certificados impresos"
+                        type="warning"
+                        icon="ion-android-document"
                         navigateTo="/"
                     />
                 </div>
                 <div className="col-lg-3 col-6">
                     <SmallBox
                         count={44}
-                        title="User Registrations"
-                        type="warning"
+                        title="Estudiantes Egresados"
+                        type="success"
+                        
+                        icon="ion-android-contact"
                         navigateTo="/"
                     />
                 </div>
                 <div className="col-lg-3 col-6">
                     <SmallBox
                         count={65}
-                        title="Unique Visitors"
+                        title="Ajustes de certificados"
                         type="danger"
+                        icon="ion-android-options"
                         navigateTo="/"
                     />
                 </div>

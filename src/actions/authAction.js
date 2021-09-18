@@ -78,3 +78,24 @@ export const logout = () => {
         type: types.logout
     }
 }
+
+export const recover = () => ({
+    type: types.recoverPassword,
+  })
+
+export const recoverPassword = (email) => {
+    return (dispatch) => {
+      return firebase
+        .auth()
+        .sendPasswordResetEmail(email)
+        .then(() => {
+         
+          dispatch(recover());
+          
+        })
+        .catch((e) => {
+          console.log(e)
+        
+        });
+    }
+  }

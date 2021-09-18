@@ -1,14 +1,13 @@
 import React, {useRef, useEffect, useState} from 'react';
 import {useHistory, Link} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
-import {DateTime} from 'luxon';
+import { useDispatch, useSelector } from 'react-redux';
 import {startLogout} from './../../../../actions/authAction';
 
 const UserDropdown = () => {
     const dropdownRef = useRef(null);
     const history = useHistory();
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.auth.currentUser);
+    const { name, image } = useSelector(state => state.auth)
 
     const [dropdownState, updateDropdownState] = useState({
         isDropdownOpen: false
@@ -61,7 +60,7 @@ const UserDropdown = () => {
                 data-toggle="dropdown"
             >
                 <img
-                    src={'profile' || '/img/default-profile.png'}
+                    src={image}
                     className="user-image img-circle elevation-2"
                     alt="User"
                 />
@@ -70,12 +69,12 @@ const UserDropdown = () => {
             <ul className={className}>
                 <li className="user-header bg-primary">
                     <img
-                        src={'profile' || '/img/default-profile.png'}
+                        src={image}
                         className="img-circle elevation-2"
                         alt="User"
                     />
                     <p>
-                        {'email'}
+                        {name}
                         <small>
                             <span>Member since </span>
                             
@@ -97,7 +96,7 @@ const UserDropdown = () => {
                 </li>
                 <li className="user-footer">
                     <Link
-                        to="/profile"
+                        to="/programa"
                         onClick={toggleDropdown}
                         className="btn btn-default btn-flat"
                     >

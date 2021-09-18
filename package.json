@@ -2,7 +2,7 @@
   "name": "zafiroapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gejocad.github.io/zafiroApp",
+  "homepage": "https://gejocad.github.io/ZafiroApp",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
