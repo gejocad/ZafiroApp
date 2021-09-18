@@ -248,13 +248,8 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
             <div>
               <br />
               <br />
-<<<<<<< HEAD
-              <br /><br /> <br />
-
-=======
               <br />
               <br /> <br />
->>>>>>> Gerald
             </div>
           </DialogContent>
           <DialogActions>
