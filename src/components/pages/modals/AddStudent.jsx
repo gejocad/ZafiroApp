@@ -112,7 +112,7 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
   ];
 
   const [TipoDocumento, setTipoDocumento] = React.useState('CC');
-  const [TipoProg, setTipoProg] = React.useState('');
+  const [TipoProg, setTipoProg] = React.useState('Medicina');
   const [formValue, handleInputChange, reset] = useForm([])
   const dispatch = useDispatch()
 
@@ -244,6 +244,7 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
               <br />
               <br />
               <br /><br /> <br />
+
             </div>
           </DialogContent>
           <DialogActions>

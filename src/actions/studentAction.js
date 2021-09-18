@@ -13,6 +13,7 @@ export const AddStudent = (student, typedoc, prog) => {
         const newStudent = {
             name,
             lastName,
+            fullName: name + ' ' + lastName,
             typedoc: typedoc,
             document,
             email,
@@ -24,7 +25,7 @@ export const AddStudent = (student, typedoc, prog) => {
 
         await db.collection('students/').add(newStudent)
         dispatch(addNewStudent(newStudent))
-       
+        startLoadingStudent()
     }
 }
 export const addNewStudent = (student) => ({
@@ -34,9 +35,9 @@ export const addNewStudent = (student) => ({
     }
 })
 
-export const startLoadingStudent = (id) => {
+export const startLoadingStudent = () => {
     return async (dispatch) => {
-        const student = await loadStudents(id)
+        const student = await loadStudents()
         dispatch(setStudent(student))
     }
 }

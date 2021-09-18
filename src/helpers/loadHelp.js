@@ -1,6 +1,6 @@
 import { db } from "../firebase/firebase-config";
 
-export const loadStudents = async (id) => {
+export const loadStudents = async () => {
 
     const studentsSnap = await db.collection(`students/`).get()
     const students = []
