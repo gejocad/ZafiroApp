@@ -1,19 +1,18 @@
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Typography from '@material-ui/core/Typography';
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
-import { useForm } from 'src/hooks/useForm';
-import { AddStudent } from 'src/actions/studentAction';
-import { useDispatch } from 'react-redux'
-
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import MuiDialogContent from "@material-ui/core/DialogContent";
+import MuiDialogActions from "@material-ui/core/DialogActions";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+import { useForm } from "src/hooks/useForm";
+import { AddStudent } from "src/actions/studentAction";
+import { useDispatch } from "react-redux";
 
 const styles = (theme) => ({
   root: {
@@ -21,7 +20,7 @@ const styles = (theme) => ({
     padding: theme.spacing(2),
   },
   closeButton: {
-    position: 'absolute',
+    position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
@@ -34,7 +33,11 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <IconButton
+          aria-label="close"
+          className={classes.closeButton}
+          onClick={onClose}
+        >
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -55,59 +58,55 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
+    "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: '50ch',
+      width: "50ch",
     },
   },
 }));
 
-
-
 export default function StudentAddModal(showAddStudent, setShowAddStudent) {
-
   const classes = useStyles();
   const handleClose = () => {
     setShowAddStudent(false);
   };
   const tiposdoc = [
     {
-      value: 'CC',
-      label: 'Cédula',
+      value: "CC",
+      label: "Cédula",
     },
     {
-      value: 'TI',
-      label: 'Tarjeta de Identidad',
+      value: "TI",
+      label: "Tarjeta de Identidad",
     },
     {
-      value: 'PSPRT',
-      label: 'Pasaporte',
+      value: "PSPRT",
+      label: "Pasaporte",
     },
     {
-      value: 'PEP',
-      label: 'PEP',
+      value: "PEP",
+      label: "PEP",
     },
   ];
 
   const tiposprog = [
     {
-      value: 'Medicina',
-      label: 'Medicina',
+      value: "Medicina",
+      label: "Medicina",
     },
     {
-      value: 'Programación',
-      label: 'Programación',
+      value: "Programación",
+      label: "Programación",
     },
     {
-      value: 'Administración',
-      label: 'Administración',
+      value: "Administración",
+      label: "Administración",
     },
     {
-      value: 'Atención al Cliente',
-      label: 'Atención al Cliente',
+      value: "Atención al Cliente",
+      label: "Atención al Cliente",
     },
   ];
 
@@ -116,7 +115,7 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
   const [formValue, handleInputChange, reset] = useForm([])
   const dispatch = useDispatch()
 
-  const { name, lastName, email, document, finscrip } = formValue
+  const { name, lastName, email, document, finscrip } = formValue;
 
   const handleChange = (event) => {
     setTipoDocumento(event.target.value);
@@ -128,23 +127,30 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
   };
 
   const handleNewStudent = (e) => {
-    e.preventDefault() 
-    console.log(formValue, TipoDocumento, TipoProg)
-    dispatch(AddStudent(formValue, TipoDocumento, TipoProg))
-  }
-
+    e.preventDefault();
+    console.log(formValue, TipoDocumento, TipoProg);
+    dispatch(AddStudent(formValue, TipoDocumento, TipoProg));
+  };
 
   return (
     <div>
-
-      <Dialog maxWidth='md' onClose={handleClose} aria-labelledby="customized-dialog-title" open={showAddStudent}>
+      <Dialog
+        maxWidth="md"
+        onClose={handleClose}
+        aria-labelledby="customized-dialog-title"
+        open={showAddStudent}
+      >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Añadir Estudiante
         </DialogTitle>
 
-        <form className={classes.root} onSubmit={handleNewStudent} noValidate autoComplete="off">
+        <form
+          className={classes.root}
+          onSubmit={handleNewStudent}
+          noValidate
+          autoComplete="off"
+        >
           <DialogContent dividers>
-
             <div>
               <TextField
                 required
@@ -155,7 +161,6 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
                 name="name"
                 value={name}
                 onChange={handleInputChange}
-                
               />
               <TextField
                 required
@@ -248,7 +253,7 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
             </div>
           </DialogContent>
           <DialogActions>
-            <Button autoFocus type="submit "color="primary">
+            <Button autoFocus type="submit " color="primary">
               Save changes
             </Button>
           </DialogActions>

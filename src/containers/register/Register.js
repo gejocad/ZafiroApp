@@ -138,7 +138,7 @@ const Register = () => {
                                     name="name"
                                     type="text"
                                     className="form-control"
-                                    placeholder="Name"
+                                    placeholder="Nombre"
                                     {...formik.getFieldProps('name')}
                                 />
                                 <div className="input-group-append">
@@ -155,7 +155,7 @@ const Register = () => {
                                     name="lastName"
                                     type="text"
                                     className="form-control"
-                                    placeholder="Lastname"
+                                    placeholder="Apellido"
                                     {...formik.getFieldProps('lastName')}
                                 />
                                 <div className="input-group-append">
@@ -172,7 +172,7 @@ const Register = () => {
                                     name="email"
                                     type="email"
                                     className="form-control"
-                                    placeholder="Email"
+                                    placeholder="Correo"
                                     {...formik.getFieldProps('email')}
                                 />
                                 <div className="input-group-append">
@@ -191,7 +191,7 @@ const Register = () => {
                                     name="password"
                                     type="password"
                                     className="form-control"
-                                    placeholder="Password"
+                                    placeholder="Contraseña"
                                     {...formik.getFieldProps('password')}
                                 />
                                 <div className="input-group-append">
@@ -209,7 +209,7 @@ const Register = () => {
                                     name="passwordRetype"
                                     type="password"
                                     className="form-control"
-                                    placeholder="Retype password"
+                                    placeholder="Repetir contraseña"
                                     {...formik.getFieldProps('passwordRetype')}
                                 />
                                 <div className="input-group-append">
@@ -273,7 +273,7 @@ const Register = () => {
                         </Button>
                     </div>
                     <Link to="/login" className="text-center">
-                        Registrar
+                        Iniciar sesión
                     </Link>
                 </div>
             </div>
