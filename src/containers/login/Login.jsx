@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import LogoZafiro from '../../img/LogoZafiro.png'
 import Button from '@material-ui/core/Button';
 import Stack from '@material-ui/core/Button';
-import LoginAdmin from './LoginAdmin.jsx'
+import LoginAdmin from './LoginAdmin'
 import Dialog from "@material-ui/core/Dialog";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from '@material-ui/core/IconButton';
