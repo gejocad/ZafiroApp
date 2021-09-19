@@ -1,14 +1,12 @@
 import React, {useRef, useEffect, useState} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {DateTime} from 'luxon';
 import {startLogout} from './../../../../actions/authAction';
 
 const UserDropdown = () => {
     const dropdownRef = useRef(null);
     const history = useHistory();
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.auth.currentUser);
     const { name, image } = useSelector(state => state.auth)
 
     const [dropdownState, updateDropdownState] = useState({
@@ -98,7 +96,7 @@ const UserDropdown = () => {
                 </li>
                 <li className="user-footer">
                     <Link
-                        to="/profile"
+                        to="/programa"
                         onClick={toggleDropdown}
                         className="btn btn-default btn-flat"
                     >

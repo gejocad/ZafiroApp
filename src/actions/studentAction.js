@@ -6,12 +6,14 @@ import Swal from 'sweetalert2'
 
 let fileUrl=[]
 
-export const AddStudent = (name, lastName, document, email, finscrip, prog) => {
+export const AddStudent = (student, typedoc, prog) => {
     return async (dispatch) => {
+        const {name, lastName, document, email, finscrip} = student
 
         const newStudent = {
             name,
             lastName,
+            typedoc: typedoc,
             document,
             email,
             finscrip,
@@ -22,7 +24,7 @@ export const AddStudent = (name, lastName, document, email, finscrip, prog) => {
 
         await db.collection('students/').add(newStudent)
         dispatch(addNewStudent(newStudent))
-        dispatch(startLoadingStudent('students'))
+       
     }
 }
 export const addNewStudent = (student) => ({

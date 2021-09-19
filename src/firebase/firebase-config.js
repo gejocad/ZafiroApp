@@ -5,6 +5,7 @@ import 'firebase/auth'
 const firebaseConfig = {
   apiKey: "AIzaSyAaTapNCDRD_l4wWd_2wN7vNTAqqIA_Ti0",
   authDomain: "zafiroapp-d5379.firebaseapp.com",
+  databaseURL: "https://zafiroapp-d5379-default-rtdb.firebaseio.com",
   projectId: "zafiroapp-d5379",
   storageBucket: "zafiroapp-d5379.appspot.com",
   messagingSenderId: "390034566049",

@@ -1,10 +1,16 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {NavLink, Link} from 'react-router-dom';
+import EmailIcon from '@material-ui/icons/Email';
+import HomeIcon from '@material-ui/icons/Home';
+import CastForEducationIcon from '@material-ui/icons/CastForEducation';
+import GroupIcon from '@material-ui/icons/Group';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 const MenuSidebar = () => {
     
-    const { email, image } = useSelector(state => state.auth)
+    const { email } = useSelector(state => state.auth)
     
 
     return (
@@ -28,7 +34,8 @@ const MenuSidebar = () => {
                         />*/}
                     </div>
                     <div className="info">
-                        <Link to="/profile" className="d-block">
+                        <Link to="/programa" className="d-block">
+                            <EmailIcon className="nav-icon fas"/>
                             {email}
                         </Link>
                     </div>
@@ -42,20 +49,32 @@ const MenuSidebar = () => {
                     >
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link">
-                                <i className="nav-icon fas fa-tachometer-alt" />
-                                <p>Dashboard</p>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/profile" exact className="nav-link">
-                                <i className="nav-icon fas fa-user" />
-                                <p>Perfil</p>
+                                <HomeIcon className="nav-icon fas"/>
+                                <p>Inicio</p>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/students" exact className="nav-link">
-                                <i className="nav-icon fas fa-user" />
-                                <p>Registro Estudiantes</p>
+                                <GroupIcon className="nav-icon fas"/>
+                                <p>Estudiantes</p>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/programa" exact className="nav-link">
+                            <CastForEducationIcon className="nav-icon fas"/>
+                                <p>Programas</p>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/reports" exact className="nav-link">
+                                <LibraryBooksIcon className="nav-icon fas"/>
+                                <p>Notas y certificados</p>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/setting" exact className="nav-link">
+                                <SettingsIcon className="nav-icon fas"/>
+                                <p>Ajustes</p>
                             </NavLink>
                         </li>
                     </ul>
