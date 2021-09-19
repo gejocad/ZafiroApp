@@ -112,7 +112,7 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
 
   const [TipoDocumento, setTipoDocumento] = React.useState('CC');
   const [TipoProg, setTipoProg] = React.useState('Medicina');
-  const [formValue, handleInputChange, reset] = useForm([])
+  const [formValue, handleInputChange] = useForm([])
   const dispatch = useDispatch()
 
   const { name, lastName, email, document, finscrip } = formValue;

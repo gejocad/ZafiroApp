@@ -84,7 +84,7 @@ const CrudStudents = () => {
                 title='Estudiantes'  
                 actions={[
                     {
-                        icon: 'detail',
+                        icon: 'Detail',
                         tooltip: 'Detalles',
                         onClick: (event, rowData) => {handleShowDetail(event, rowData)}
                     },
