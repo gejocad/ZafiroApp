@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Dashboard from '@components/pages/Dashboard';
-import Programa from '@components/pages/profile/Profile';
+import Programa from '@components/pages/program/Program';
+import Reporte from '@components/pages/reports/Reports';
 import Header from '@components/main/header/Header';
 import Footer from '@components/main/footer/Footer';
 import MenuSidebar from '@components/main/menu-sidebar/MenuSidebar';
-import PageLoading from '../../components/page-loading/PageLoading';
-import CrudStudents from '@components/pages/crud/CrudStudents';
+import PageLoading from '@components/page-loading/PageLoading';
+import Estudiante from '@components/pages/students/Students'
 
 const Main = () => {
     const [appLoadingState, updateAppLoading] = useState(false);
@@ -62,9 +63,10 @@ const Main = () => {
                     <div className="pt-3" />
                     <section className="content">
                         <Switch>
-                            <Route exact path="/programa" component={Programa} />
                             <Route exact path="/" component={Dashboard} />
-                            <Route exact path="/students" component={CrudStudents} />
+                            <Route exact path="/programa" component={Programa} />
+                            <Route exact path="/students" component={Estudiante} />
+                            <Route exact path="/reports" component={Reporte} />
                         </Switch>
                     </section>
                 </div>
