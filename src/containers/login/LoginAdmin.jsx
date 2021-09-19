@@ -6,7 +6,9 @@ import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import Button from '../../components/button/Button';
-const Login = () => {
+
+
+const LoginAdmin = () => {
     const [isAuthLoading, setAuthLoading] = useState(false);
     const [isGoogleAuthLoading, setGoogleAuthLoading] = useState(false);
     const [isFacebookAuthLoading, setFacebookAuthLoading] = useState(false);
@@ -97,7 +99,7 @@ const Login = () => {
     document.getElementById('root').classList = 'hold-transition login-page';
 
     return (
-        <div className="login-box">
+        <div className="login-box mx-auto">
             <div className="card card-outline card-primary">
                 <div className="card-header text-center">
                     <Link to="/" className="h1">
@@ -205,4 +207,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginAdmin;
