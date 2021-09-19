@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Redirect, Switch} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../actions/authAction';
 import Main from '@containers/main/Main';
-import Login from '@containers/login/Login';
+import Login from '@containers/login/Login.jsx';
 import Register from '@containers/register/Register';
 import ForgetPassword from '@containers/forgot-password/ForgotPassword';
 import RecoverPassword from '@containers/recover-password/RecoverPassword';
