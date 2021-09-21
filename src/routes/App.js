@@ -52,7 +52,7 @@ function App() {
         <PublicRoute exact path="/callback">
             <h1>Callback</h1>
         </PublicRoute>
-        <PrivateRoute path="/" component={Main} isAuthenticated={isLoogedIn} />
+        <PrivateRoute path="/ZafiroApp" component={Main} isAuthenticated={isLoogedIn} />
         <Redirect to='/login' />
     </Switch>
     </Router>

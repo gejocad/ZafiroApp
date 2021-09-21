@@ -15,7 +15,7 @@ const MenuSidebar = () => {
 
     return (
         <aside className="main-sidebar sidebar-dark-primary elevation-4">
-            <Link to="/" className="brand-link">
+            <Link to="/ZafiroApp" className="brand-link">
                 <img
                     src="https://i.ibb.co/WpqWtfc/logoSolo.png"
                     alt="AdminLTE Logo"
