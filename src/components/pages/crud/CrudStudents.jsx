@@ -66,14 +66,7 @@ const CrudStudents = () => {
         }
     ];
 
-    const data = [
-        {document: 1092006788, student: 'Wildelmy Jose Colina', email: 'wilcol@gmail.com', prog: 'Desarrollo Web'},
-        {document: 1065815899, student: 'Gerald Jose Castillo', email: 'geocad@gmail.com', prog: 'Desarrollo Web'},
-        {document: 1092314765, student: 'Jose Angel Agelvis', email: 'agelvisangel@gmail.com', prog: 'Intesivo de Manicure'},
-        {document: 1065800989, student: 'Pedro Jose Zapata', email: 'pedrozap1@gmail.com', prog: 'Ingles'},
-        {document: 1092142726, student: 'Petro Porfirio Chavez', email: 'elpetro123ya@gmail.com', prog: 'Estudios Politicos'},
-        {document: 1065455780, student: 'Claudia Pezlo', email: 'pezloclau@gmail.com', prog: 'Resposteria'}
-    ];
+   
 
     return (
         <div>
