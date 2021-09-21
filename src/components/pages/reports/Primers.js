@@ -5,7 +5,7 @@ import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 
 
-const Listado = ({isActive}) => {
+const Primers = ({isActive}) => {
    
     const [showDetail, setShowDetail] = useState(false)
     const [showAddStudent, setShowAddStudent] = useState(false)
@@ -85,4 +85,4 @@ const Listado = ({isActive}) => {
     )
 }
  
-export default Listado;
+export default Primers;

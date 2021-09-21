@@ -2,7 +2,7 @@ import React from 'react';
 import Post from './Post';
 
 
-const SettingsTab = ({isActive}) => {
+const Tercers = ({isActive}) => {
     
 
     return (
@@ -15,4 +15,4 @@ const SettingsTab = ({isActive}) => {
 };
 
 
-export default SettingsTab;
+export default Tercers;
