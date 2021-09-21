@@ -154,7 +154,7 @@ export default function StudentDetail(showDetail, setShowDetail) {
         open={showDetail}
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Añadir Estudiante
+          {active.fullName}
         </DialogTitle>
 
         <form
