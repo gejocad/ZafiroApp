@@ -19,7 +19,7 @@ export const types = {
     updatePrograma: 'Update Programa',
     loadPrograma: 'Load Programa',
     activePrograma: 'Active Programa',
-    studentPrograma:'Delete Programa',
+    deletePrograma:'Delete Programa',
 
     ListarBusqueda: 'ListarBusqueda'
 }

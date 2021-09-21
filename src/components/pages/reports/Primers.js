@@ -1,67 +1,62 @@
 import React, { useState } from 'react';
 import MaterialTable from 'material-table'
 import {Button} from '@material-ui/core';
+/*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
+import { useDispatch, useSelector } from 'react-redux';
+import { activePrograma } from '@actions/programaAction';
 
 
 const Primers = ({isActive}) => {
-   
-    const [showDetail, setShowDetail] = useState(false)
-    const [showAddStudent, setShowAddStudent] = useState(false)
-    const [user, setUser] = useState({})
 
-    const handleShowDetail = (event, user1) => {
-        setUser(user1) 
-        setShowDetail(true)
+    const dispatch = useDispatch()
+    const [showDetailPrograma, setShowDetailPrograma] = useState(false)
+    const [showAddPrograma, setShowAddPrograma] = useState(false)
+    const { programa } = useSelector(state => state.programa)
+    
+
+    const handleShowDetailPrograma = (event, data) => {
+
+        dispatch(activePrograma(data.id, data))
+        setShowDetailPrograma(true)
     }
     const handleShowAdd = () => {
-        console.log("ok")
-        setShowAddStudent(true)
+        setShowAddPrograma(true)
     }
 
     const columnas = [
         
         {
             title: 'Documento',
-            field: 'document',
-            type: 'numeric',
+            field: 'nombre',
+            type: 'text',
             align: 'center'
         },
         {
             title: 'Estudiante',
-            field: 'student'
+            field: 'resolucion'
         },
         {
             title: 'Correo',
-            field: 'email'
-        },
-        {
-            title: 'Programa',
-            field: 'prog'
+            field: 'codigo'
         }
     ];
 
-    const data = [
-        {document: 1092006788, student: 'Wildelmy Jose Colina', email: 'wilcol@gmail.com', prog: 'Desarrollo Web'},
-        {document: 1065815899, student: 'Gerald Jose Castillo', email: 'geocad@gmail.com', prog: 'Desarrollo Web'},
-        {document: 1092314765, student: 'Jose Angel Agelvis', email: 'agelvisangel@gmail.com', prog: 'Intesivo de Manicure'},
-        {document: 1065800989, student: 'Pedro Jose Zapata', email: 'pedrozap1@gmail.com', prog: 'Ingles'},
-        {document: 1092142726, student: 'Petro Porfirio Chavez', email: 'elpetro123ya@gmail.com', prog: 'Estudios Politicos'},
-        {document: 1065455780, student: 'Claudia Pezlo', email: 'pezloclau@gmail.com', prog: 'Resposteria'}
-    ];
+   
 
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
+            
            <MaterialTable
                 columns={columnas}
-                data={data}
+                data={programa}
                 title='Estudiantes'  
                 actions={[
                     {
-                        icon: 'detail',
+                        icon: 'Detail',
                         tooltip: 'Detalles',
-                        onClick: (event, rowData) => {handleShowDetail(event, rowData)}
+                        onClick: (event, rowData) => {handleShowDetailPrograma(event, rowData)}
                     },
                     {
                         icon: 'delete_outline',
@@ -78,11 +73,12 @@ const Primers = ({isActive}) => {
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail, user)}</div>
+           <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
            <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
-           <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
+           <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
         </div>
     )
 }
  
+
 export default Primers;

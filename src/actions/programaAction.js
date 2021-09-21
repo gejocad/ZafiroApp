@@ -160,7 +160,7 @@ export const setPrograma = (programa) => ({
   payload: programa,
 });
 
-export const activeProgramas = (id, programa) => ({
+export const activePrograma = (id, programa) => ({
   type: types.activePrograma,
   payload: {
     id,
