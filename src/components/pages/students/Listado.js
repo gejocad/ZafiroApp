@@ -28,7 +28,7 @@ import { activeStudents } from '@actions/studentAction';
   }));}*/
   
 
-const CrudStudents = () => {
+  const Listado = ({isActive}) => {
 
     const dispatch = useDispatch()
     const [showDetail, setShowDetail] = useState(false)
@@ -104,4 +104,4 @@ const CrudStudents = () => {
     )
 }
 
-export default CrudStudents
+export default Listado;

@@ -110,10 +110,10 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
     },
   ];
 
-  const [TipoDocumento, setTipoDocumento] = React.useState('CC');
-  const [TipoProg, setTipoProg] = React.useState('Medicina');
-  const [formValue, handleInputChange] = useForm([])
-  const dispatch = useDispatch()
+  const [TipoDocumento, setTipoDocumento] = React.useState("CC");
+  const [TipoProg, setTipoProg] = React.useState("");
+  const [formValue, handleInputChange] = useForm([]);
+  const dispatch = useDispatch();
 
   const { name, lastName, email, document, finscrip } = formValue;
 
@@ -245,7 +245,12 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
                 ))}
               </TextField>
             </div>
-            <div className="space"></div>
+            <div>
+              <br />
+              <br />
+              <br />
+              <br /> <br />
+            </div>
           </DialogContent>
           <DialogActions>
             <Button autoFocus type="submit " color="primary">
