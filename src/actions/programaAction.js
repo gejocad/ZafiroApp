@@ -197,7 +197,7 @@ export const Edit = (programa) => {
       },
     });
 
-    await db.doc(`programas/${programaF.id}`).update(EditPrograma);
+    await db.doc(`programa/${programaF.id}`).update(EditPrograma);
     console.log(EditPrograma);
 
     Swal.fire("Guardado", programa.title, "success");

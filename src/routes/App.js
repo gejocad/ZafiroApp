@@ -12,6 +12,7 @@ import {PublicRoute} from './PublicRoute';
 import {PrivateRoute} from './PrivateRoute';
 import firebase from 'firebase';
 import { startLoadingStudent } from 'src/actions/studentAction';
+import { startLoadingPrograma } from 'src/actions/programaAction';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         dispatch(login(user.uid, user.displayName, user.email, user.photoURL))
         setIsLoogedIn(true)
         dispatch(startLoadingStudent())
+        dispatch(startLoadingPrograma())
       } else {
         setIsLoogedIn(false)
       }

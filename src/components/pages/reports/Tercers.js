@@ -5,45 +5,41 @@ import {Button} from '@material-ui/core';
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
-import { activeStudents } from '@actions/studentAction';
+import { activePrograma } from '@actions/programaAction';
 
 
 const Tercers = ({isActive}) => {
- 
+
     const dispatch = useDispatch()
-    const [showDetail, setShowDetail] = useState(false)
-    const [showAddStudent, setShowAddStudent] = useState(false)
-    const { student } = useSelector(state => state.student)
+    const [showDetailPrograma, setShowDetailPrograma] = useState(false)
+    const [showAddPrograma, setShowAddPrograma] = useState(false)
+    const { programa } = useSelector(state => state.programa)
     
 
-    const handleShowDetail = (event, data) => {
+    const handleShowDetailPrograma = (event, data) => {
 
-        dispatch(activeStudents(data.id, data))
-        setShowDetail(true)
+        dispatch(activePrograma(data.id, data))
+        setShowDetailPrograma(true)
     }
     const handleShowAdd = () => {
-        setShowAddStudent(true)
+        setShowAddPrograma(true)
     }
 
     const columnas = [
         
         {
             title: 'Documento',
-            field: 'document',
-            type: 'numeric',
+            field: 'nombre',
+            type: 'text',
             align: 'center'
         },
         {
             title: 'Estudiante',
-            field: 'fullName'
+            field: 'resolucion'
         },
         {
             title: 'Correo',
-            field: 'email'
-        },
-        {
-            title: 'Programa',
-            field: 'prog'
+            field: 'codigo'
         }
     ];
 
@@ -54,13 +50,13 @@ const Tercers = ({isActive}) => {
             
            <MaterialTable
                 columns={columnas}
-                data={student}
+                data={programa}
                 title='Estudiantes'  
                 actions={[
                     {
                         icon: 'Detail',
                         tooltip: 'Detalles',
-                        onClick: (event, rowData) => {handleShowDetail(event, rowData)}
+                        onClick: (event, rowData) => {handleShowDetailPrograma(event, rowData)}
                     },
                     {
                         icon: 'delete_outline',
@@ -77,12 +73,13 @@ const Tercers = ({isActive}) => {
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail)}</div>
+           <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
            <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
-           <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
+           <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
         </div>
     )
 }
  
+
 
 export default Tercers;
