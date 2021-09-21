@@ -7,26 +7,27 @@ import Swal from "sweetalert2";
 let fileUrl = [];
 
 export const AddStudent = (student, typedoc, prog) => {
-  return async (dispatch) => {
-    const { name, lastName, document, email, finscrip } = student;
+    return async (dispatch) => {
+        const {name, lastName, document, email, finscrip} = student
 
-    const newStudent = {
-      name,
-      lastName,
-      typedoc,
-      document,
-      email,
-      finscrip,
-      prog,
-      programs: []
-    };
+        const newStudent = {
+            name,
+            lastName,
+            fullName: name + ' ' + lastName,
+            typedoc: typedoc,
+            document,
+            email,
+            finscrip,
+            prog: prog,
+        }
 
-    console.log(newStudent);
+        console.log(newStudent);
 
-    await db.collection("students/").doc(document).set(newStudent);
-    dispatch(addNewStudent(newStudent));
-  };
-};
+        await db.collection('students/').add(newStudent)
+        dispatch(addNewStudent(newStudent))
+        startLoadingStudent()
+    }
+}
 export const addNewStudent = (student) => ({
   type: types.addStudent,
   payload: {
@@ -34,12 +35,12 @@ export const addNewStudent = (student) => ({
   },
 });
 
-export const startLoadingStudent = (id) => {
-  return async (dispatch) => {
-    const student = await loadStudents(id);
-    dispatch(setStudent(student));
-  };
-};
+export const startLoadingStudent = () => {
+    return async (dispatch) => {
+        const student = await loadStudents()
+        dispatch(setStudent(student))
+    }
+}
 
 export const setStudent = (student) => ({
   type: types.loadStudent,
@@ -54,10 +55,56 @@ export const activeStudents = (id, student) => ({
   },
 });
 
-export const Edit = (student) => {
-  return async (dispatch, getState) => {
-    if (!student.url) {
-      delete student.url;
+export const Edit = (student, typedoc, prog) => {
+    return async (dispatch) => {
+        
+        const EditStudent = {
+            name: student.name,
+            lastName: student.lastName,
+            fullName: student.name + ' ' + student.lastName,
+            typedoc: typedoc,
+            document: student.document,
+            email: student.email,
+            finscrip: student.finscrip,
+            prog: prog,
+        }
+
+        const studentF = { ...EditStudent  }
+        delete studentF.id
+
+        Swal.fire({
+            title: 'actualizando...',
+            text: 'Por favor, Espere ...',
+allowOutsideClick: false,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+            }
+        })
+
+        await db.doc(`students/${studentF.id}`).update(EditStudent)
+           console.log(EditStudent)
+
+        Swal.fire('Guardado', student.title, 'success');
+        dispatch(startLoadingStudent(studentF.id))
+    }
+}
+
+export const startUploading = (file) => {
+    return async (dispatch) => {
+
+        Swal.fire({
+            title: 'Uploading...',
+            text: 'Please wait ...',
+            allowOutsideClick: false,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+            }
+        })
+
+        fileUrl = await fileUpload(file)
+        console.log(fileUrl)
+        Swal.close()
+       return fileUrl
     }
 
     const EditStudent = {
@@ -89,7 +136,7 @@ export const Edit = (student) => {
     Swal.fire("Guardado", student.title, "success");
     dispatch(startLoadingStudent(studentF.id));
   };
-};
+
 
 export const startUploading = (file) => {
   return async (dispatch) => {
