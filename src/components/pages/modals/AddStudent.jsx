@@ -17,7 +17,7 @@ import { useDispatch } from "react-redux";
 const styles = (theme) => ({
   root: {
     margin: 0,
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
   },
   closeButton: {
     position: "absolute",
@@ -245,12 +245,7 @@ export default function StudentAddModal(showAddStudent, setShowAddStudent) {
                 ))}
               </TextField>
             </div>
-            <div>
-              <br />
-              <br />
-              <br /><br /> <br />
-
-            </div>
+            <div className="space"></div>
           </DialogContent>
           <DialogActions>
             <Button autoFocus type="submit " color="primary">

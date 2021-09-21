@@ -56,22 +56,18 @@ export const activeStudents = (id, student) => ({
 })
 
 
-export const Edit = (student) => {
-    return async (dispatch, getState) => {
+export const Edit = (student, typedoc, prog) => {
+    return async (dispatch) => {
         
-        if (!student.url) {
-            delete student.url;
-        }
-
         const EditStudent = {
-                image: fileUrl,
-                tittle: student.tittle,
-                description: student.description,
-                year: student.year,
-                categorie: student.categoria,
-                duration:student.duracion,
-                qualification: [],
-                trailer: 'fdgfd'
+            name: student.name,
+            lastName: student.lastName,
+            fullName: student.name + ' ' + student.lastName,
+            typedoc: typedoc,
+            document: student.document,
+            email: student.email,
+            finscrip: student.finscrip,
+            prog: prog,
         }
 
         const studentF = { ...EditStudent  }
