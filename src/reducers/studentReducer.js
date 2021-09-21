@@ -5,10 +5,12 @@ const initialState = {
     active: {
         name: '',
         lastName: '',
+        fullName: '',
+        typedoc: '',
         document: '',
         email: '',
         finscrip: '',
-        prog:{},
+        prog: '',
     }
 }
 

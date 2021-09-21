@@ -13,6 +13,7 @@ export const AddStudent = (student, typedoc, prog) => {
         const newStudent = {
             name,
             lastName,
+            fullName: name + ' ' + lastName,
             typedoc: typedoc,
             document,
             email,
@@ -24,7 +25,7 @@ export const AddStudent = (student, typedoc, prog) => {
 
         await db.collection('students/').add(newStudent)
         dispatch(addNewStudent(newStudent))
-       
+        startLoadingStudent()
     }
 }
 export const addNewStudent = (student) => ({
@@ -34,9 +35,9 @@ export const addNewStudent = (student) => ({
     }
 })
 
-export const startLoadingStudent = (id) => {
+export const startLoadingStudent = () => {
     return async (dispatch) => {
-        const student = await loadStudents(id)
+        const student = await loadStudents()
         dispatch(setStudent(student))
     }
 }
@@ -55,22 +56,18 @@ export const activeStudents = (id, student) => ({
 })
 
 
-export const Edit = (student) => {
-    return async (dispatch, getState) => {
+export const Edit = (student, typedoc, prog) => {
+    return async (dispatch) => {
         
-        if (!student.url) {
-            delete student.url;
-        }
-
         const EditStudent = {
-                image: fileUrl,
-                tittle: student.tittle,
-                description: student.description,
-                year: student.year,
-                categorie: student.categoria,
-                duration:student.duracion,
-                qualification: [],
-                trailer: 'fdgfd'
+            name: student.name,
+            lastName: student.lastName,
+            fullName: student.name + ' ' + student.lastName,
+            typedoc: typedoc,
+            document: student.document,
+            email: student.email,
+            finscrip: student.finscrip,
+            prog: prog,
         }
 
         const studentF = { ...EditStudent  }
