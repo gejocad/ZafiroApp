@@ -6,6 +6,7 @@ import LoginAdmin from './LoginAdmin'
 import Dialog from "@material-ui/core/Dialog";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from '@material-ui/core/IconButton';
+import LoginUser from './LoginUser.jsx'
 
 
 const Login = () => {
@@ -44,7 +45,8 @@ const Login = () => {
           </IconButton>
         </div>
 
-        {userType === "admin" && <LoginAdmin />}
+         {userType === "user" && <LoginUser />}
+         {userType === "admin" && <LoginAdmin />}
       </Dialog>
 
     </section>

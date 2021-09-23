@@ -54,7 +54,7 @@ const MessagesDropdown = () => {
                 <span className="badge badge-danger navbar-badge">3</span>
             </button>
             <div className={className}>
-                <Link to="/" className="dropdown-item">
+                <Link to="/ZafiroApp" className="dropdown-item">
                     <div className="media">
                         <img
                             src="/img/default-profile.png"
@@ -81,7 +81,7 @@ const MessagesDropdown = () => {
                     </div>
                 </Link>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item">
+                <Link to="/ZafiroApp" className="dropdown-item">
                     <div className="media">
                         <img
                             src="/img/default-profile.png"
@@ -106,7 +106,7 @@ const MessagesDropdown = () => {
                     </div>
                 </Link>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item">
+                <Link to="/ZafiroApp" className="dropdown-item">
                     <div className="media">
                         <img
                             src="/img/default-profile.png"
@@ -131,7 +131,7 @@ const MessagesDropdown = () => {
                     </div>
                 </Link>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item dropdown-footer">
+                <Link to="/ZafiroApp" className="dropdown-item dropdown-footer">
                    Mensaje header
                 </Link>
             </div>

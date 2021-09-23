@@ -63,7 +63,7 @@ const Main = () => {
                     <div className="pt-3" />
                     <section className="content">
                         <Switch>
-                            <Route exact path="/" component={Dashboard} />
+                            <Route exact path="/ZafiroApp" component={Dashboard} />
                             <Route exact path="/programa" component={Programa} />
                             <Route exact path="/students" component={Estudiante} />
                             <Route exact path="/reports" component={Reporte} />
