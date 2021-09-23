@@ -128,7 +128,7 @@ export default function StudentDetail(showDetail, setShowDetail) {
       reset(active)
     }
     activeId.current = active.id
-  }, [active])
+  }, [active,reset])
 
   const handleChange = (event) => {
     setTipoDocumento(event.target.value);
