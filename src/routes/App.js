@@ -12,6 +12,7 @@ import {PublicRoute} from './PublicRoute';
 import {PrivateRoute} from './PrivateRoute';
 import firebase from 'firebase';
 import { startLoadingStudent } from 'src/actions/studentAction';
+import GenerateCertificates from '@containers/generate-certificates'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
     <Router>
     <Switch>
         <PublicRoute exact path="/login" component={Login} isAuthenticated={isLoogedIn} />
+        <PublicRoute exact path="/mis-certificados/:id" component={GenerateCertificates} />
         <PublicRoute exact path="/register" component={Register} isAuthenticated={isLoogedIn} />
         <PublicRoute exact path="/forgot-password" component={ForgetPassword} isAuthenticated={isLoogedIn} />
         <PublicRoute exact path="/recover-password" component={RecoverPassword} isAuthenticated={isLoogedIn} />
