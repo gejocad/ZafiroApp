@@ -160,7 +160,7 @@ export const setPrograma = (programa) => ({
   payload: programa,
 });
 
-export const activeProgramas = (id, programa) => ({
+export const activePrograma = (id, programa) => ({
   type: types.activePrograma,
   payload: {
     id,
@@ -197,7 +197,7 @@ export const Edit = (programa) => {
       },
     });
 
-    await db.doc(`programas/${programaF.id}`).update(EditPrograma);
+    await db.doc(`programa/${programaF.id}`).update(EditPrograma);
     console.log(EditPrograma);
 
     Swal.fire("Guardado", programa.title, "success");

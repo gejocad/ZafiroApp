@@ -12,7 +12,10 @@ import {PublicRoute} from './PublicRoute';
 import {PrivateRoute} from './PrivateRoute';
 import firebase from 'firebase';
 import { startLoadingStudent } from 'src/actions/studentAction';
+
 import GenerateCertificates from '@containers/generate-certificates'
+
+import { startLoadingPrograma } from 'src/actions/programaAction';
 
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
         dispatch(login(user.uid, user.displayName, user.email, user.photoURL))
         setIsLoogedIn(true)
         dispatch(startLoadingStudent())
+        dispatch(startLoadingPrograma())
       } else {
         setIsLoogedIn(false)
       }
@@ -54,7 +58,7 @@ function App() {
         <PublicRoute exact path="/callback">
             <h1>Callback</h1>
         </PublicRoute>
-        <PrivateRoute path="/ZafiroApp" component={Main} isAuthenticated={isLoogedIn} />
+        <PrivateRoute path="/" component={Main} isAuthenticated={isLoogedIn} />
         <Redirect to='/login' />
     </Switch>
     </Router>
