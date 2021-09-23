@@ -8,8 +8,9 @@ let fileUrl = [];
 
 export const AddPrograma = (
   nombre,
+  licencia,
+  decreto,
   resolucion,
-  codigo,
   nombreS11,
   nombreS12,
   nombreS13,
@@ -50,8 +51,9 @@ export const AddPrograma = (
   return async (dispatch) => {
     const newPrograma = {
       nombre,
+      licencia,
+      decreto,
       resolucion,
-      codigo,
       semestres: {
         semestre1: {
           competencia1: {
