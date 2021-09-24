@@ -58,7 +58,7 @@ const NotificationsDropdown = () => {
                     Header notificacion
                 </span>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item">
+                <Link to="/ZafiroApp" className="dropdown-item">
                     <i className="fas fa-envelope mr-2" />
                     <span>
                         Header notificacion
@@ -68,7 +68,7 @@ const NotificationsDropdown = () => {
                     </span>
                 </Link>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item">
+                <Link to="/ZafiroApp" className="dropdown-item">
                     <i className="fas fa-users mr-2" />
                     <span>
                         Amigos
@@ -78,7 +78,7 @@ const NotificationsDropdown = () => {
                     </span>
                 </Link>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item">
+                <Link to="/ZafiroApp" className="dropdown-item">
                     <i className="fas fa-file mr-2" />
                     <span>
                         Reporte notificaciones
@@ -88,7 +88,7 @@ const NotificationsDropdown = () => {
                     </span>
                 </Link>
                 <div className="dropdown-divider" />
-                <Link to="/" className="dropdown-item dropdown-footer">
+                <Link to="/ZafiroApp" className="dropdown-item dropdown-footer">
                     Todas las notificaciones
                 </Link>
             </div>

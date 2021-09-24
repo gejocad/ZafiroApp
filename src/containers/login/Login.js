@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import LogoZafiro from '../../img/LogoZafiro.png'
 import Button from '@material-ui/core/Button';
-import Stack from '@material-ui/core/Button';
-import LoginAdmin from './LoginAdmin'
-import Dialog from "@material-ui/core/Dialog";
 import CloseIcon from "@material-ui/icons/Close";
+import Dialog from "@material-ui/core/Dialog";
 import IconButton from '@material-ui/core/IconButton';
+import LoginAdmin from './LoginAdmin'
+import LoginUser from './LoginUser'
+import LogoZafiro from '../../img/LogoZafiro.png'
+import Stack from '@material-ui/core/Button';
 
 
 const Login = () => {
@@ -44,7 +45,8 @@ const Login = () => {
           </IconButton>
         </div>
 
-        {userType === "admin" && <LoginAdmin />}
+         {userType === "user" && <LoginUser />}
+         {userType === "admin" && <LoginAdmin />}
       </Dialog>
 
     </section>

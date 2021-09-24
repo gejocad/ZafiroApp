@@ -14,7 +14,7 @@ const Primers = ({isActive}) => {
     const [showDetailPrograma, setShowDetailPrograma] = useState(false)
     const [showAddPrograma, setShowAddPrograma] = useState(false)
     const { programa } = useSelector(state => state.programa)
-    console.log(programa)
+    
 
     const handleShowDetailPrograma = (event, data) => {
 
@@ -24,8 +24,6 @@ const Primers = ({isActive}) => {
     const handleShowAdd = () => {
         setShowAddPrograma(true)
     }
-
-    console.log(programa)
 
     const columnas = [
         
@@ -41,7 +39,7 @@ const Primers = ({isActive}) => {
         },
         {
             title: 'Correo',
-            field: ''
+            field: 'codigo'
         }
     ];
 

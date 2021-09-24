@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { activePrograma } from '@actions/programaAction';
 
 
-const Listado = ({isActive}) => {
+const Egresados = ({isActive}) => {
 
     const dispatch = useDispatch()
     const [showDetailPrograma, setShowDetailPrograma] = useState(false)
@@ -28,22 +28,18 @@ const Listado = ({isActive}) => {
     const columnas = [
         
         {
-            title: 'Nombre',
+            title: 'Documento',
             field: 'nombre',
             type: 'text',
             align: 'center'
         },
         {
-            title: 'Licencia',
-            field: 'licencia'
-        },
-        {
-            title: 'Decreto',
-            field: 'decreto'
-        },
-        {
-            title: 'Resolucion',
+            title: 'Estudiante',
             field: 'resolucion'
+        },
+        {
+            title: 'Correo',
+            field: 'codigo'
         }
     ];
 
@@ -85,4 +81,5 @@ const Listado = ({isActive}) => {
 }
  
 
-export default Listado;
+
+export default Egresados;

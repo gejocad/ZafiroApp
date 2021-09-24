@@ -13,8 +13,9 @@ const Registro = ({isActive}) => {
 
     const [values, handleInputChange, reset ] = useForm({
         nombre:'',
+        licencia:'',
+        decreto:'',
         resolucion:'',
-        codigo:'',
         nombreS11:'',
         nombreS12:'',
         nombreS13:'',
@@ -56,8 +57,9 @@ const Registro = ({isActive}) => {
 
     const { 
         nombre,
+        licencia,
+        decreto,
         resolucion,
-        codigo,
         nombreS11,
         nombreS12,
         nombreS13,
@@ -101,8 +103,9 @@ const Registro = ({isActive}) => {
 
         dispatch(AddPrograma(
             nombre,
+            licencia,
+            decreto,
             resolucion,
-            codigo,
             nombreS11,
             nombreS12,
             nombreS13,
@@ -167,6 +170,42 @@ const Registro = ({isActive}) => {
                 </div>
                 <div className="form-group row">
                     <label
+                        htmlFor="inputName2"
+                        className="col-sm-2 col-form-label"
+                    >
+                        licencia
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Licencia"
+                            name="licencia"
+                            value={licencia}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
+                        htmlFor="inputName2"
+                        className="col-sm-2 col-form-label"
+                    >
+                        Decreto
+                    </label>
+                    <div className="col-sm-10">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Decreto"
+                            name="decreto"
+                            value={decreto}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label
                         htmlFor="inputEmail"
                         className="col-sm-2 col-form-label"
                     >
@@ -179,24 +218,6 @@ const Registro = ({isActive}) => {
                             placeholder="Resolucion"
                             name="resolucion"
                             value={resolucion}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label
-                        htmlFor="inputName2"
-                        className="col-sm-2 col-form-label"
-                    >
-                        Codigo
-                    </label>
-                    <div className="col-sm-10">
-                        <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Codigo"
-                            name="codigo"
-                            value={codigo}
                             onChange={handleInputChange}
                         />
                     </div>

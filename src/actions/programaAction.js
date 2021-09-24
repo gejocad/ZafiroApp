@@ -8,8 +8,9 @@ let fileUrl = [];
 
 export const AddPrograma = (
   nombre,
+  licencia,
+  decreto,
   resolucion,
-  codigo,
   nombreS11,
   nombreS12,
   nombreS13,
@@ -50,8 +51,9 @@ export const AddPrograma = (
   return async (dispatch) => {
     const newPrograma = {
       nombre,
+      licencia,
+      decreto,
       resolucion,
-      codigo,
       semestres: {
         semestre1: {
           competencia1: {
@@ -160,7 +162,7 @@ export const setPrograma = (programa) => ({
   payload: programa,
 });
 
-export const activeProgramas = (id, programa) => ({
+export const activePrograma = (id, programa) => ({
   type: types.activePrograma,
   payload: {
     id,
@@ -197,7 +199,7 @@ export const Edit = (programa) => {
       },
     });
 
-    await db.doc(`programas/${programaF.id}`).update(EditPrograma);
+    await db.doc(`programa/${programaF.id}`).update(EditPrograma);
     console.log(EditPrograma);
 
     Swal.fire("Guardado", programa.title, "success");
