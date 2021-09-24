@@ -70,7 +70,7 @@ import { activeStudents } from '@actions/studentAction';
    
 
     return (
-        <div>
+        <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             
            <MaterialTable
                 columns={columnas}
