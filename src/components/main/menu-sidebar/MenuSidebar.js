@@ -14,8 +14,8 @@ const MenuSidebar = () => {
     
 
     return (
-        <aside className="main-sidebar sidebar-dark-primary elevation-4">
-            <Link to="/" className="brand-link">
+        <aside className="main-sidebar sidebar-dark-primary elevation-4 mr-2">
+            <Link to="/ZafiroApp" className="brand-link">
                 <img
                     src="https://i.ibb.co/WpqWtfc/logoSolo.png"
                     alt="AdminLTE Logo"
@@ -42,13 +42,13 @@ const MenuSidebar = () => {
                 </div>
                 <nav className="mt-2" style={{overflowY: 'hidden'}}>
                     <ul
-                        className="nav nav-pills nav-sidebar flex-column"
+                        className="nav nav-pills nav-sidebar flex-column "
                         data-widget="treeview"
                         role="menu"
                         data-accordion="false"
                     >
                         <li className="nav-item">
-                            <NavLink to="/" exact className="nav-link">
+                            <NavLink to="/ZafiroApp" exact className="nav-link">
                                 <HomeIcon className="nav-icon fas"/>
                                 <p>Inicio</p>
                             </NavLink>

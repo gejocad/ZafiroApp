@@ -84,13 +84,13 @@ const UserDropdown = () => {
                 <li className="user-body">
                     <div className="row">
                         <div className="col-4 text-center">
-                            <Link to="/">Segidores</Link>
+                            <Link to="/ZafiroApp">Segidores</Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/">Ventas</Link>
+                            <Link to="/ZafiroApp">Ventas</Link>
                         </div>
                         <div className="col-4 text-center">
-                            <Link to="/">Amigos</Link>
+                            <Link to="/ZafiroApp">Amigos</Link>
                         </div>
                     </div>
                 </li>

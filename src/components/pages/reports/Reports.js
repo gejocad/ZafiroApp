@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import Listado from './Listado';
-import Registro from './Registro';
-import SettingsTab from './SettingsTab';
+import Primers from './Primers';
+import Segundos from './Segundos';
+import Tercers from './Tercers';
+import Egresados from './Egresados';
 
 const Reporte = () => {
-    const [activeTab, setActiveTab] = useState('LISTADO');
+    const [activeTab, setActiveTab] = useState('PRIMERS');
 
     const toggle = (tab) => {
         if (activeTab !== tab) setActiveTab(tab);
@@ -32,59 +33,77 @@ const Reporte = () => {
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'LISTADO'
+                                                    activeTab === 'PRIMERS'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('LISTADO')
+                                                    toggle('PRIMERS')
                                                 }
                                             >
-                                                Listado
+                                                Primer semestre
                                             </button>
                                         </li>
                                         <li className="nav-item">
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'REGISTO'
+                                                    activeTab === 'SEGUNDOS'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('REGISTO')
+                                                    toggle('SEGUNDOS')
                                                 }
                                             >
-                                                Registrar
+                                                Segundo semestre
                                             </button>
                                         </li>
                                         <li className="nav-item">
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'SETTINGS'
+                                                    activeTab === 'TERCERS'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('SETTINGS')
+                                                    toggle('TERCERS')
                                                 }
                                             >
-                                                Ajustes
+                                                Tercer semestre
+                                            </button>
+                                        </li>
+                                        <li className="nav-item">
+                                            <button
+                                                type="button"
+                                                className={`nav-link ${
+                                                    activeTab === 'EGRESADOS'
+                                                        ? 'active'
+                                                        : ''
+                                                }`}
+                                                onClick={() =>
+                                                    toggle('EGRESADOS')
+                                                }
+                                            >
+                                                Egresados
                                             </button>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="card-body">
                                     <div className="tab-content">
-                                        <Listado
-                                            isActive={activeTab === 'LISTADO'}
+                                        <Primers
+                                            isActive={activeTab === 'PRIMERS'}
                                         />
-                                        <Registro
-                                            isActive={activeTab === 'REGISTO'}
+                                        <Segundos
+                                            isActive={activeTab === 'SEGUNDOS'}
                                         />
-                                        <SettingsTab
-                                            isActive={activeTab === 'SETTINGS'}
+                                        <Tercers
+                                            isActive={activeTab === 'TERCERS'}
+                                        />
+                                         <Egresados
+                                            isActive={activeTab === 'EGRESADOS'}
                                         />
                                     </div>
                                 </div>

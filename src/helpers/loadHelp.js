@@ -15,7 +15,7 @@ export const loadStudents = async () => {
     return students
 }
 
-export const loadProgramas = async (id) => {
+export const loadProgramas = async () => {
 
     const programaSnap = await db.collection(`programa/`).get()
     const programa = []
