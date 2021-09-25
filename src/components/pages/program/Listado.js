@@ -43,7 +43,7 @@ const Listado = ({isActive}) => {
         },
         {
             title: 'Resolucion',
-            field: 'resolucion'
+            field: 'nombreS12'
         }
     ];
 

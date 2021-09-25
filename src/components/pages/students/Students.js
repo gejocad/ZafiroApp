@@ -40,7 +40,7 @@ const Estudiante = () => {
                                                     toggle('LISTADO')
                                                 }
                                             >
-                                                Listado
+                                                Este semestre
                                             </button>
                                         </li>
                                         <li className="nav-item">
@@ -55,7 +55,7 @@ const Estudiante = () => {
                                                     toggle('REGISTO')
                                                 }
                                             >
-                                                Registrar
+                                                Todos los estudiantes
                                             </button>
                                         </li>
                                         <li className="nav-item">
@@ -70,7 +70,7 @@ const Estudiante = () => {
                                                     toggle('SETTINGS')
                                                 }
                                             >
-                                                Ajustes
+                                                Egresados
                                             </button>
                                         </li>
                                     </ul>

@@ -72,6 +72,9 @@ import { activeStudents } from '@actions/studentAction';
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             
+           <div>{StudentDetail(showDetail, setShowDetail)}</div>
+           <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
+           <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
            <MaterialTable
                 columns={columnas}
                 data={student}
@@ -97,9 +100,6 @@ import { activeStudents } from '@actions/studentAction';
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail)}</div>
-           <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
-           <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
         </div>
     )
 }

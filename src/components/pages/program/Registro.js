@@ -5,7 +5,7 @@ import { AddPrograma } from '@actions/programaAction';
 import {Button} from '@components';
 
 
-const Registro = ({isActive}) => {  
+const Ultimos = ({isActive}) => {  
 
     
     const dispatch = useDispatch()
@@ -882,4 +882,4 @@ const Registro = ({isActive}) => {
     );
 };
 
-export default Registro;
+export default Ultimos;
