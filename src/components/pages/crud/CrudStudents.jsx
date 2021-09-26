@@ -34,6 +34,7 @@ const CrudStudents = () => {
     const [showDetail, setShowDetail] = useState(false)
     const [showAddStudent, setShowAddStudent] = useState(false)
     const { student } = useSelector(state => state.student)
+    console.log(student)
     
 
     const handleShowDetail = (event, data) => {

@@ -128,7 +128,7 @@ export default function StudentDetail(showDetail, setShowDetail) {
       reset(active)
     }
     activeId.current = active.id
-  }, [active,reset])
+  }, [active, reset])
 
   const handleChange = (event) => {
     setTipoDocumento(event.target.value);
@@ -154,7 +154,7 @@ export default function StudentDetail(showDetail, setShowDetail) {
         open={showDetail}
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Añadir Estudiante
+          {active.fullName}
         </DialogTitle>
 
         <form
