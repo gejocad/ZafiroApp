@@ -32,7 +32,7 @@ const Registro = ({isActive}) => {
     
   
     const [TipoDocumento, setTipoDocumento] = React.useState("CC");
-    const [TipoProg, setTipoProg] = React.useState("");
+    const [TipoProg, setTipoProg] = React.useState(programa[0].id);
     const [formValue, handleInputChange] = useForm([]);
     const dispatch = useDispatch();
   

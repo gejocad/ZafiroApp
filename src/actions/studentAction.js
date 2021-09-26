@@ -18,7 +18,7 @@ export const AddStudent = (student, typedoc, prog) => {
       document,
       email,
       finscrip,
-      programa: prog
+      ...prog
     }
 
     console.log(newStudent);
