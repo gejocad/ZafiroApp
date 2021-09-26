@@ -1,14 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '@hooks/useForm';
 import {Button} from '@components';
 import TextField from "@material-ui/core/TextField";
 import { AddStudent } from '@actions/studentAction';
 
 
+
 const Registro = ({isActive}) => {  
 
-    
+  const { programa } = useSelector(state => state.programa)
     
     const tiposdoc = [
       {
@@ -28,25 +29,7 @@ const Registro = ({isActive}) => {
         label: "PEP",
       },
     ];
-  
-    const tiposprog = [
-      {
-        value: "Medicina",
-        label: "Medicina",
-      },
-      {
-        value: "Programación",
-        label: "Programación",
-      },
-      {
-        value: "Administración",
-        label: "Administración",
-      },
-      {
-        value: "Atención al Cliente",
-        label: "Atención al Cliente",
-      },
-    ];
+    
   
     const [TipoDocumento, setTipoDocumento] = React.useState("CC");
     const [TipoProg, setTipoProg] = React.useState("");
@@ -61,13 +44,16 @@ const Registro = ({isActive}) => {
   
     const handleProgChange = (event) => {
       setTipoProg(event.target.value);
-      console.log(event.target.value);
+      
     };
   
     const handleNewStudent = (e) => {
       e.preventDefault();
-      console.log(formValue, TipoDocumento, TipoProg);
-      dispatch(AddStudent(formValue, TipoDocumento, TipoProg));
+      programa.map(item => {
+        return TipoProg === item.id? dispatch(AddStudent(formValue, TipoDocumento, item)) : ''
+      })
+      
+      ;
     };
   
     return (
@@ -75,9 +61,6 @@ const Registro = ({isActive}) => {
         <div
           aria-labelledby="customized-dialog-title"
         >
-          <div id="customized-dialog-title" >
-            Añadir Estudiante
-          </div>
   
           <form
             className="formAddStudent"
@@ -173,9 +156,9 @@ const Registro = ({isActive}) => {
                   variant="outlined"
                   name="prog"
                 >
-                  {tiposprog.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
+                  {programa.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.nombre}
                     </option>
                   ))}
                 </TextField>
@@ -189,7 +172,7 @@ const Registro = ({isActive}) => {
             </div>
             <div>
               <Button autoFocus type="submit " color="primary">
-                Save changes
+                Registrar
               </Button>
             </div>
           </form>

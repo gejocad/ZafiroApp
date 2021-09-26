@@ -10,7 +10,7 @@ export const AddStudent = (student, typedoc, prog) => {
   return async (dispatch) => {
     const { name, lastName, document, email, finscrip } = student
 
-    const newStudent = {
+    const newStudent = {  
       name,
       lastName,
       fullName: name + ' ' + lastName,
@@ -18,7 +18,7 @@ export const AddStudent = (student, typedoc, prog) => {
       document,
       email,
       finscrip,
-      prog: prog,
+      programa: prog
     }
 
     console.log(newStudent);
