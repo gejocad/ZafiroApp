@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Listado from './Listado';
 import Registro from './Registro';
-import SettingsTab from './SettingsTab';
+import Settings from './Settings';
 
 const Estudiante = () => {
     const [activeTab, setActiveTab] = useState('LISTADO');
@@ -83,7 +83,7 @@ const Estudiante = () => {
                                         <Registro
                                             isActive={activeTab === 'REGISTO'}
                                         />
-                                        <SettingsTab
+                                        <Settings
                                             isActive={activeTab === 'SETTINGS'}
                                         />
                                     </div>
