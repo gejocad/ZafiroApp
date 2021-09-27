@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import MaterialTable from 'material-table'
-import {Button} from '@material-ui/core';
+import MaterialTable from 'material-table';
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
@@ -21,25 +20,40 @@ const Segundos = ({isActive}) => {
         dispatch(activePrograma(data.id, data))
         setShowDetailPrograma(true)
     }
-    const handleShowAdd = () => {
-        setShowAddPrograma(true)
-    }
+    
+
 
     const columnas = [
         
         {
-            title: 'Documento',
+            title: 'Programa',
             field: 'nombre',
             type: 'text',
             align: 'center'
         },
         {
-            title: 'Estudiante',
-            field: 'resolucion'
+            title: 'Compt. 1',
+            field: 'nombreS21'
         },
         {
-            title: 'Correo',
-            field: 'codigo'
+            title: 'Compt. 2',
+            field: 'nombreS22'
+        },
+        {
+            title: 'Compt. 3',
+            field: 'nombreS23'
+        },
+        {
+            title: 'Compt. 4',
+            field: 'nombreS24'
+        },
+        {
+            title: 'Compt. 5',
+            field: 'nombreS25'
+        },
+        {
+            title: 'Compt. 6',
+            field: 'nombreS26'
         }
     ];
 
@@ -48,10 +62,11 @@ const Segundos = ({isActive}) => {
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             
+            
            <MaterialTable
                 columns={columnas}
                 data={programa}
-                title='Estudiantes'  
+                title='Competencias'  
                 actions={[
                     {
                         icon: 'Detail',
@@ -74,12 +89,10 @@ const Segundos = ({isActive}) => {
                 }}
            />
            <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
-           <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
            <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
         </div>
     )
 }
  
-
 
 export default Segundos;

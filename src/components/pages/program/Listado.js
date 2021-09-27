@@ -51,7 +51,7 @@ const Listado = ({isActive}) => {
            <MaterialTable
                 columns={columnas}
                 data={programa}
-                title='Estudiantes'  
+                title='Programas educativos'  
                 actions={[
                     {
                         icon: 'Detail',

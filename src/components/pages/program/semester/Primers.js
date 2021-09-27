@@ -1,69 +1,59 @@
 import React, { useState } from 'react';
-import MaterialTable from 'material-table'
-import {Button} from '@material-ui/core';
+import MaterialTable from 'material-table';
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
-import { activeStudents } from '@actions/studentAction';
+import { activePrograma } from '@actions/programaAction';
 
-/*{const useStyles = makeStyles((theme) => ({
-    modal: {
-      position: 'absolute',
-      width: 400,
-      backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)'
-    },
-    iconos:{
-      cursor: 'pointer'
-    }, 
-    inputMaterial:{
-      width: '100%'
-    }
-  }));}*/
-  
 
-  const Primers = ({isActive}) => {
+const Primers = ({isActive}) => {
 
     const dispatch = useDispatch()
-    const [showDetail, setShowDetail] = useState(false)
-    const [showAddStudent, setShowAddStudent] = useState(false)
-    const { student } = useSelector(state => state.student)
+    const [showDetailPrograma, setShowDetailPrograma] = useState(false)
+    const [showAddPrograma, setShowAddPrograma] = useState(false)
+    const { programa } = useSelector(state => state.programa)
     
 
-    const handleShowDetail = (event, data) => {
+    const handleShowDetailPrograma = (event, data) => {
 
-        dispatch(activeStudents(data.id, data))
-        setShowDetail(true)
+        dispatch(activePrograma(data.id, data))
+        setShowDetailPrograma(true)
     }
-    const handleShowAdd = () => {
-        setShowAddStudent(true)
-    }
+    
+
 
     const columnas = [
         
         {
-            title: 'Documento',
-            field: 'document',
-            type: 'numeric',
+            title: 'Programa',
+            field: 'nombre',
+            type: 'text',
             align: 'center'
         },
         {
-            title: 'Estudiante',
-            field: 'fullName'
+            title: 'Compt. 1',
+            field: 'nombreS11'
         },
         {
-            title: 'Correo',
-            field: 'email'
+            title: 'Compt. 2',
+            field: 'nombreS12'
         },
         {
-            title: 'Programa',
-            field: 'prog'
+            title: 'Compt. 3',
+            field: 'nombreS13'
+        },
+        {
+            title: 'Compt. 4',
+            field: 'nombreS14'
+        },
+        {
+            title: 'Compt. 5',
+            field: 'nombreS15'
+        },
+        {
+            title: 'Compt. 6',
+            field: 'nombreS16'
         }
     ];
 
@@ -72,15 +62,16 @@ import { activeStudents } from '@actions/studentAction';
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             
+            
            <MaterialTable
                 columns={columnas}
-                data={student}
-                title='Estudiantes'  
+                data={programa}
+                title='Competencias'  
                 actions={[
                     {
                         icon: 'Detail',
                         tooltip: 'Detalles',
-                        onClick: (event, rowData) => {handleShowDetail(event, rowData)}
+                        onClick: (event, rowData) => {handleShowDetailPrograma(event, rowData)}
                     },
                     {
                         icon: 'delete_outline',
@@ -97,11 +88,11 @@ import { activeStudents } from '@actions/studentAction';
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail)}</div>
-           <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
-           <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
+           <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
+           <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
         </div>
     )
 }
+ 
 
 export default Primers;

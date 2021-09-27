@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
 import Primers from './semester/Primers';
 import Segundos from './semester/Segundos';
-import Tercers from './semester/Tercers'
+import Tercers from './semester/Tercers';
+import {Button} from '@material-ui/core';
+import StudentAddModal from '@components/pages/modals/AddStudent';
  
 const Registro = ({ isActive }) => {
 
-  
+    
+    const [showAddPrograma, setShowAddPrograma] = useState(false)
 
+    const handleShowAdd = () => {
+        setShowAddPrograma(true)
+    }
 
 
   const [activeTab1, setActiveTab1] = useState('PRIMERS');
@@ -14,6 +20,8 @@ const Registro = ({ isActive }) => {
     const toggle1 = (tab1) => {
         if (activeTab1 !== tab1) setActiveTab1(tab1);
     };
+
+    
 
     return (
         <div className={`tab-pane ${isActive ? 'active' : ''}`}>
@@ -30,6 +38,10 @@ const Registro = ({ isActive }) => {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-11 ml-5">
+                            
+           <Button onClick={() => handleShowAdd()}>Añadir Competencias</Button>
+           
+           <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
                             <div className="card">
                                 <div className="card-header p-2">
                                     <ul className="nav nav-pills">
