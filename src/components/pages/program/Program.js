@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Listado from './Listado';
 import Registro from './Registro';
-import SettingsTab from './SettingsTab';
 
 const Programa = () => {
     const [activeTab, setActiveTab] = useState('LISTADO');
@@ -47,32 +46,18 @@ const Programa = () => {
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'REGISTO'
+                                                    activeTab === 'REGISTRO'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('REGISTO')
+                                                    toggle('REGISTRO')
                                                 }
                                             >
                                                 Registrar
                                             </button>
                                         </li>
-                                        <li className="nav-item">
-                                            <button
-                                                type="button"
-                                                className={`nav-link ${
-                                                    activeTab === 'SETTINGS'
-                                                        ? 'active'
-                                                        : ''
-                                                }`}
-                                                onClick={() =>
-                                                    toggle('SETTINGS')
-                                                }
-                                            >
-                                                Ajustes
-                                            </button>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 <div className="card-body">
@@ -81,11 +66,9 @@ const Programa = () => {
                                             isActive={activeTab === 'LISTADO'}
                                         />
                                         <Registro
-                                            isActive={activeTab === 'REGISTO'}
+                                            isActive={activeTab === 'REGISTRO'}
                                         />
-                                        <SettingsTab
-                                            isActive={activeTab === 'SETTINGS'}
-                                        />
+                                       
                                     </div>
                                 </div>
                             </div>

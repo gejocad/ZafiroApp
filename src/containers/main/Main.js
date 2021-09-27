@@ -7,7 +7,8 @@ import Header from '@components/main/header/Header';
 import Footer from '@components/main/footer/Footer';
 import MenuSidebar from '@components/main/menu-sidebar/MenuSidebar';
 import PageLoading from '@components/page-loading/PageLoading';
-import Estudiante from '@components/pages/students/Students'
+import Estudiante from '@components/pages/students/Students';
+import Setting from '@components/pages/settings/Settings'
 
 const Main = () => {
   const [appLoadingState, updateAppLoading] = useState(false);
@@ -67,6 +68,7 @@ const Main = () => {
                             <Route exact path="/programa" component={Programa} />
                             <Route exact path="/students" component={Estudiante} />
                             <Route exact path="/reports" component={Reporte} />
+                            <Route exact path="/setting" component={Setting} />
                         </Switch>
                     </section>
                 </div>

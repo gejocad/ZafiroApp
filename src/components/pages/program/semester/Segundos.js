@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import MaterialTable from 'material-table';
+import MaterialTable from 'material-table'
+import {Button} from '@material-ui/core';
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
@@ -7,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { activePrograma } from '@actions/programaAction';
 
 
-const Listado = ({isActive}) => {
+const Segundos = ({isActive}) => {
 
     const dispatch = useDispatch()
     const [showDetailPrograma, setShowDetailPrograma] = useState(false)
@@ -20,26 +21,25 @@ const Listado = ({isActive}) => {
         dispatch(activePrograma(data.id, data))
         setShowDetailPrograma(true)
     }
+    const handleShowAdd = () => {
+        setShowAddPrograma(true)
+    }
 
     const columnas = [
         
         {
-            title: 'Nombre',
+            title: 'Documento',
             field: 'nombre',
             type: 'text',
             align: 'center'
         },
         {
-            title: 'Licencia',
-            field: 'licencia'
-        },
-        {
-            title: 'Decreto',
-            field: 'decreto'
-        },
-        {
-            title: 'Resolucion',
+            title: 'Estudiante',
             field: 'resolucion'
+        },
+        {
+            title: 'Correo',
+            field: 'codigo'
         }
     ];
 
@@ -74,10 +74,12 @@ const Listado = ({isActive}) => {
                 }}
            />
            <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
+           <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
            <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
         </div>
     )
 }
  
 
-export default Listado;
+
+export default Segundos;

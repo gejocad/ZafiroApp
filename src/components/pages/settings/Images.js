@@ -1,45 +1,63 @@
 import React, { useState } from 'react';
-import MaterialTable from 'material-table';
+import MaterialTable from 'material-table'
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
-import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
-import { activePrograma } from '@actions/programaAction';
+import { activeStudents } from '@actions/studentAction';
 
+/*{const useStyles = makeStyles((theme) => ({
+    modal: {
+      position: 'absolute',
+      width: 400,
+      backgroundColor: theme.palette.background.paper,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    },
+    iconos:{
+      cursor: 'pointer'
+    }, 
+    inputMaterial:{
+      width: '100%'
+    }
+  }));}*/
+  
 
-const Listado = ({isActive}) => {
+  const Images = ({isActive}) => {
 
     const dispatch = useDispatch()
-    const [showDetailPrograma, setShowDetailPrograma] = useState(false)
-    const [showAddPrograma, setShowAddPrograma] = useState(false)
-    const { programa } = useSelector(state => state.programa)
+    const [showDetail, setShowDetail] = useState(false)
+    const { student } = useSelector(state => state.student)
     
 
-    const handleShowDetailPrograma = (event, data) => {
+    const handleShowDetail = (event, data) => {
 
-        dispatch(activePrograma(data.id, data))
-        setShowDetailPrograma(true)
+        dispatch(activeStudents(data.id, data))
+        setShowDetail(true)
     }
 
     const columnas = [
         
         {
-            title: 'Nombre',
-            field: 'nombre',
-            type: 'text',
+            title: 'Documento',
+            field: 'document',
+            type: 'numeric',
             align: 'center'
         },
         {
-            title: 'Licencia',
-            field: 'licencia'
+            title: 'Estudiante',
+            field: 'fullName'
         },
         {
-            title: 'Decreto',
-            field: 'decreto'
+            title: 'Correo',
+            field: 'email'
         },
         {
-            title: 'Resolucion',
-            field: 'resolucion'
+            title: 'Programa',
+            field: 'prog'
         }
     ];
 
@@ -50,13 +68,13 @@ const Listado = ({isActive}) => {
             
            <MaterialTable
                 columns={columnas}
-                data={programa}
+                data={student}
                 title='Estudiantes'  
                 actions={[
                     {
                         icon: 'Detail',
                         tooltip: 'Detalles',
-                        onClick: (event, rowData) => {handleShowDetailPrograma(event, rowData)}
+                        onClick: (event, rowData) => {handleShowDetail(event, rowData)}
                     },
                     {
                         icon: 'delete_outline',
@@ -73,11 +91,9 @@ const Listado = ({isActive}) => {
                     }
                 }}
            />
-           <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
-           <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
+           <div>{StudentDetail(showDetail, setShowDetail)}</div>
         </div>
     )
 }
- 
 
-export default Listado;
+export default Images;
