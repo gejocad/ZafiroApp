@@ -64,7 +64,7 @@ const CrudStudents = () => {
         },
         {
             title: 'Programa',
-            field: 'prog'
+            field: 'nombre'
         }
     ];
 

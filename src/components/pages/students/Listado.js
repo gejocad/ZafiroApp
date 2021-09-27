@@ -57,7 +57,7 @@ import { activeStudents } from '@actions/studentAction';
         },
         {
             title: 'Programa',
-            field: 'prog'
+            field: 'nombre'
         }
     ];
 
