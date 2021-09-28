@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MaterialTable from 'material-table'
 import {Button} from '@material-ui/core';
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
-import StudentDetail from '@components/pages/modals/StudentDetail';
+import StudentDetailSem1 from '@components/pages/modals/StudentDetailSem1';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
 import { activeStudents } from '@actions/studentAction';
