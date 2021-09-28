@@ -3,11 +3,6 @@ import { getStudent } from "src/actions/studentAction";
 import { jsPDF } from "jspdf";
 import { useParams } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import FolderIcon from "@material-ui/icons/Folder";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from "@material-ui/core/ListItemText";
 import "../../assets/css/certificateStyle.css";
 import logo_ag from "../../img/Logo-AG-2021.png";
 
