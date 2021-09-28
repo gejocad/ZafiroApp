@@ -3,7 +3,7 @@ import MaterialTable from 'material-table'
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import { useDispatch, useSelector } from 'react-redux';
-import { activeStudents } from '@actions/studentAction';
+import { activeStudents, Delete } from '@actions/studentAction';
 
 /*{const useStyles = makeStyles((theme) => ({
     modal: {
@@ -37,6 +37,10 @@ import { activeStudents } from '@actions/studentAction';
 
         dispatch(activeStudents(data.id, data))
         setShowDetail(true)
+    }
+    
+    const handleDelete = (event, id) => {
+        dispatch(Delete(id))
     }
 
     const columnas = [
@@ -79,7 +83,7 @@ import { activeStudents } from '@actions/studentAction';
                     {
                         icon: 'delete_outline',
                         tooltip: 'Borrar Estudiante',
-                        onClick: (event,rowData)=> console.log(event, rowData.id)
+                        onClick: (event, rowData) => {handleDelete(event, rowData.id)}
                     }
                 ]}        
                 options={{

@@ -11,7 +11,7 @@ import React, { useEffect, useRef } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { useForm } from "src/hooks/useForm";
-import { AddStudent } from "src/actions/studentAction";
+import { Edit } from "src/actions/studentAction";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -93,28 +93,10 @@ export default function StudentDetail(showDetail, setShowDetail) {
     },
   ];
 
-  const tiposprog = [
-    {
-      value: "Medicina",
-      label: "Medicina",
-    },
-    {
-      value: "Programación",
-      label: "Programación",
-    },
-    {
-      value: "Administración",
-      label: "Administración",
-    },
-    {
-      value: "Atención al Cliente",
-      label: "Atención al Cliente",
-    },
-  ];
-
+  
   const { active } = useSelector(state => state.student)
-  const [TipoDocumento, setTipoDocumento] = React.useState('CC');
-  const [TipoProg, setTipoProg] = React.useState('Medicina');
+  const [TipoDocumento, setTipoDocumento] = React.useState(active.typedoc);
+
   const [formValue, handleInputChange, reset] = useForm(active)
   const dispatch = useDispatch()
   const { name, lastName, email, document, finscrip } = formValue;
@@ -123,8 +105,7 @@ export default function StudentDetail(showDetail, setShowDetail) {
 
   useEffect(() => {
     if (active.id !== activeId.current) {
-      setTipoDocumento(active.document)
-      setTipoProg(active.prog)
+      setTipoDocumento(active.typedoc)
       reset(active)
     }
     activeId.current = active.id
@@ -134,16 +115,18 @@ export default function StudentDetail(showDetail, setShowDetail) {
     setTipoDocumento(event.target.value);
   };
 
-  const handleProgChange = (event) => {
-    setTipoProg(event.target.value);
-    console.log(event.target.value);
-  };
-
-  const handleNewStudent = (e) => {
-    e.preventDefault();
-    console.log(formValue, TipoDocumento, TipoProg);
-    dispatch(AddStudent(formValue, TipoDocumento, TipoProg));
-  };
+    const handleEditStudent = (e) => {
+      e.preventDefault();
+      const newStudent = {...active}
+      newStudent.name = name;
+      newStudent.lastName = lastName;
+      newStudent.finscrip = finscrip;
+      newStudent.email = email;
+      newStudent.document = document;
+      newStudent.fullName = name + ' ' + lastName;
+      dispatch(Edit(newStudent))
+      handleClose()
+    }; 
 
   return (
     <div>
@@ -159,7 +142,7 @@ export default function StudentDetail(showDetail, setShowDetail) {
 
         <form
           className={classes.root}
-          onSubmit={handleNewStudent}
+          onSubmit={handleEditStudent}
           noValidate
           autoComplete="off"
         >
@@ -241,28 +224,19 @@ export default function StudentDetail(showDetail, setShowDetail) {
               />
               <TextField
                 id="prog"
-                select
+                disabled
                 label="Programa"
-                value={TipoProg}
-                onChange={handleProgChange}
-                SelectProps={{
-                  native: true,
-                }}
-                variant="outlined"
+                value={active.nombre}
                 name="prog"
               >
-                {tiposprog.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
+                  {active.nombre}
               </TextField>
             </div>
             <div className="space"></div>
           </DialogContent>
           <DialogActions>
             <Button autoFocus type="submit " color="primary">
-              Save changes
+              Actualizar
             </Button>
           </DialogActions>
         </form>
