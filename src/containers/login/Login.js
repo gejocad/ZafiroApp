@@ -28,7 +28,7 @@ const Login = () => {
           <Button variant="contained"
             className="mr-5"
             onClick={() => setUserType("user")}
-          >Usuario</Button>
+          >Estudiante</Button>
 
           <Button variant="contained"
             onClick={() => setUserType("admin")}

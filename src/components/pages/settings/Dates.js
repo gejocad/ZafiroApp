@@ -202,13 +202,13 @@ const Dates = ({ isActive }) => {
       <form className="form-horizontal">
         <div className="form-group row">
           <label htmlFor="inputName" className="col-sm-2 col-form-label">
-            Nombre
+            Nombre de institución:
           </label>
           <div className="col-sm-10">
             <input
               type="email"
               className="form-control"
-              placeholder="Name"
+              placeholder="Nombre de institución"
               name="nombre"
               value={nombre}
               onChange={handleInputChange}
@@ -217,13 +217,13 @@ const Dates = ({ isActive }) => {
         </div>
         <div className="form-group row">
           <label htmlFor="inputName2" className="col-sm-2 col-form-label">
-            licencia
+            Nombre de director:
           </label>
           <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
-              placeholder="Licencia"
+              placeholder="Nombre de director:"
               name="licencia"
               value={licencia}
               onChange={handleInputChange}
@@ -232,13 +232,13 @@ const Dates = ({ isActive }) => {
         </div>
         <div className="form-group row">
           <label htmlFor="inputName2" className="col-sm-2 col-form-label">
-            Decreto
+            Nombre de secretaria
           </label>
           <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
-              placeholder="Decreto"
+              placeholder="Nombre de secretaria"
               name="decreto"
               value={decreto}
               onChange={handleInputChange}
@@ -247,13 +247,13 @@ const Dates = ({ isActive }) => {
         </div>
         <div className="form-group row">
           <label htmlFor="inputEmail" className="col-sm-2 col-form-label">
-            Resolucion
+            Dirección:
           </label>
           <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
-              placeholder="Resolucion"
+              placeholder="Dirección"
               name="resolucion"
               value={resolucion}
               onChange={handleInputChange}
@@ -262,13 +262,13 @@ const Dates = ({ isActive }) => {
         </div>
         <div className="form-group row">
           <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 1 de semestre 1
+            Nro. de contácto:
           </label>
           <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
-              placeholder="materia 1 S1"
+              placeholder="Nro. de contácto"
               name="nombreS11"
               value={nombreS11}
               onChange={handleInputChange}
@@ -277,529 +277,20 @@ const Dates = ({ isActive }) => {
         </div>
         <div className="form-group row">
           <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 1 de semestre 1
+            Correo de institución:
           </label>
           <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
-              placeholder="codigo 1 S1"
+              placeholder="Correo de institución"
               name="codigoS11"
               value={codigoS11}
               onChange={handleInputChange}
             />
           </div>
         </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 2 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 2 S1"
-              name="nombreS12"
-              value={nombreS12}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 2 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 2 S1"
-              name="codigoS12"
-              value={codigoS12}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 3 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 3 S1"
-              name="nombreS13"
-              value={nombreS13}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 3 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 3 S1"
-              name="codigoS13"
-              value={codigoS13}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 4 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 4 S1"
-              name="nombreS14"
-              value={nombreS14}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 4 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 4 S1"
-              name="codigoS14"
-              value={codigoS14}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 5 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 5 S1"
-              name="nombreS15"
-              value={nombreS15}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 5 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 5 S1"
-              name="codigoS15"
-              value={codigoS15}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 6 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 6 S1"
-              name="nombreS16"
-              value={nombreS16}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 6 de semestre 1
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 6 S1"
-              name="codigoS16"
-              value={codigoS16}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 1 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 1 S2"
-              name="nombreS21"
-              value={nombreS21}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 1 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 1 S2"
-              name="codigoS21"
-              value={codigoS21}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 2 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 2 S2"
-              name="nombreS22"
-              value={nombreS22}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 2 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 2 S2"
-              name="codigoS22"
-              value={codigoS22}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 3 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 3 S2"
-              name="nombreS23"
-              value={nombreS23}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 3 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 3 S2"
-              name="codigoS23"
-              value={codigoS23}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 4 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 4 S2"
-              name="nombreS24"
-              value={nombreS24}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 4 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 4 S1"
-              name="codigoS24"
-              value={codigoS24}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 5 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 5 S2"
-              name="nombreS25"
-              value={nombreS25}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 5 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 5 S2"
-              name="codigoS25"
-              value={codigoS25}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 6 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 6 S2"
-              name="nombreS26"
-              value={nombreS26}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 6 de semestre 2
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 6 S2"
-              name="codigoS26"
-              value={codigoS26}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 1 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 1 S3"
-              name="nombreS31"
-              value={nombreS31}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 1 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 1 S3"
-              name="codigoS31"
-              value={codigoS31}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 2 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 2 S3"
-              name="nombreS32"
-              value={nombreS32}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 2 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 2 S3"
-              name="codigoS32"
-              value={codigoS32}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 3 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 3 S3"
-              name="nombreS33"
-              value={nombreS33}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 3 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 3 S3"
-              name="codigoS33"
-              value={codigoS33}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 4 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 4 S3"
-              name="nombreS34"
-              value={nombreS34}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 4 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 4 S3"
-              name="codigoS34"
-              value={codigoS34}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 5 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 5 S3"
-              name="nombreS35"
-              value={nombreS35}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 5 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 5 S3"
-              name="codigoS35"
-              value={codigoS35}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Materia 6 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="materia 6 S3"
-              name="nombreS36"
-              value={nombreS36}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="inputSkills" className="col-sm-2 col-form-label">
-            Codigo de materia 6 de semestre 3
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="codigo 6 S3"
-              name="codigoS36"
-              value={codigoS36}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
+        
         <div className="form-group row">
           <div className="offset-sm-2 col-sm-10">
             <Button type="submit" onClick={handleAddPrograma} theme="danger">

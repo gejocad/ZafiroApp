@@ -76,22 +76,14 @@ const UserDropdown = () => {
                     <p>
                         {name}
                         <small>
-                            <span>Member since </span>
+                            <span>Administrador </span>
                             
                         </small>
                     </p>
                 </li>
                 <li className="user-body">
                     <div className="row">
-                        <div className="col-4 text-center">
-                            <Link to="/ZafiroApp">Segidores</Link>
-                        </div>
-                        <div className="col-4 text-center">
-                            <Link to="/ZafiroApp">Ventas</Link>
-                        </div>
-                        <div className="col-4 text-center">
-                            <Link to="/ZafiroApp">Amigos</Link>
-                        </div>
+                        
                     </div>
                 </li>
                 <li className="user-footer">
@@ -100,14 +92,14 @@ const UserDropdown = () => {
                         onClick={toggleDropdown}
                         className="btn btn-default btn-flat"
                     >
-                        Perfil
+                        
                     </Link>
                     <button
                         type="button"
                         className="btn btn-default btn-flat float-right"
                         onClick={logOut}
                     >
-                        Login
+                        Salir
                     </button>
                 </li>
             </ul>

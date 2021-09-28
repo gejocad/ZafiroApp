@@ -24,7 +24,7 @@ export const AddStudent = (student, typedoc, prog) => {
 
     console.log(newStudent);
 
-    await db.collection('students').add(newStudent)
+    await db.collection('students').doc(document).set(newStudent)
     dispatch(addNewStudent(newStudent))
     startLoadingStudent()
   }

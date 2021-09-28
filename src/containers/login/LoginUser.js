@@ -15,6 +15,7 @@ const LoginUser = () => {
     const response = await getStudent(document);
     setStudent(response);
   };
+  
 
   function sendEmail() {
     const urlId = new Date().getTime().toString(15)

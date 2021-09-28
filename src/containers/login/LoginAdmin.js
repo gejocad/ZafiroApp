@@ -22,7 +22,7 @@ const LoginAdmin = () => {
             
             console.log(user, password);
             dispatch(startLogin(user, password));
-            toast.success('Login is succeed!');
+            toast.success('Acceso exitoso');
             setAuthLoading(false);
         } catch (error) {
             setAuthLoading(false);
@@ -38,7 +38,7 @@ const LoginAdmin = () => {
     const loginByGoogle = async () => {
         try {
             setGoogleAuthLoading(true);
-            toast.success('Login is succeeded!');
+            toast.success('Acceso exitoso');
             setGoogleAuthLoading(false);
             dispatch(startGoogleLogin());
         } catch (error) {
@@ -55,7 +55,7 @@ const LoginAdmin = () => {
     const loginByFacebook = async () => {
         try {
             setFacebookAuthLoading(true);
-            toast.success('Login is succeeded!');
+            toast.success('Acceso exitoso');
             setFacebookAuthLoading(false);
             dispatch(startFacebookLogin());
             history.push('/');
