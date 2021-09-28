@@ -5,42 +5,82 @@ import {Button} from '@material-ui/core';
 import StudentDetail from '@components/pages/modals/StudentDetail';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
-import { activePrograma } from '@actions/programaAction';
+import { activeStudents } from '@actions/studentAction';
 
+/*{const useStyles = makeStyles((theme) => ({
+    modal: {
+      position: 'absolute',
+      width: 400,
+      backgroundColor: theme.palette.background.paper,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    },
+    iconos:{
+      cursor: 'pointer'
+    }, 
+    inputMaterial:{
+      width: '100%'
+    }
+  }));}*/
+  
 
-const Tercers = ({isActive}) => {
+  const Tercers = ({isActive}) => {
 
     const dispatch = useDispatch()
-    const [showDetailPrograma, setShowDetailPrograma] = useState(false)
-    const [showAddPrograma, setShowAddPrograma] = useState(false)
-    const { programa } = useSelector(state => state.programa)
+    const [showDetail, setShowDetail] = useState(false)
+    const [showAddStudent, setShowAddStudent] = useState(false)
+    const { student } = useSelector(state => state.student)
     
 
-    const handleShowDetailPrograma = (event, data) => {
+    const handleShowDetail = (event, data) => {
 
-        dispatch(activePrograma(data.id, data))
-        setShowDetailPrograma(true)
+        dispatch(activeStudents(data.id, data))
+        setShowDetail(true)
     }
     const handleShowAdd = () => {
-        setShowAddPrograma(true)
+        setShowAddStudent(true)
     }
 
     const columnas = [
         
         {
             title: 'Documento',
-            field: 'nombre',
-            type: 'text',
+            field: 'document',
+            type: 'numeric',
             align: 'center'
         },
         {
             title: 'Estudiante',
-            field: 'resolucion'
+            field: 'fullName'
         },
         {
-            title: 'Correo',
-            field: 'codigo'
-        }
+            title: 'Nota 1',
+            field: 'notaS21'
+        },
+        {
+            title: 'Nota 2',
+            field: 'notaS22'
+        },
+        {
+            title: 'Nota 3',
+            field: 'notaS23'
+        },
+        {
+            title: 'Nota 4',
+            field: 'notaS24'
+        },
+        {
+            title: 'Nota 5',
+            field: 'notaS25'
+        },
+        {
+            title: 'Nota 6',
+            field: 'notaS26'
+        },
     ];
 
    
@@ -50,13 +90,13 @@ const Tercers = ({isActive}) => {
             
            <MaterialTable
                 columns={columnas}
-                data={programa}
+                data={student}
                 title='Estudiantes'  
                 actions={[
                     {
                         icon: 'Detail',
                         tooltip: 'Detalles',
-                        onClick: (event, rowData) => {handleShowDetailPrograma(event, rowData)}
+                        onClick: (event, rowData) => {handleShowDetail(event, rowData)}
                     },
                     {
                         icon: 'delete_outline',
@@ -73,13 +113,11 @@ const Tercers = ({isActive}) => {
                     }
                 }}
            />
-           <div>{StudentDetail(showDetailPrograma, setShowDetailPrograma)}</div>
+           <div>{StudentDetail(showDetail, setShowDetail)}</div>
            <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
-           <div>{StudentAddModal(showAddPrograma, setShowAddPrograma)}</div>
+           <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
         </div>
     )
 }
- 
-
 
 export default Tercers;

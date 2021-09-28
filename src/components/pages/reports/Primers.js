@@ -58,13 +58,29 @@ import { activeStudents } from '@actions/studentAction';
             field: 'fullName'
         },
         {
-            title: 'Correo',
-            field: 'email'
+            title: 'Nota 1',
+            field: 'notaS11'
         },
         {
-            title: 'Programa',
-            field: 'prog'
-        }
+            title: 'Nota 2',
+            field: 'notaS12'
+        },
+        {
+            title: 'Nota 3',
+            field: 'notaS13'
+        },
+        {
+            title: 'Nota 4',
+            field: 'notaS14'
+        },
+        {
+            title: 'Nota 5',
+            field: 'notaS15'
+        },
+        {
+            title: 'Nota 6',
+            field: 'notaS16'
+        },
     ];
 
    
