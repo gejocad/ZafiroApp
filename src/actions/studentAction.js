@@ -18,6 +18,7 @@ export const AddStudent = (student, typedoc, prog) => {
       document,
       email,
       finscrip,
+      certificatesCode: '',
       ...prog
     }
 
@@ -215,3 +216,13 @@ export const getStudent = async (document) => {
     console.log(error);
   }
 };
+
+export const setCertificatesCode = async (document, code) => {
+  try {
+    await db.doc(`students/${document}`).set({ certificatesCode: code }, { merge: true })
+    return true
+  } catch (error) {
+    console.error(error);
+    return error
+  }
+}

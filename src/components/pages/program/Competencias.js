@@ -1,22 +1,27 @@
 import React, {useState} from 'react';
-import Listado from './Listado';
-import Competencias from './Competencias';
-import Registro from './Registro';
+import Primers from './semester/Primers';
+import Segundos from './semester/Segundos';
+import Tercers from './semester/Tercers';
+const Competencias = ({ isActive }) => {
 
-const Programa = () => {
-    const [activeTab, setActiveTab] = useState('LISTADO');
+    
 
-    const toggle = (tab) => {
-        if (activeTab !== tab) setActiveTab(tab);
+
+  const [activeTab1, setActiveTab1] = useState('PRIMERS');
+
+    const toggle1 = (tab1) => {
+        if (activeTab1 !== tab1) setActiveTab1(tab1);
     };
 
+    
+
     return (
-        <>
+        <div className={`tab-pane ${isActive ? 'active' : ''}`}>
             <section className="content-header">
                 <div className="container-fluid">
                     <div className="row mb-2">
                         <div className="col-sm-6">
-                            <h1>Registro de programas</h1>
+                            <h1>Competencias por semestre</h1>
                         </div>
                     </div>
                 </div>
@@ -32,61 +37,60 @@ const Programa = () => {
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'LISTADO'
+                                                    activeTab1 === 'PRIMERS'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('LISTADO')
+                                                    toggle1('PRIMERS')
                                                 }
                                             >
-                                                Listado
+                                                Primer semestre
                                             </button>
                                         </li>
                                         <li className="nav-item">
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'COMPETENCIAS'
+                                                    activeTab1 === 'SEGUNDOS'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('COMPETENCIAS')
+                                                    toggle1('SEGUNDOS')
                                                 }
                                             >
-                                                Competencias
+                                                Segundo semestre
                                             </button>
                                         </li>
                                         <li className="nav-item">
                                             <button
                                                 type="button"
                                                 className={`nav-link ${
-                                                    activeTab === 'REGISTRO'
+                                                    activeTab1 === 'TERCERS'
                                                         ? 'active'
                                                         : ''
                                                 }`}
                                                 onClick={() =>
-                                                    toggle('REGISTRO')
+                                                    toggle1('TERCERS')
                                                 }
                                             >
-                                                Registrar
+                                                Tercer semestre
                                             </button>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="card-body">
                                     <div className="tab-content">
-                                        <Listado
-                                            isActive={activeTab === 'LISTADO'}
+                                        <Primers
+                                            isActive={activeTab1 === 'PRIMERS'}
                                         />
-                                        <Competencias
-                                            isActive={activeTab === 'COMPETENCIAS'}
+                                        <Segundos
+                                            isActive={activeTab1 === 'SEGUNDOS'}
                                         />
-                                        <Registro
-                                            isActive={activeTab === 'REGISTRO'}
+                                        <Tercers
+                                            isActive={activeTab1 === 'TERCERS'}
                                         />
-                                       
                                     </div>
                                 </div>
                             </div>
@@ -94,8 +98,8 @@ const Programa = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 
-export default Programa;
+export default Competencias;

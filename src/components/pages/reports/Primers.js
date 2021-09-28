@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MaterialTable from 'material-table'
 import {Button} from '@material-ui/core';
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
-import StudentDetail from '@components/pages/modals/StudentDetail';
+import StudentDetailSem1 from '@components/pages/modals/StudentDetailSem1';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
 import { activeStudents } from '@actions/studentAction';
@@ -58,13 +58,29 @@ import { activeStudents } from '@actions/studentAction';
             field: 'fullName'
         },
         {
-            title: 'Correo',
-            field: 'email'
+            title: 'Nota 1',
+            field: 'notaS11'
         },
         {
-            title: 'Programa',
-            field: 'prog'
-        }
+            title: 'Nota 2',
+            field: 'notaS12'
+        },
+        {
+            title: 'Nota 3',
+            field: 'notaS13'
+        },
+        {
+            title: 'Nota 4',
+            field: 'notaS14'
+        },
+        {
+            title: 'Nota 5',
+            field: 'notaS15'
+        },
+        {
+            title: 'Nota 6',
+            field: 'notaS16'
+        },
     ];
 
    
@@ -97,7 +113,7 @@ import { activeStudents } from '@actions/studentAction';
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail)}</div>
+           <div>{StudentDetailSem1(showDetail, setShowDetail)}</div>
            <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
            <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
         </div>

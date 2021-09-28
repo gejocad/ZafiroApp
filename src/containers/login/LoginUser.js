@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { getStudent } from "src/actions/studentAction";
+import { getStudent, setCertificatesCode } from "src/actions/studentAction";
 import emailjs from 'emailjs-com'
 
 const LoginUser = () => {
@@ -18,7 +18,7 @@ const LoginUser = () => {
 
   function sendEmail() {
     const urlId = new Date().getTime().toString(15)
-    const certicateUrl = `${window.location.origin}/mis-certificados/${urlId}-${student.document}`
+    const certificateUrl = `${window.location.origin}/mis-certificados/${urlId}-${student.document}`
     try {
       const service_id = 'service_5xyb25m'
       const template_id = 'template_vyux5d9'
@@ -26,13 +26,16 @@ const LoginUser = () => {
       const templateParams = {
         to_name: student.name,
         to_email: student.email,
-        message: `Ingresa a este link para obtener tus certificados: ${certicateUrl}`,
+        message: `Ingresa a este link para obtener tus certificados: ${certificateUrl}`,
       };
 
       emailjs.send(service_id, template_id, templateParams, user_id)
-        .then(function (response) {
+        .then( async (response) => {
           if (response.status === 200) {
-            setResultMessage('Enlace enviado. Por favor revisa tu bandeja')
+            const result = setCertificatesCode(document, urlId)
+            if (result === true) {
+              setResultMessage('Enlace enviado. Por favor revisa tu bandeja')
+            }
           }
         }, function (error) {
           console.log('FAILED...', error);
