@@ -11,7 +11,7 @@ import React, { useEffect, useRef } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { useForm } from "src/hooks/useForm";
-import { AddStudent } from "src/actions/studentAction";
+import { Edit } from "src/actions/studentAction";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -74,76 +74,45 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
   const handleClose = () => {
     setShowDetail(false);
   };
-  const tiposdoc = [
-    {
-      value: "CC",
-      label: "Cédula",
-    },
-    {
-      value: "TI",
-      label: "Tarjeta de Identidad",
-    },
-    {
-      value: "PSPRT",
-      label: "Pasaporte",
-    },
-    {
-      value: "PEP",
-      label: "PEP",
-    },
-  ];
 
-  const tiposprog = [
-    {
-      value: "Medicina",
-      label: "Medicina",
-    },
-    {
-      value: "Programación",
-      label: "Programación",
-    },
-    {
-      value: "Administración",
-      label: "Administración",
-    },
-    {
-      value: "Atención al Cliente",
-      label: "Atención al Cliente",
-    },
-  ];
 
+  
   const { active } = useSelector(state => state.student)
-  const [TipoDocumento, setTipoDocumento] = React.useState('CC');
-  const [TipoProg, setTipoProg] = React.useState('Medicina');
+
   const [formValue, handleInputChange, reset] = useForm(active)
   const dispatch = useDispatch()
-  const { name, lastName, email, document, finscrip } = formValue;
+  const { nombreS11, nombreS12, nombreS13, nombreS14, nombreS15, nombreS16, notaS11, notaS12, notaS13, notaS14, notaS15, notaS16 } = formValue;
 
   const activeId = useRef(active.id)
 
   useEffect(() => {
     if (active.id !== activeId.current) {
-      setTipoDocumento(active.document)
-      setTipoProg(active.prog)
       reset(active)
     }
     activeId.current = active.id
   }, [active, reset])
 
-  const handleChange = (event) => {
-    setTipoDocumento(event.target.value);
-  };
+  
 
-  const handleProgChange = (event) => {
-    setTipoProg(event.target.value);
-    console.log(event.target.value);
-  };
-
-  const handleNewStudent = (e) => {
-    e.preventDefault();
-    console.log(formValue, TipoDocumento, TipoProg);
-    dispatch(AddStudent(formValue, TipoDocumento, TipoProg));
-  };
+    const handleEditStudent = (e) => {
+      e.preventDefault();
+      const newStudent = {...active}
+      newStudent.nombreS11 = nombreS11;
+      newStudent.nombreS12 = nombreS12;
+      newStudent.nombreS13 = nombreS13;
+      newStudent.nombreS14 = nombreS14;
+      newStudent.nombreS15 = nombreS15;
+      newStudent.nombreS16 = nombreS16;
+      newStudent.notaS11 = notaS11;
+      newStudent.notaS12 = notaS12;
+      newStudent.notaS13 = notaS13;
+      newStudent.notaS14 = notaS14;
+      newStudent.notaS15 = notaS15;
+      newStudent.notaS16 = notaS16;
+      
+      dispatch(Edit(newStudent))
+      handleClose()
+    }; 
 
   return (
     <div>
@@ -159,110 +128,84 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
 
         <form
           className={classes.root}
-          onSubmit={handleNewStudent}
+          onSubmit={handleEditStudent}
           noValidate
           autoComplete="off"
         >
           <DialogContent dividers>
             <div>
-              <TextField
+            <TextField
                 required
-                id="Nombres"
-                label="Nombres"
-                placeholder="Ingresar Nombres"
-                variant="outlined"
-                name="name"
-                value={name}
-                onChange={handleInputChange}
-              />
-              <TextField
-                required
-                id="Apellidos"
-                label="Apellidos"
-                placeholder="Ingresar Apellidos"
-                variant="outlined"
-                name="lastName"
-                value={lastName}
-                onChange={handleInputChange}
-              />
-              <TextField
-                required
-                id="Email"
-                label="Email"
-                type="email"
-                placeholder="Ingresar Email"
-                variant="outlined"
-                name="email"
-                value={email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <TextField
-                id="tipodoc"
-                select
-                label="Tipo de Documento"
-                value={TipoDocumento}
-                onChange={handleChange}
-                SelectProps={{
-                  native: true,
-                }}
-                variant="outlined"
-                name="typedocument"
-              >
-                {tiposdoc.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
-              <TextField
-                required
-                id="Documento"
-                label="Documento"
+                id="notaS11"
+                label={nombreS11}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="document"
-                value={document}
+                name="notaS11"
+                value={notaS11}
+                onChange={handleInputChange}
+              />
+              <TextField
+                required
+                id="notaS11"
+                label={nombreS12}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS12"
+                value={notaS12}
                 onChange={handleInputChange}
               />
             </div>
             <div>
-              <TextField
+              
+            <TextField
                 required
-                id="Fecha"
-                label="Fecha"
-                type="date"
-                placeholder="Ingresar Fecha de Inscripción"
+                id="notaS11"
+                label={nombreS13}
+                placeholder="Ingresar Documento"
                 variant="outlined"
-                name="finscrip"
-                value={finscrip}
+                name="notaS13"
+                value={notaS13}
                 onChange={handleInputChange}
               />
               <TextField
-                id="prog"
-                select
-                label="Programa"
-                value={TipoProg}
-                onChange={handleProgChange}
-                SelectProps={{
-                  native: true,
-                }}
+                required
+                id="notaS11"
+                label={nombreS14}
+                placeholder="Ingresar Documento"
                 variant="outlined"
-                name="prog"
-              >
-                {tiposprog.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
+                name="notaS14"
+                value={notaS14}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              
+            <TextField
+                required
+                id="notaS11"
+                label={nombreS15}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS15"
+                value={notaS15}
+                onChange={handleInputChange}
+              />
+              <TextField
+                required
+                id="notaS11"
+                label={nombreS16}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS16"
+                value={notaS16}
+                onChange={handleInputChange}
+              />
             </div>
             <div className="space"></div>
           </DialogContent>
           <DialogActions>
             <Button autoFocus type="submit " color="primary">
-              Save changes
+              Actualizar
             </Button>
           </DialogActions>
         </form>

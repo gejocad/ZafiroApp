@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Listado from './Listado';
 import Registro from './Registro';
-import Settings from './Settings';
 
 const Estudiante = () => {
     const [activeTab, setActiveTab] = useState('LISTADO');
@@ -58,21 +57,6 @@ const Estudiante = () => {
                                                 Registrar
                                             </button>
                                         </li>
-                                        <li className="nav-item">
-                                            <button
-                                                type="button"
-                                                className={`nav-link ${
-                                                    activeTab === 'SETTINGS'
-                                                        ? 'active'
-                                                        : ''
-                                                }`}
-                                                onClick={() =>
-                                                    toggle('SETTINGS')
-                                                }
-                                            >
-                                                Suspendidos
-                                            </button>
-                                        </li>
                                     </ul>
                                 </div>
                                 <div className="card-body">
@@ -82,9 +66,6 @@ const Estudiante = () => {
                                         />
                                         <Registro
                                             isActive={activeTab === 'REGISTO'}
-                                        />
-                                        <Settings
-                                            isActive={activeTab === 'SETTINGS'}
                                         />
                                     </div>
                                 </div>

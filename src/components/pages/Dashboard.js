@@ -1,13 +1,17 @@
 import React from 'react';
 import SmallBox from '../small-box/SmallBox';
+import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
+
+    const { student } = useSelector(state => state.student)
+
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-3 col-6">
                     <SmallBox
-                        count={150}
+                        count={student.length}
                         title="Estudiantes Registrados"
                         type="info"
                         icon="ion-android-people"

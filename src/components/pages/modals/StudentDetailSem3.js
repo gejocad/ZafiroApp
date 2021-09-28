@@ -68,62 +68,48 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function StudentDetail(showDetail, setShowDetail) {
+export default function StudentDetailSem3(showDetail, setShowDetail) {
 
   const classes = useStyles();
   const handleClose = () => {
     setShowDetail(false);
   };
-  const tiposdoc = [
-    {
-      value: "CC",
-      label: "Cédula",
-    },
-    {
-      value: "TI",
-      label: "Tarjeta de Identidad",
-    },
-    {
-      value: "PSPRT",
-      label: "Pasaporte",
-    },
-    {
-      value: "PEP",
-      label: "PEP",
-    },
-  ];
+
 
   
   const { active } = useSelector(state => state.student)
-  const [TipoDocumento, setTipoDocumento] = React.useState(active.typedoc);
 
   const [formValue, handleInputChange, reset] = useForm(active)
   const dispatch = useDispatch()
-  const { name, lastName, email, document, finscrip } = formValue;
+  const { nombreS31, nombreS32, nombreS33, nombreS34, nombreS35, nombreS36, notaS31, notaS32, notaS33, notaS34, notaS35, notaS36 } = formValue;
 
   const activeId = useRef(active.id)
 
   useEffect(() => {
     if (active.id !== activeId.current) {
-      setTipoDocumento(active.typedoc)
       reset(active)
     }
     activeId.current = active.id
   }, [active, reset])
 
-  const handleChange = (event) => {
-    setTipoDocumento(event.target.value);
-  };
+  
 
     const handleEditStudent = (e) => {
       e.preventDefault();
       const newStudent = {...active}
-      newStudent.name = name;
-      newStudent.lastName = lastName;
-      newStudent.finscrip = finscrip;
-      newStudent.email = email;
-      newStudent.document = document;
-      newStudent.fullName = name + ' ' + lastName;
+      newStudent.nombreS31 = nombreS31;
+      newStudent.nombreS32 = nombreS32;
+      newStudent.nombreS33 = nombreS33;
+      newStudent.nombreS34 = nombreS34;
+      newStudent.nombreS35 = nombreS35;
+      newStudent.nombreS36 = nombreS36;
+      newStudent.notaS31 = notaS31;
+      newStudent.notaS32 = notaS32;
+      newStudent.notaS33 = notaS33;
+      newStudent.notaS34 = notaS34;
+      newStudent.notaS35 = notaS35;
+      newStudent.notaS36 = notaS36;
+      
       dispatch(Edit(newStudent))
       handleClose()
     }; 
@@ -148,89 +134,72 @@ export default function StudentDetail(showDetail, setShowDetail) {
         >
           <DialogContent dividers>
             <div>
-              <TextField
+            <TextField
                 required
-                id="Nombres"
-                label="Nombres"
-                placeholder="Ingresar Nombres"
-                variant="outlined"
-                name="name"
-                value={name}
-                onChange={handleInputChange}
-              />
-              <TextField
-                required
-                id="Apellidos"
-                label="Apellidos"
-                placeholder="Ingresar Apellidos"
-                variant="outlined"
-                name="lastName"
-                value={lastName}
-                onChange={handleInputChange}
-              />
-              <TextField
-                required
-                id="Email"
-                label="Email"
-                type="email"
-                placeholder="Ingresar Email"
-                variant="outlined"
-                name="email"
-                value={email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <TextField
-                id="tipodoc"
-                select
-                label="Tipo de Documento"
-                value={TipoDocumento}
-                onChange={handleChange}
-                SelectProps={{
-                  native: true,
-                }}
-                variant="outlined"
-                name="typedocument"
-              >
-                {tiposdoc.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
-              <TextField
-                required
-                id="Documento"
-                label="Documento"
+                id="notaS31"
+                label={nombreS31}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="document"
-                value={document}
+                name="notaS31"
+                value={notaS31}
+                onChange={handleInputChange}
+              />
+              <TextField
+                required
+                id="notaS32"
+                label={nombreS32}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS32"
+                value={notaS32}
                 onChange={handleInputChange}
               />
             </div>
             <div>
-              <TextField
+              
+            <TextField
                 required
-                id="Fecha"
-                label="Fecha"
-                type="date"
-                placeholder="Ingresar Fecha de Inscripción"
+                id="notaS33"
+                label={nombreS33}
+                placeholder="Ingresar Documento"
                 variant="outlined"
-                name="finscrip"
-                value={finscrip}
+                name="notaS33"
+                value={notaS33}
                 onChange={handleInputChange}
               />
               <TextField
-                id="prog"
-                disabled
-                label="Programa"
-                value={active.nombre}
-                name="prog"
-              >
-                  {active.nombre}
-              </TextField>
+                required
+                id="notaS34"
+                label={nombreS34}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS34"
+                value={notaS34}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              
+            <TextField
+                required
+                id="notaS35"
+                label={nombreS35}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS35"
+                value={notaS35}
+                onChange={handleInputChange}
+              />
+              <TextField
+                required
+                id="notaS36"
+                label={nombreS36}
+                placeholder="Ingresar Documento"
+                variant="outlined"
+                name="notaS36"
+                value={notaS36}
+                onChange={handleInputChange}
+              />
             </div>
             <div className="space"></div>
           </DialogContent>

@@ -52,8 +52,6 @@ const Registro = ({isActive}) => {
       programa.map(item => {
         return TipoProg === item.id? dispatch(AddStudent(formValue, TipoDocumento, item)) : ''
       })
-      
-      ;
     };
   
     return (
