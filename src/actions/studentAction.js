@@ -10,7 +10,6 @@ export const AddStudent = (student, typedoc, prog) => {
   return async (dispatch) => {
     const { name, lastName, document, email, finscrip } = student
 
-    delete prog.id
     const newStudent = {  
       name,
       lastName,
@@ -19,6 +18,7 @@ export const AddStudent = (student, typedoc, prog) => {
       document,
       email,
       finscrip,
+      certificatesCode: '',
       ...prog
     }
 
@@ -56,10 +56,21 @@ export const activeStudents = (id, student) => ({
   },
 });
 
-export const Edit = (newStudent) => {
+export const Edit = async (student, typedoc, prog) => {
   return async (dispatch) => {
 
-    const studentF = { ...newStudent }
+    const EditStudent = {
+      name: student.name,
+      lastName: student.lastName,
+      fullName: student.name + ' ' + student.lastName,
+      typedoc: typedoc,
+      document: student.document,
+      email: student.email,
+      finscrip: student.finscrip,
+      prog: prog,
+    }
+
+    const studentF = { ...EditStudent }
     delete studentF.id
 
     Swal.fire({
@@ -71,13 +82,62 @@ export const Edit = (newStudent) => {
       }
     })
 
-    await db.doc(`students/${newStudent.id}`).update(studentF)
-    console.log(studentF)
+    await db.doc(`students/${studentF.id}`).update(EditStudent)
+    console.log(EditStudent)
 
-    Swal.fire('Guardado', studentF.fullName, 'success');
-    dispatch(startLoadingStudent())
+    Swal.fire('Guardado', student.title, 'success');
+    dispatch(startLoadingStudent(studentF.id))
   }
 }
+
+// export const startUploading = async (file) => {
+//   return async (dispatch) => {
+
+//     Swal.fire({
+//       title: 'Uploading...',
+//       text: 'Please wait ...',
+//       allowOutsideClick: false,
+//       onBeforeOpen: () => {
+//         Swal.showLoading()
+//       }
+//     })
+
+//     fileUrl = await fileUpload(file)
+//     console.log(fileUrl)
+//     Swal.close()
+//     return fileUrl
+//   }
+
+//   const EditStudent = {
+//     image: fileUrl,
+//     tittle: student.tittle,
+//     description: student.description,
+//     year: student.year,
+//     categorie: student.categoria,
+//     duration: student.duracion,
+//     qualification: [],
+//     trailer: "fdgfd",
+//   };
+
+//   const studentF = { ...EditStudent };
+//   delete studentF.id;
+
+//   Swal.fire({
+//     title: "actualizando...",
+//     text: "Por favor, Espere ...",
+//     allowOutsideClick: false,
+//     onBeforeOpen: () => {
+//       Swal.showLoading();
+//     },
+//   });
+
+//   await db.doc(`students/${studentF.id}`).update(EditStudent);
+//   console.log(EditStudent);
+
+//   Swal.fire("Guardado", student.title, "success");
+//   dispatch(startLoadingStudent(studentF.id));
+// };
+
 
 export const startUploading = (file) => {
   return async (dispatch) => {
@@ -98,19 +158,16 @@ export const startUploading = (file) => {
 };
 
 export const Delete = (id) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     await db.doc(`students/${id}`).delete();
 
     dispatch(deleteStudent(id));
     Swal.fire({
-      position: "center",
+      position: "top-end",
       icon: "success",
-      title: "Estudiante Eliminado",
+      title: "Pelicula Eliminada",
       showConfirmButton: false,
       timer: 1500,
-      onBeforeOpen: () => {
-        Swal.showLoading();
-      },
     });
     dispatch(startLoadingStudent());
   };
@@ -148,10 +205,11 @@ export const listarSe = (student) => {
 };
 
 export const getStudent = async (document) => {
+  console.log(document)
   try {
-    const doc = await db.collection("students").doc(document).get();
-    if (doc.exists) {
-      return doc.data()
+    const doc = await db.collection('students').where('document', '==', document).get();
+    if (doc.docs[0].exists) {
+      return doc.docs[0].data()
     } else {
       return null
     }
@@ -160,9 +218,9 @@ export const getStudent = async (document) => {
   }
 };
 
-export const setCertificatesCode = async (document, code) => {
+export const setCertificatesCode = async (id, code) => {
   try {
-    await db.doc(`students/${document}`).set({ certificatesCode: code }, { merge: true })
+    await db.collection(`students`).doc(id).set({ certificatesCode: code }, { merge: true })
     return true
   } catch (error) {
     console.error(error);
