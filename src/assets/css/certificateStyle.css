@@ -26,11 +26,11 @@
   font-weight: bold;
   text-transform: uppercase;
 }
-table {
-  width: 100%;
+.table {
+  width: 70%;
   border: 1px solid #000;
 }
-th, td {
+.th, .td {
   width: 25%;
   text-align: left;
   vertical-align: top;

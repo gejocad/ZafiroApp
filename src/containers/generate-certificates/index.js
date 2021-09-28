@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "../../assets/css/certificateStyle.css";
 import logo_ag from "../../img/Logo-AG-2021.png";
+import firma from "../../img/logo.png";
 
 const GenerateCertificates = () => {
   const { id } = useParams();
@@ -33,7 +34,7 @@ const GenerateCertificates = () => {
     html2canvas(html).then(function (canvas) {
       const img = canvas.toDataURL();
       var doc = new jsPDF();
-      doc.addImage(img, "JPEG", 15, 40, 180, 180);
+      doc.addImage(img, "JPEG", 15, 10, 180, 250);
       doc.save(`certificado_${student?.fullName}.pdf`);
     });
   };
@@ -79,93 +80,89 @@ const GenerateCertificates = () => {
           </div>
         </div>
         <div className="certificate-text">
-          <p className="text-right">
-            licencia: <strong> { student.licencia}</strong>,
-            decreto: <strong>{ student.decreto}</strong>
-          </p>
-          <p className="title">Constancia de egresado</p>
+         
+          <p className="title">Constancia de notas</p>
           <p className="principal text-center">
             El director de la oficina central de registro, que suscribe
             <br />
             hace constar:
           </p>
           <p>
-            Que, <strong>{student.fullName}</strong>; con tipo documento{" "}
+            Que, <strong>{student.fullName}</strong> con tipo documento{" "}
             <strong>{student.typedoc}</strong> N°{" "}
-            <strong>{student.document}</strong>, con fecha de inscripción de{" "}
-            <strong>{student.finscrip}</strong>, aprobó satisfactoriamente las
-            asignaturas de acuerdo a su plan de estudios y se encuentra en
-            condición de <strong>Egresado (A)</strong>
-          </p>
-          <table className="certificate-text">
+            <strong>{student.document}</strong> de Arauca, cursa el tercer semestre del programa <strong>{student.nombre}</strong>.
+            En nuestra sede educativa con licencia de funcionamiento Nro. <strong>{student.licencia}</strong> 
+            segun decreto educativo ETDH <strong>{student.decreto}</strong>, con resolución <strong>{student.resolucion}</strong>
+           </p>
+          <table className="table">
 
             <tr>
 
-              <th>Competencia</th>
+              <th className="th">Competencia</th>
 
-              <th>Codigo</th>
+              <th className="th">Codigo</th>
 
-              <th>Promedio</th>
+              <th className="th">Promedio</th>
 
             </tr>
 
             <tr>
 
-              <td>{student.nombreS31}</td>
+              <td className="td">{student.nombreS31}</td>
 
-              <td>{student.codigoS31}</td>
+              <td className="td">{student.codigoS31}</td>
 
-              <td>{student.notaS31}</td>
-
-            </tr>
-
-            <tr>
-
-            <td>{student.nombreS32}</td>
-
-            <td>{student.codigoS32}</td>
-
-            <td>{student.notaS32}</td>
+              <td className="td">{student.notaS31}</td>
 
             </tr>
 
             <tr>
 
-            <td>{student.nombreS33}</td>
+            <td className="td">{student.nombreS32}</td>
 
-            <td>{student.codigoS33}</td>
+            <td className="td">{student.codigoS32}</td>
 
-            <td>{student.notaS33}</td>
-
-            </tr>
-
-            <tr>
-
-              <td>{student.nombreS34}</td>
-
-              <td>{student.codigoS34}</td>
-
-              <td>{student.notaS34}</td>
+            <td className="td">{student.notaS32}</td>
 
             </tr>
 
             <tr>
 
-            <td>{student.nombreS35}</td>
+            <td className="td">{student.nombreS33}</td>
 
-            <td>{student.codigoS35}</td>
+            <td className="td">{student.codigoS33}</td>
 
-            <td>{student.notaS35}</td>
+            <td className="td">{student.notaS33}</td>
 
             </tr>
 
             <tr>
 
-            <td>{student.nombreS36}</td>
+              <td className="td">{student.nombreS34}</td>
 
-            <td>{student.codigoS36}</td>
+              <td className="td">{student.codigoS34}</td>
 
-            <td>{student.notaS36}</td>
+              <td className="td">{student.notaS34}</td>
+
+            </tr>
+
+            <tr>
+
+            <td className="td">{student.nombreS35}</td>
+
+            <td className="td">{student.codigoS35}</td>
+
+            <td className="td">{student.notaS35}</td>
+
+            </tr>
+
+            <tr>
+
+            <td className="td">{student.nombreS36}</td>
+
+            <td className="td">{student.codigoS36}</td>
+
+            <td className="td">{student.notaS36}</td>
 
             </tr>
 
@@ -173,12 +170,16 @@ const GenerateCertificates = () => {
           <br />
           <p>
             Se expide la presente a solicitud del interesado, para los fines que
-            estime conveniente
+            estime conveniente el {today.day}/{today.month}/{today.year}.
           </p>
-          <p className="text-right">
-            {today.day}/{today.month}/{today.year}.
-          </p>
-          <p>Resolucion: <strong>{student.resolucion }</strong> </p>
+          <div className="text-right">
+            <div  className="institution-name text-center">
+            <img src={firma} width="200" alt="logo" />
+            <p>__________________</p>
+            <p>Firma del director</p>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>

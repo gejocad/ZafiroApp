@@ -150,7 +150,7 @@ export default function StudentDetailSem2(showDetail, setShowDetail) {
                 label={nombreS22}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS12"
+                name="notaS22"
                 value={notaS22}
                 onChange={handleInputChange}
               />

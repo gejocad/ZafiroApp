@@ -141,6 +141,7 @@ export default function StudentDetailSem3(showDetail, setShowDetail) {
                 placeholder="Ingresar Documento"
                 variant="outlined"
                 name="notaS31"
+                type="number"
                 value={notaS31}
                 onChange={handleInputChange}
               />
@@ -151,6 +152,7 @@ export default function StudentDetailSem3(showDetail, setShowDetail) {
                 placeholder="Ingresar Documento"
                 variant="outlined"
                 name="notaS32"
+                type="number"
                 value={notaS32}
                 onChange={handleInputChange}
               />
@@ -164,6 +166,7 @@ export default function StudentDetailSem3(showDetail, setShowDetail) {
                 placeholder="Ingresar Documento"
                 variant="outlined"
                 name="notaS33"
+                type="number"
                 value={notaS33}
                 onChange={handleInputChange}
               />
@@ -174,6 +177,7 @@ export default function StudentDetailSem3(showDetail, setShowDetail) {
                 placeholder="Ingresar Documento"
                 variant="outlined"
                 name="notaS34"
+                type="number"
                 value={notaS34}
                 onChange={handleInputChange}
               />
@@ -187,6 +191,7 @@ export default function StudentDetailSem3(showDetail, setShowDetail) {
                 placeholder="Ingresar Documento"
                 variant="outlined"
                 name="notaS35"
+                type="number"
                 value={notaS35}
                 onChange={handleInputChange}
               />
@@ -197,6 +202,7 @@ export default function StudentDetailSem3(showDetail, setShowDetail) {
                 placeholder="Ingresar Documento"
                 variant="outlined"
                 name="notaS36"
+                type="number"
                 value={notaS36}
                 onChange={handleInputChange}
               />
