@@ -97,6 +97,80 @@ const GenerateCertificates = () => {
             asignaturas de acuerdo a su plan de estudios y se encuentra en
             condición de <strong>Egresado (A)</strong>
           </p>
+          <table className="certificate-text">
+
+            <tr>
+
+              <th>Competencia</th>
+
+              <th>Codigo</th>
+
+              <th>Promedio</th>
+
+            </tr>
+
+            <tr>
+
+              <td>{student.nombreS31}</td>
+
+              <td>{student.codigoS31}</td>
+
+              <td>{student.notaS31}</td>
+
+            </tr>
+
+            <tr>
+
+            <td>{student.nombreS32}</td>
+
+            <td>{student.codigoS32}</td>
+
+            <td>{student.notaS32}</td>
+
+            </tr>
+
+            <tr>
+
+            <td>{student.nombreS33}</td>
+
+            <td>{student.codigoS33}</td>
+
+            <td>{student.notaS33}</td>
+
+            </tr>
+
+            <tr>
+
+              <td>{student.nombreS34}</td>
+
+              <td>{student.codigoS34}</td>
+
+              <td>{student.notaS34}</td>
+
+            </tr>
+
+            <tr>
+
+            <td>{student.nombreS35}</td>
+
+            <td>{student.codigoS35}</td>
+
+            <td>{student.notaS35}</td>
+
+            </tr>
+
+            <tr>
+
+            <td>{student.nombreS36}</td>
+
+            <td>{student.codigoS36}</td>
+
+            <td>{student.notaS36}</td>
+
+            </tr>
+
+          </table>
+          <br />
           <p>
             Se expide la presente a solicitud del interesado, para los fines que
             estime conveniente
