@@ -74,50 +74,15 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
   const handleClose = () => {
     setShowDetail(false);
   };
-  const tiposdoc = [
-    {
-      value: "CC",
-      label: "Cédula",
-    },
-    {
-      value: "TI",
-      label: "Tarjeta de Identidad",
-    },
-    {
-      value: "PSPRT",
-      label: "Pasaporte",
-    },
-    {
-      value: "PEP",
-      label: "PEP",
-    },
-  ];
-
-  const tiposprog = [
-    {
-      value: "Medicina",
-      label: "Medicina",
-    },
-    {
-      value: "Programación",
-      label: "Programación",
-    },
-    {
-      value: "Administración",
-      label: "Administración",
-    },
-    {
-      value: "Atención al Cliente",
-      label: "Atención al Cliente",
-    },
-  ];
+  
+  
 
   const { active } = useSelector(state => state.student)
   const [TipoDocumento, setTipoDocumento] = React.useState('CC');
   const [TipoProg, setTipoProg] = React.useState('Medicina');
   const [formValue, handleInputChange, reset] = useForm(active)
   const dispatch = useDispatch()
-  const { name, lastName, email, document, finscrip } = formValue;
+  const { name, lastName, email, notaS11} = formValue;
 
   const activeId = useRef(active.id)
 
@@ -130,14 +95,8 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
     activeId.current = active.id
   }, [active, reset])
 
-  const handleChange = (event) => {
-    setTipoDocumento(event.target.value);
-  };
 
-  const handleProgChange = (event) => {
-    setTipoProg(event.target.value);
-    console.log(event.target.value);
-  };
+
 
   const handleNewStudent = (e) => {
     e.preventDefault();
@@ -199,65 +158,17 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
             </div>
             <div>
               <TextField
-                id="tipodoc"
-                select
-                label="Tipo de Documento"
-                value={TipoDocumento}
-                onChange={handleChange}
-                SelectProps={{
-                  native: true,
-                }}
-                variant="outlined"
-                name="typedocument"
-              >
-                {tiposdoc.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
-              <TextField
                 required
                 id="Documento"
                 label="Documento"
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="document"
-                value={document}
+                name="notaS11"
+                value={notaS11}
                 onChange={handleInputChange}
               />
             </div>
-            <div>
-              <TextField
-                required
-                id="Fecha"
-                label="Fecha"
-                type="date"
-                placeholder="Ingresar Fecha de Inscripción"
-                variant="outlined"
-                name="finscrip"
-                value={finscrip}
-                onChange={handleInputChange}
-              />
-              <TextField
-                id="prog"
-                select
-                label="Programa"
-                value={TipoProg}
-                onChange={handleProgChange}
-                SelectProps={{
-                  native: true,
-                }}
-                variant="outlined"
-                name="prog"
-              >
-                {tiposprog.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
-            </div>
+            
             <div className="space"></div>
           </DialogContent>
           <DialogActions>
