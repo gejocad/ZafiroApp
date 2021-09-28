@@ -113,7 +113,7 @@ import { activeStudents } from '@actions/studentAction';
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail)}</div>
+           <div>{StudentDetailSem1(showDetail, setShowDetail)}</div>
            <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
            <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
         </div>
