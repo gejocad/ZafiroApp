@@ -85,8 +85,8 @@ const GenerateCertificates = () => {
         </div>
         <div className="certificate-text">
           <p className="text-right">
-            licencia: <strong> { student.licencia}</strong>,
-            decreto: <strong>{ student.decreto}</strong>
+            licencia: <strong> {student.licencia}</strong>, decreto:{" "}
+            <strong>{student.decreto}</strong>
           </p>
           <p className="title">Constancia de egresado</p>
           <p className="principal text-center">
@@ -99,8 +99,9 @@ const GenerateCertificates = () => {
             <strong>{student.typedoc}</strong> N°{" "}
             <strong>{student.document}</strong>, con fecha de inscripción de{" "}
             <strong>{student.finscrip}</strong>, aprobó satisfactoriamente las
-            asignaturas de acuerdo a su plan de estudios y se encuentra en
-            condición de <strong>Egresado (A)</strong>
+            asignaturas la competencia de <strong>{student.nombre}</strong>{" "}
+            acuerdo a su plan de estudios y se encuentra en condición de{" "}
+            <strong>Egresado (A)</strong>
           </p>
           <p>
             Se expide la presente a solicitud del interesado, para los fines que
@@ -109,7 +110,9 @@ const GenerateCertificates = () => {
           <p className="text-right">
             {today.day}/{today.month}/{today.year}.
           </p>
-          <p>Resolucion: <strong>{student.resolucion }</strong> </p>
+          <p>
+            Resolucion: <strong>{student.resolucion}</strong>{" "}
+          </p>
         </div>
       </div>
     </section>
