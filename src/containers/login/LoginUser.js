@@ -34,7 +34,8 @@ const LoginUser = () => {
       emailjs.send(service_id, template_id, templateParams, user_id)
         .then( async (response) => {
           if (response.status === 200) {
-            const result = setCertificatesCode(student.uid, urlId)
+            const result = await setCertificatesCode(student.uid, urlId)
+            console.log(result)
             if (result === true) {
               setResultMessage('Enlace enviado. Por favor revisa tu bandeja')
             }

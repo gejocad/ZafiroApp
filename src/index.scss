@@ -13,12 +13,30 @@
     height: 100vh;
 }
 
-.login {
-    background-color: #010532;
+.login{
+    background-image: url('./img/FondoLogin.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
+
+}
+.correos {
+    background-image: url('./img/FondoLogin.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: white;
+
 }
 
+.slogan {
+  color: #fff;
+  font-style: italic;
+}
 .main-header .navbar-nav .nav-item .nav-link {
     background: transparent;
     border: none;
@@ -48,4 +66,3 @@
 .space {
     height:85px;
 }
-

@@ -50,7 +50,7 @@ const GenerateCertificates = () => {
   }
 
   return (
-    <section className="d-flex flex-column align-items-center justify-content-center">
+    <section className="d-flex flex-column align-items-center justify-content-center correos">
       <h4>Hola, {student.name}</h4>
       <h5>Descarga tus certificados disponibles</h5>
       {student.nombre ? (
@@ -93,8 +93,7 @@ const GenerateCertificates = () => {
             Que, <strong>{student.fullName}</strong> con tipo documento{" "}
             <strong>{student.typedoc}</strong> N°{" "}
             <strong>{student.document}</strong> de Arauca, cursa el tercer semestre del programa <strong>{student.nombre}</strong>.
-            En nuestra sede educativa con licencia de funcionamiento Nro. <strong>{student.licencia}</strong> 
-            segun decreto educativo ETDH <strong>{student.decreto}</strong>, con resolución <strong>{student.resolucion}</strong>
+            En nuestra sede educativa con licencia de funcionamiento Nro. <strong>{student.licencia}</strong> segun decreto educativo ETDH <strong>{student.decreto}</strong>, con resolución <strong>{student.resolucion}</strong>.
            </p>
           <table className="table">
 
