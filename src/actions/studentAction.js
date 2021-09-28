@@ -79,55 +79,6 @@ export const Edit = (newStudent) => {
   }
 }
 
-// export const startUploading = async (file) => {
-//   return async (dispatch) => {
-
-//     Swal.fire({
-//       title: 'Uploading...',
-//       text: 'Please wait ...',
-//       allowOutsideClick: false,
-//       onBeforeOpen: () => {
-//         Swal.showLoading()
-//       }
-//     })
-
-//     fileUrl = await fileUpload(file)
-//     console.log(fileUrl)
-//     Swal.close()
-//     return fileUrl
-//   }
-
-//   const EditStudent = {
-//     image: fileUrl,
-//     tittle: student.tittle,
-//     description: student.description,
-//     year: student.year,
-//     categorie: student.categoria,
-//     duration: student.duracion,
-//     qualification: [],
-//     trailer: "fdgfd",
-//   };
-
-//   const studentF = { ...EditStudent };
-//   delete studentF.id;
-
-//   Swal.fire({
-//     title: "actualizando...",
-//     text: "Por favor, Espere ...",
-//     allowOutsideClick: false,
-//     onBeforeOpen: () => {
-//       Swal.showLoading();
-//     },
-//   });
-
-//   await db.doc(`students/${studentF.id}`).update(EditStudent);
-//   console.log(EditStudent);
-
-//   Swal.fire("Guardado", student.title, "success");
-//   dispatch(startLoadingStudent(studentF.id));
-// };
-
-
 export const startUploading = (file) => {
   return async (dispatch) => {
     Swal.fire({
@@ -208,3 +159,13 @@ export const getStudent = async (document) => {
     console.log(error);
   }
 };
+
+export const setCertificatesCode = async (document, code) => {
+  try {
+    await db.doc(`students/${document}`).set({ certificatesCode: code }, { merge: true })
+    return true
+  } catch (error) {
+    console.error(error);
+    return error
+  }
+}

@@ -1,0 +1,28 @@
+#certificate {
+  position: fixed;
+  bottom: 100%;
+  margin-top: 20px;
+  margin-left: 50px;
+  max-width: 550px ;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+}
+.institution-info {
+ border-bottom: 2px solid rgb(95, 95, 95) ; 
+ margin-bottom: 30px;
+}
+.institution-name {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.logo {
+  margin-right: 20px;
+}
+.certificate-text {
+  text-align: justify;
+}
+.principal {
+  font-weight: bold;
+  text-transform: uppercase;
+}
