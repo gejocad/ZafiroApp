@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MaterialTable from 'material-table'
 import {Button} from '@material-ui/core';
 /*{import {makeStyles} from '@material-ui/core/styles';}*/
-import StudentDetail from '@components/pages/modals/StudentDetail';
+import StudentDetailSem2 from '@components/pages/modals/StudentDetailSem2';
 import StudentAddModal from '@components/pages/modals/AddStudent';
 import { useDispatch, useSelector } from 'react-redux';
 import { activeStudents } from '@actions/studentAction';
@@ -113,7 +113,7 @@ import { activeStudents } from '@actions/studentAction';
                     }
                 }}
            />
-           <div>{StudentDetail(showDetail, setShowDetail)}</div>
+           <div>{StudentDetailSem2(showDetail, setShowDetail)}</div>
            <Button onClick={() => handleShowAdd()}>Añadir Estudiante</Button>
            <div>{StudentAddModal(showAddStudent, setShowAddStudent)}</div>
         </div>

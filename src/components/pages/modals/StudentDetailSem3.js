@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function StudentDetailSem1(showDetail, setShowDetail) {
+export default function StudentDetailSem3(showDetail, setShowDetail) {
 
   const classes = useStyles();
   const handleClose = () => {
@@ -81,7 +81,7 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
 
   const [formValue, handleInputChange, reset] = useForm(active)
   const dispatch = useDispatch()
-  const { nombreS11, nombreS12, nombreS13, nombreS14, nombreS15, nombreS16, notaS11, notaS12, notaS13, notaS14, notaS15, notaS16 } = formValue;
+  const { nombreS31, nombreS32, nombreS33, nombreS34, nombreS35, nombreS36, notaS31, notaS32, notaS33, notaS34, notaS35, notaS36 } = formValue;
 
   const activeId = useRef(active.id)
 
@@ -97,18 +97,18 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
     const handleEditStudent = (e) => {
       e.preventDefault();
       const newStudent = {...active}
-      newStudent.nombreS11 = nombreS11;
-      newStudent.nombreS12 = nombreS12;
-      newStudent.nombreS13 = nombreS13;
-      newStudent.nombreS14 = nombreS14;
-      newStudent.nombreS15 = nombreS15;
-      newStudent.nombreS16 = nombreS16;
-      newStudent.notaS11 = notaS11;
-      newStudent.notaS12 = notaS12;
-      newStudent.notaS13 = notaS13;
-      newStudent.notaS14 = notaS14;
-      newStudent.notaS15 = notaS15;
-      newStudent.notaS16 = notaS16;
+      newStudent.nombreS31 = nombreS31;
+      newStudent.nombreS32 = nombreS32;
+      newStudent.nombreS33 = nombreS33;
+      newStudent.nombreS34 = nombreS34;
+      newStudent.nombreS35 = nombreS35;
+      newStudent.nombreS36 = nombreS36;
+      newStudent.notaS31 = notaS31;
+      newStudent.notaS32 = notaS32;
+      newStudent.notaS33 = notaS33;
+      newStudent.notaS34 = notaS34;
+      newStudent.notaS35 = notaS35;
+      newStudent.notaS36 = notaS36;
       
       dispatch(Edit(newStudent))
       handleClose()
@@ -136,22 +136,22 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
             <div>
             <TextField
                 required
-                id="notaS11"
-                label={nombreS11}
+                id="notaS31"
+                label={nombreS31}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS11"
-                value={notaS11}
+                name="notaS31"
+                value={notaS31}
                 onChange={handleInputChange}
               />
               <TextField
                 required
-                id="notaS11"
-                label={nombreS12}
+                id="notaS32"
+                label={nombreS32}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS12"
-                value={notaS12}
+                name="notaS32"
+                value={notaS32}
                 onChange={handleInputChange}
               />
             </div>
@@ -159,22 +159,22 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
               
             <TextField
                 required
-                id="notaS11"
-                label={nombreS13}
+                id="notaS33"
+                label={nombreS33}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS13"
-                value={notaS13}
+                name="notaS33"
+                value={notaS33}
                 onChange={handleInputChange}
               />
               <TextField
                 required
-                id="notaS11"
-                label={nombreS14}
+                id="notaS34"
+                label={nombreS34}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS14"
-                value={notaS14}
+                name="notaS34"
+                value={notaS34}
                 onChange={handleInputChange}
               />
             </div>
@@ -182,22 +182,22 @@ export default function StudentDetailSem1(showDetail, setShowDetail) {
               
             <TextField
                 required
-                id="notaS11"
-                label={nombreS15}
+                id="notaS35"
+                label={nombreS35}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS15"
-                value={notaS15}
+                name="notaS35"
+                value={notaS35}
                 onChange={handleInputChange}
               />
               <TextField
                 required
-                id="notaS11"
-                label={nombreS16}
+                id="notaS36"
+                label={nombreS36}
                 placeholder="Ingresar Documento"
                 variant="outlined"
-                name="notaS16"
-                value={notaS16}
+                name="notaS36"
+                value={notaS36}
                 onChange={handleInputChange}
               />
             </div>
