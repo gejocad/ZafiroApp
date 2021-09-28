@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "../../assets/css/certificateStyle.css";
 import logo_ag from "../../img/Logo-AG-2021.png";
-import firma from "../../img/logo.png";
+import firma from "../../img/images.png";
 
 const GenerateCertificates = () => {
   const { id } = useParams();
@@ -19,9 +19,11 @@ const GenerateCertificates = () => {
   };
 
   useEffect(() => {
-    const [certificatesCode] = id.split("-");
-    getStudent(id).then((result) => {
+    const [certificatesCode, document] = id.split("-");
+    console.log(id)
+    getStudent(document).then((result) => {
       console.log(result);
+
       if (certificatesCode === result?.certificatesCode) {
         setStudent(result);
       }
