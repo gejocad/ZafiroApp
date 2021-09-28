@@ -1,6 +1,6 @@
 #certificate {
-  /* position: fixed; */
-  /* bottom: 100%; */
+  position: fixed;
+  bottom: 100%;
   margin-top: 20px;
   margin-left: 50px;
   max-width: 550px ;
