@@ -14,6 +14,7 @@ const LoginUser = () => {
   const search = async (e) => {
     const response = await getStudent(document);
     setStudent(response);
+    console.log(response)
   };
 
   function sendEmail() {
@@ -32,7 +33,7 @@ const LoginUser = () => {
       emailjs.send(service_id, template_id, templateParams, user_id)
         .then( async (response) => {
           if (response.status === 200) {
-            const result = setCertificatesCode(document, urlId)
+            const result = setCertificatesCode(student.id, urlId)
             if (result === true) {
               setResultMessage('Enlace enviado. Por favor revisa tu bandeja')
             }

@@ -205,10 +205,11 @@ export const listarSe = (student) => {
 };
 
 export const getStudent = async (document) => {
+  console.log(document)
   try {
-    const doc = await db.collection("students").doc(document).get();
-    if (doc.exists) {
-      return doc.data()
+    const doc = await db.collection('students').where('document', '==', document).get();
+    if (doc.docs[0].exists) {
+      return doc.docs[0].data()
     } else {
       return null
     }
@@ -217,9 +218,9 @@ export const getStudent = async (document) => {
   }
 };
 
-export const setCertificatesCode = async (document, code) => {
+export const setCertificatesCode = async (id, code) => {
   try {
-    await db.doc(`students/${document}`).set({ certificatesCode: code }, { merge: true })
+    await db.collection(`students`).doc(id).set({ certificatesCode: code }, { merge: true })
     return true
   } catch (error) {
     console.error(error);

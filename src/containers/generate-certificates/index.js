@@ -18,8 +18,8 @@ const GenerateCertificates = () => {
   };
 
   useEffect(() => {
-    const [certificatesCode, document] = id.split("-");
-    getStudent(document).then((result) => {
+    const [certificatesCode] = id.split("-");
+    getStudent(id).then((result) => {
       console.log(result);
       if (certificatesCode === result?.certificatesCode) {
         setStudent(result);
