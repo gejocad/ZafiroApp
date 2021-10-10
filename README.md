@@ -1,11 +1,6 @@
-[![Run on Repl.it](https://repl.it/badge/github/erdkse/adminlte-3-react)](https://repl.it/github/erdkse/adminlte-3-react)
+# Deploy
 
-# Admin LTE 3.1.0 - React 17.0.2
-
-To login website use:
-
-`username:` admin@example.com<br />
-`password:` admin<br />
+https://gejocad.github.io/ZafiroApp
 
 ## Available Scripts
 
